@@ -50,7 +50,7 @@ function parseJSON(JSONObj)
 //view and edit an influencer entry
 function viewandedit(event)
 {
-  alert(jQuery(event.target).attr("id"));
+  //alert(jQuery(event.target).attr("id"));
   var id_str = jQuery(event.target).attr("id").substring(jQuery(event.target).attr("id").indexOf("editbutton")+10);//get the influencer's id
   var id = parseInt(id_str);
   var i;
@@ -80,7 +80,7 @@ function remove_hashtag_button(event)
 //delete an influencer entry
 function deleteentry(event)
 {
-  alert(jQuery(event.target).attr("id"));
+  //alert(jQuery(event.target).attr("id"));
   if(confirm("Are you sure to delete?") == false)
     return;
   var id_str = jQuery(event.target).attr("id").substring(jQuery(event.target).attr("id").indexOf("deletebutton")+12);//get the influencer's id
@@ -101,79 +101,87 @@ function test(){
     ((event.currentTarget).closest("div")).remove();
 }
 
-var jsonStr = "{";
-var jsonObj;
+
 var influencer_id;
 
 //write the detail page into json object
 function writeToJson(){
-    jsonStr += "\"id\": " + influencer_id + ", ";
-    var modalbody = jQuery(".modal-body")[0];
+  var jsonStr = "{";
+  var jsonObj;
+  jsonStr += "\"id\": " + influencer_id + ", ";
+  var modalbody = jQuery(".modal-body")[0];
 
-    var name = jQuery("#name", modalbody).html();
-    jsonStr += "\"name\": \"" + name + "\", ";
-    var profile_icon = jQuery("#icon_img", modalbody).attr("src");
-    jsonStr += "\"profile_icon\": \"" + profile_icon + "\", ";
-    var description = (jQuery("#description", modalbody)[0]).value;
-    jsonStr += "\"description\": \"" + description + "\", ";
-    var big_image = jQuery("#background_img", modalbody).attr("src");
-    jsonStr += "\"big_image\": \"" + big_image + "\", ";
+  var name = jQuery("#name", modalbody).html();
+  jsonStr += "\"name\": \"" + name + "\", ";
+  var profile_icon = jQuery("#icon_img", modalbody).attr("src");
+  jsonStr += "\"profile_icon\": \"" + profile_icon + "\", ";
+  var description = (jQuery("#description", modalbody)[0]).value;
+  jsonStr += "\"description\": \"" + description + "\", ";
+  var big_image = jQuery("#background_img", modalbody).attr("src");
+  jsonStr += "\"big_image\": \"" + big_image + "\", ";
 
-    var blog_div = jQuery("#blog_div");
-    var blogs = jQuery(".chunk_div", blog_div);
-    jsonStr += "\"blog\": ";
-    jsonStr += "[";
-    for (var i=0; i<blogs.length; i++){
-        jsonStr += "{";
+  var blog_div = jQuery("#blog_div");
+  var blogs = jQuery(".chunk_div", blog_div);
+  jsonStr += "\"blog\": ";
+  jsonStr += "[";
+  for (var i=0; i<blogs.length; i++){
+      jsonStr += "{";
 
-        jsonStr += "\"img\": \"" + jQuery("img", blogs[i]).attr("src") + "\", ";
-        jsonStr += "\"description\": \"" + (jQuery("textarea", blogs[i])[0]).value + "\"";
+      jsonStr += "\"img\": \"" + jQuery("img", blogs[i]).attr("src") + "\", ";
+      jsonStr += "\"description\": \"" + (jQuery("textarea", blogs[i])[0]).value + "\"";
 
-        if(i==blogs.length-1)  jsonStr += "} ";
-        else jsonStr += "}, ";
-    }
-    jsonStr += "], ";
+      if(i==blogs.length-1)  jsonStr += "} ";
+      else jsonStr += "}, ";
+  }
+  jsonStr += "], ";
 
-    var style_div = jQuery("#style_div");
-    var styles = jQuery(".chunk_div", style_div);
-    jsonStr += "\"style\": ";
-    jsonStr += "[";
-    for (var i=0; i<styles.length; i++){
-        jsonStr += "{";
+  var style_div = jQuery("#style_div");
+  var styles = jQuery(".chunk_div", style_div);
+  jsonStr += "\"style\": ";
+  jsonStr += "[";
+  for (var i=0; i<styles.length; i++){
+      jsonStr += "{";
 
-        jsonStr += "\"img\": \"" + jQuery("img", styles[i]).attr("src") + "\", ";
-        jsonStr += "\"main_title\": \"" + jQuery("input", styles[i])[1].value + "\", ";
-        jsonStr += "\"subtitle\": \"" + jQuery("input", styles[i])[2].value + "\", ";
-        jsonStr += "\"link\": \"" + jQuery("input", styles[i])[3].value + "\"";
+      jsonStr += "\"img\": \"" + jQuery("img", styles[i]).attr("src") + "\", ";
+      jsonStr += "\"main_title\": \"" + jQuery("input", styles[i])[1].value + "\", ";
+      jsonStr += "\"subtitle\": \"" + jQuery("input", styles[i])[2].value + "\", ";
+      jsonStr += "\"link\": \"" + jQuery("input", styles[i])[3].value + "\"";
 
-        if(i==styles.length-1)  jsonStr += "} ";
-        else jsonStr += "}, ";
-    }
-    jsonStr += "], ";
+      if(i==styles.length-1)  jsonStr += "} ";
+      else jsonStr += "}, ";
+  }
+  jsonStr += "], ";
 
-    var pick_div = jQuery("#pick_div");
-    var picks = jQuery(".chunk_div", pick_div);
-    jsonStr += "\"picks\": ";
-    jsonStr += "[";
-    for (var i=0; i<picks.length; i++){
-        jsonStr += "{";
+  var pick_div = jQuery("#pick_div");
+  var picks = jQuery(".chunk_div", pick_div);
+  jsonStr += "\"picks\": ";
+  jsonStr += "[";
+  for (var i=0; i<picks.length; i++){
+      jsonStr += "{";
 
-        jsonStr += "\"img\": \"" + jQuery("img", picks[i]).attr("src") + "\", ";
-        jsonStr += "\"description\": \"" + (jQuery("textarea", picks[i])[0]).value + "\", ";
-        jsonStr += "\"money\": \"" + jQuery("input", picks[i])[1].value + "\", ";
-        jsonStr += "\"link\": \"" + jQuery("input", picks[i])[2].value + "\"";
+      jsonStr += "\"img\": \"" + jQuery("img", picks[i]).attr("src") + "\", ";
+      jsonStr += "\"description\": \"" + (jQuery("textarea", picks[i])[0]).value + "\", ";
+      jsonStr += "\"money\": \"" + jQuery("input", picks[i])[1].value + "\", ";
+      jsonStr += "\"link\": \"" + jQuery("input", picks[i])[2].value + "\"";
 
-        if(i==blogs.length-1)  jsonStr += "} ";
-        else jsonStr += "}, ";
-    }
+      if(i==blogs.length-1)  jsonStr += "} ";
+      else jsonStr += "}, ";
+  }
 
-    jsonStr += "]";
+  jsonStr += "]";
 
-    jsonStr += ("}");
+  jsonStr += ("}");
 
-    jsonObj = JSON.parse(jsonStr);
-    
-    //change new Json Object
+  jsonObj = JSON.parse(jsonStr);
+
+  //change new Json Object
+  var j = 0;
+  for(;j<newJsonObj.influencers.length;j++)
+  {
+    if(newJsonObj.influencers[j].id == influencer_id)
+      break;
+  }
+  newJsonObj.influencers[j] = jsonObj;
 }
 
 
@@ -264,7 +272,7 @@ function UpLoadFile(event)
     data:fd,
     success:function(result)
     {
-      alert(result);
+      //alert(result);
       var target = event.target;
       var parent = target.parentElement;
       var imgtag = parent.getElementsByTagName("img")[0];
