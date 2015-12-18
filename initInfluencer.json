@@ -1,0 +1,29 @@
+{
+  "id":0,
+  "name":"",
+  "profile_icon":"",
+  "description":"",
+  "big_image":"",
+  "blog":[
+    {
+      "img":  "",
+      "description": ""
+    }
+  ],
+  "style":[
+    {
+      "img":"",
+      "main_title":"",
+      "subtitle":"",
+      "link":""
+    }
+  ],
+  "picks":[
+    {
+      "img":"",
+      "description":"",
+      "money":"",
+      "link": ""
+    }
+  ]
+}

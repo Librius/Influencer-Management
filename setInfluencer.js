@@ -63,6 +63,12 @@ function viewandedit(event)
   readFromJson(currentInfluencer);
 }
 
+function createInfluencer(){
+    jQuery.getJSON("initInfluencer.json", function(emptyJson){
+        readFromJson(emptyJson);
+    });
+}
+
 function remove_hashtag_button(event)
 {
   //find the removed hashtag content in newjsonobj
@@ -341,6 +347,9 @@ jQuery(document).ready(function(){
   });
   
 
+    jQuery("#create_button").click(function(){
+        createInfluencer();
+    });
   
   jQuery("#reset_button").click(function(){
     newJSON = oldJSON;
