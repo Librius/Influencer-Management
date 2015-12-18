@@ -63,6 +63,12 @@ function viewandedit(event)
   readFromJson(currentInfluencer);
 }
 
+function createInfluencer(){
+    jQuery.getJSON("initInfluencer.json", function(emptyJson){
+        readFromJson(emptyJson);
+    });
+}
+
 function remove_hashtag_button(event)
 {
   //find the removed hashtag content in newjsonobj
@@ -199,8 +205,8 @@ function readFromJson(data){
     for(var i=0; i<blogs.length; i++){
         jQuery("#blog_div").append(
             "<div class=\"chunk_div\">" +
-            "<input type=\"file\" class=\"fileUpload\"  onchange='UpLoadFile(event)'>" +
             "<button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>" +
+            "<input type=\"file\" class=\"fileUpload\"  onchange='UpLoadFile(event)'>" +
             "<img class=\"entry_picture\" src=\"" +
             data["blog"][i]["img"] +
             "\" alt=\"No file chosen\"/>" +
@@ -214,8 +220,8 @@ function readFromJson(data){
     for(var i=0; i<styles.length; i++){
         jQuery("#style_div").append(
             "<div class=\"chunk_div\">" +
-            "<input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>" +
             "<button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>" +
+            "<input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>" +
             "<img class=\"entry_picture\" src=\"" +
             data["style"][i]["img"] +
             "\" alt=\"No file chosen\"/>\ " +
@@ -238,8 +244,8 @@ function readFromJson(data){
     for(var i=0; i<picks.length; i++){
         jQuery("#pick_div").append(
             "<div class=\"chunk_div\">" +
-            "<input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>" +
             "<button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>" +
+            "<input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>" +
             "<img class=\"entry_picture\" src=\"\" alt=\"No file chosen\"/>" +
             "<div class=\"entry\">Money: <input type=\"text\" class=\"pick_money_input entry_input\" value=\"" +
             data["picks"][i]["money"] +
@@ -341,6 +347,9 @@ jQuery(document).ready(function(){
   });
   
 
+    jQuery("#create_button").click(function(){
+        createInfluencer();
+    });
   
   jQuery("#reset_button").click(function(){
     newJSON = oldJSON;
