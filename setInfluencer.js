@@ -186,7 +186,7 @@ function readFromJson(data){
     for(var i=0; i<blogs.length; i++){
         jQuery("#blog_div").append(
             "<div class=\"chunk_div\">" +
-            "<input type=\"file\" class=\"fileUpload\">" +
+            "<input type=\"file\" class=\"fileUpload\"  onchange='UpLoadFile(event)'>" +
             "<button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>" +
             "<img class=\"entry_picture\" src=\"" +
             data["blog"][i]["img"] +
@@ -201,7 +201,7 @@ function readFromJson(data){
     for(var i=0; i<styles.length; i++){
         jQuery("#style_div").append(
             "<div class=\"chunk_div\">" +
-            "<input type=\"file\" class=\"fileUpload\">" +
+            "<input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>" +
             "<button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>" +
             "<img class=\"entry_picture\" src=\"" +
             data["style"][i]["img"] +
@@ -225,7 +225,7 @@ function readFromJson(data){
     for(var i=0; i<picks.length; i++){
         jQuery("#pick_div").append(
             "<div class=\"chunk_div\">" +
-            "<input type=\"file\" class=\"fileUpload\">" +
+            "<input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>" +
             "<button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>" +
             "<img class=\"entry_picture\" src=\"\" alt=\"No file chosen\"/>" +
             "<div class=\"entry\">Money: <input type=\"text\" class=\"pick_money_input entry_input\" value=\"" +
@@ -253,6 +253,34 @@ function readFromJson(data){
     }
 }
 
+
+
+function UpLoadFile(event)
+{
+  var fd = new FormData();
+  fd.append("fileToUpload", event.target.files[0]);
+  jQuery.ajax({
+    type:"POST",
+    url:"uploadfile.php",
+    processData: false,
+    contentType: false,
+    data:fd,
+    success:function(result)
+    {
+      alert(result);
+      var target = event.target;
+      var parent = target.parentElement;
+      var imgtag = parent.getElementsByTagName("img")[0];
+      jQuery(imgtag).attr("src",result);
+      //jQuery("#showimg").attr("src",result);
+    },
+    error:function()
+    {
+      alert("error!");
+    }
+  });
+}
+
 jQuery(document).ready(function(){
   
     jQuery.ajax({
@@ -271,7 +299,8 @@ jQuery(document).ready(function(){
       alert("error!");
     }
   });
-
+  
+  /*
   jQuery(".fileUpload").change(function(event){
     var fd = new FormData();
     fd.append("fileToUpload", this.files[0]);
@@ -295,7 +324,9 @@ jQuery(document).ready(function(){
         alert("error!");
       }
     });
-  });
+  });*/
+
+
   
   jQuery("#reset_button").click(function(){
     newJSON = oldJSON;
@@ -351,20 +382,20 @@ jQuery(document).ready(function(){
 
     jQuery("#blog_add_button").click(function(){
         jQuery("#blog_div").append(
-            "<div class=\"chunk_div\">\n                            <!--<button class=\"choose_file_buttons btn btn-link\">Choose File</button>-->\n                            <input type=\"file\" class=\"fileUpload\">\n                            <button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>\n                            <!--<div class=\"entry_picture\">-->\n                            <img class=\"entry_picture\" src=\"\" alt=\"No file chosen\"/>\n                            <!--</div>-->\n                            <div class=\"entry\">Description: <textarea class=\"blog_description_textarea entry_textarea\">description</textarea></div>\n                        </div>"
+            "<div class=\"chunk_div\">\n                            <!--<button class=\"choose_file_buttons btn btn-link\">Choose File</button>-->\n                            <input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>\n                            <button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>\n                            <!--<div class=\"entry_picture\">-->\n                            <img class=\"entry_picture\" src=\"\" alt=\"No file chosen\"/>\n                            <!--</div>-->\n                            <div class=\"entry\">Description: <textarea class=\"blog_description_textarea entry_textarea\">description</textarea></div>\n                        </div>"
         );
     });
 
     jQuery("#style_add_button").click(function(){
         console.log("style_add_button clicked");
         jQuery("#style_div").append(
-            "<div class=\"chunk_div\">\n                            <!--<button class=\"choose_file_buttons btn btn-link\">Choose File</button>-->\n                            <input type=\"file\" class=\"fileUpload\">\n                            <button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>\n                            <!--<div class=\"entry_picture\">-->\n                            <img class=\"entry_picture\" src=\"\" alt=\"No file chosen\"/>\n                            <!--</div>-->\n\n                            <div class=\"entry\">Main Title: <input type=\"text\" class=\"style_main_title_input entry_input\"/></div>\n                            <div class=\"entry\">Subtitle: <input type=\"text\" class=\"style_subtitle_input entry_input\"/></div>\n                            <div class=\"entry\">Link: <input type=\"text\" class=\"style_link_input entry_input\"/></div>\n                            <div class=\"entry\">Description: <textarea class=\"style_description_textarea entry_textarea\">description</textarea></div>\n                        </div>"
+            "<div class=\"chunk_div\">\n                            <!--<button class=\"choose_file_buttons btn btn-link\">Choose File</button>-->\n                            <input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>\n                            <button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>\n                            <!--<div class=\"entry_picture\">-->\n                            <img class=\"entry_picture\" src=\"\" alt=\"No file chosen\"/>\n                            <!--</div>-->\n\n                            <div class=\"entry\">Main Title: <input type=\"text\" class=\"style_main_title_input entry_input\"/></div>\n                            <div class=\"entry\">Subtitle: <input type=\"text\" class=\"style_subtitle_input entry_input\"/></div>\n                            <div class=\"entry\">Link: <input type=\"text\" class=\"style_link_input entry_input\"/></div>\n                            <div class=\"entry\">Description: <textarea class=\"style_description_textarea entry_textarea\">description</textarea></div>\n                        </div>"
         );
     });
 
     jQuery("#pick_add_button").click(function(){
         jQuery("#pick_div").append(
-            "<div class=\"chunk_div\">\n                            <!--<button class=\"choose_file_buttons btn btn-link\">Choose File</button>-->\n                            <input type=\"file\" class=\"fileUpload\">\n                            <button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>\n                            <!--<div class=\"entry_picture\">-->\n                            <img class=\"entry_picture\" src=\"\" alt=\"No file chosen\"/>\n                            <!--</div>-->\n\n                            <div class=\"entry\">Money: <input type=\"text\" class=\"pick_money_input entry_input\"/></div>\n                            <div class=\"entry\">Link: <input type=\"text\" class=\"pick_link_input entry_input\"/></div>\n                            <div class=\"entry\">Description: <textarea class=\"pick_description_textarea entry_textarea\">description</textarea></div>\n                        </div>"
+            "<div class=\"chunk_div\">\n                            <!--<button class=\"choose_file_buttons btn btn-link\">Choose File</button>-->\n                            <input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>\n                            <button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>\n                            <!--<div class=\"entry_picture\">-->\n                            <img class=\"entry_picture\" src=\"\" alt=\"No file chosen\"/>\n                            <!--</div>-->\n\n                            <div class=\"entry\">Money: <input type=\"text\" class=\"pick_money_input entry_input\"/></div>\n                            <div class=\"entry\">Link: <input type=\"text\" class=\"pick_link_input entry_input\"/></div>\n                            <div class=\"entry\">Description: <textarea class=\"pick_description_textarea entry_textarea\">description</textarea></div>\n                        </div>"
         );
     });
 
