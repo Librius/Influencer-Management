@@ -110,8 +110,7 @@ function writeToJson(){
   var jsonObj;
   jsonStr += "\"id\": " + influencer_id + ", ";
   var modalbody = jQuery(".modal-body")[0];
-
-  var name = jQuery("#name", modalbody).html();
+  var name = jQuery("#name")[0].value;
   jsonStr += "\"name\": \"" + name + "\", ";
   var profile_icon = jQuery("#icon_img", modalbody).attr("src");
   jsonStr += "\"profile_icon\": \"" + profile_icon + "\", ";
