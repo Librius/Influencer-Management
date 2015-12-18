@@ -183,7 +183,7 @@ function readFromJson(data){
     jQuery("#style_div").html("");
     jQuery("#pick_div").html("");
     influencer_id = data["id"];
-    jQuery("#name").html(data["name"]);
+    jQuery("#name").val(data["name"]);
     jQuery("#icon_img").attr("src", data["profile_icon"]);
     jQuery("#description").val(data["description"]);
 

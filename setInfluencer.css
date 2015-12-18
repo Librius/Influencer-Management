@@ -7,6 +7,14 @@ h3{
     margin: 15px;
 }
 
+.table>tbody>tr>th{
+    vertical-align: middle;
+}
+
+.name{
+    align: center;
+}
+
 .entry{
     margin: 8px 0;
 }
@@ -55,6 +63,7 @@ h3{
 #name{
     margin-top: 5px;
     font-size: x-large;
+    text-align: center;
 }
 
 #influencer_wrapper{
