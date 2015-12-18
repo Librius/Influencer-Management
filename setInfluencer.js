@@ -180,15 +180,28 @@ function writeToJson(){
   jsonObj = JSON.parse(jsonStr);
 
   //change new Json Object
-  var j = 0;
-  for(;j<newJsonObj.influencers.length;j++)
+  if(influencer_id == 0)
   {
-    if(newJsonObj.influencers[j].id == influencer_id)
-      break;
+    jsonObj.id = newJsonObj.global_available_id;
+    newJsonObj.global_available_id++;
+    newJsonObj.influencers.push(jsonObj);
   }
-  newJsonObj.influencers[j] = jsonObj;
+  else
+  {
+    var j = 0;
+    for(;j<newJsonObj.influencers.length;j++)
+    {
+      if(newJsonObj.influencers[j].id == influencer_id)
+        break;
+    }
+    newJsonObj.influencers[j] = jsonObj;
+  }
   parseJSON(newJsonObj);
 }
+
+jQuery("#save_button").click(function(){
+    writeToJson();
+});
 
 
 //read json and display the detail page
@@ -233,10 +246,7 @@ function readFromJson(data){
             "\"/></div>" +
               "<div class=\"entry\">Link: <input type=\"text\" class=\"style_link_input entry_input\" value=\"" +
                 data["style"][i]["link"] +
-                "\"/></div>" +
-            "<div class=\"entry\">Description: <textarea class=\"style_description_textarea entry_textarea\">" +
-            "description" +
-            "</textarea></div></div>"
+                "\"/></div>" +"</div>"
         );
     }
 
@@ -259,9 +269,7 @@ function readFromJson(data){
         );
     }
 
-    jQuery("#save_button").click(function(){
-        writeToJson();
-    });
+
 }
 
 
