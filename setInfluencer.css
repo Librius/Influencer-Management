@@ -19,6 +19,11 @@ h3{
     width: 100%;
 }
 
+.fileUpload{
+    margin: 10px 0;
+}
+
+
 .button_right_wrapper{
     text-align: right;
     margin-top: 5px;
