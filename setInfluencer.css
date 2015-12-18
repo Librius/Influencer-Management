@@ -7,6 +7,14 @@ h3{
     margin: 15px;
 }
 
+.table>tbody>tr>th{
+    vertical-align: middle;
+}
+
+.name{
+    align: center;
+}
+
 .entry{
     margin: 8px 0;
 }
