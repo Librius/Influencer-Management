@@ -30,7 +30,9 @@
   
 <div id="errorinfo"></div>
 
-<div id="button_wrapper">
+
+<div class="button_right_wrapper">
+    <button id="create_button" class="btn btn-link">Create New Influencer</button>
     <button id="update_button" class="btn btn-primary" onclick="updateAll()">update</button>
     <button id="reset_button" class="btn btn-default">reset</button>
 </div>
@@ -51,10 +53,9 @@
                 </div>
                 <div class="modal-body">
                         <div id="name_wrapper"><input id="name" type="text"></div>
-                        <!--<input id="name" type="text" align="middle">-->
                         <div id="influencer_wrapper">
                         <img id="icon_img"/>
-                        <input type="file" class="fileUpload" onchange='UpLoadFile(event)'>
+                        <input id="icon_img_uploader" type="file" class="fileUpload" onchange='UpLoadFile(event)'>
                         </div>
 
                         <div id="description_wrapper">
