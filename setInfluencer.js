@@ -64,9 +64,10 @@ function viewandedit(event)
 }
 
 function createInfluencer(){
-    jQuery.getJSON("initInfluencer.json", function(emptyJson){
+    var emptyJson = jQuery.parseJSON('{"id":0,"name":"","profile_icon":"","description":"","big_image":"","blog":[{"img":  "","description": ""}],'+
+        '"style":[{"img":"","main_title":"","subtitle":"","link":""}],'+
+        '"picks":[{ "img":"","description":"","money":"","link": ""}]}');
         readFromJson(emptyJson);
-    });
 }
 
 function remove_hashtag_button(event)
