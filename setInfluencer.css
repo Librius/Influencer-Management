@@ -58,23 +58,26 @@ h3{
 }
 
 #influencer_wrapper{
-    display: inline-block;
+    /*display: inline-block;*/
     text-align: center;
-    float: left;
+    /*float: left;*/
     margin-bottom: 10px;
 }
 
+#name_wrapper{
+    text-align: center;
+}
 #description{
     width: 100%;
     height: 100px;
 }
 
 #description_wrapper{
-    padding-left: 20px;
-    display: inline-block;
-    width: 80%;
+    /*padding-left: 20px;*/
+    /*display: inline-block;*/
+    /*width: 80%;*/
     height: 100%;
-    float: left;
+    /*float: left;*/
     margin-bottom: 10px;
 }
 
