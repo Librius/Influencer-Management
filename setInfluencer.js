@@ -181,6 +181,7 @@ function writeToJson(){
       break;
   }
   newJsonObj.influencers[j] = jsonObj;
+  parseJSON(newJsonObj);
 }
 
 
@@ -285,6 +286,41 @@ function UpLoadFile(event)
   });
 }
 
+function updateAll()
+{
+  if(confirm("Are you sure to update?") == false)
+    return;
+  var sortby = document.getElementById("sort_order_select");
+  var selectedvalue = sortby.options[sortby.selectedIndex].value;
+  newJsonObj.sort_by = selectedvalue;
+  newJSON = JSON.stringify(newJsonObj);
+  jQuery.ajax({
+    type:"POST",
+    data:{"data":newJSON},
+    url:"saveinfluencerinfo.php",
+    success: function(result)
+    {
+      var resultJson = JSON.parse(result);
+      if(resultJson.status == "error")
+      {
+        alert(resultJson.message);
+        return;
+      }
+      else
+      {
+        oldJSON = JSON.stringify(newJsonObj);
+        oldJsonObj = JSON.parse(oldJSON);
+        parseJSON(oldJsonObj);
+        alert("Update succeeded!")
+      }
+    },
+    error:function()
+    {
+      alert("error!");
+    }
+  });
+}
+
 jQuery(document).ready(function(){
   
     jQuery.ajax({
@@ -346,13 +382,6 @@ jQuery(document).ready(function(){
     }
   
     
-
-    jQuery("#update_button").click(function(){
-        tags = [];
-        jQuery(".tag_button").each(function(){
-            tags.push(jQuery(this).text());
-        });
-    });
 
 
 
