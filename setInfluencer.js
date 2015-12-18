@@ -172,6 +172,8 @@ function writeToJson(){
     jsonStr += ("}");
 
     jsonObj = JSON.parse(jsonStr);
+    
+    //change new Json Object
 }
 
 
