@@ -318,7 +318,7 @@ function updateAll()
         oldJSON = JSON.stringify(newJsonObj);
         oldJsonObj = JSON.parse(oldJSON);
         parseJSON(oldJsonObj);
-        alert("Update succeeded!")
+        alert("Update succeeded!");
       }
     },
     error:function()
