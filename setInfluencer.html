@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="setInfluencer.css">
+</head>
+    <title></title>
+</head>
+<body>
+<h3>About Influencers</h3>
+<div>
+    <h5>The posted from the following influencers are sorted by:</h5>
+    <select name="sort_order" id="sort_order_select" class="form-control">
+        <option value="time">time</option>
+        <option value="like">like</option>
+    </select>
+</div>
+
+<div>
+    <h5>Use the following hashtags:</h5>
+    <div id="tag_pool">
+        <button id="add_tag_button" class="btn btn-primary">Add</button>
+    </div>
+</div>
+
+<div id="entries">
+
+</div>
+
+<div id="button_wrapper">
+    <button id="update_button" class="btn btn-primary">update</button>
+    <button id="reset_button" class="btn btn-default">reset</button>
+</div>
+
+<div class="container" id="test_parent">
+    <!-- Trigger the modal with a button -->
+    <!--<button type="button" id="toggle_button" class="btn test" data-toggle="modal" data-target="#myModal">Open Modal</button>-->
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Influencer Details</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="influencer_wrapper">
+                    <img id="icon_img"/>
+                    <div id="name">Name</div>
+                    </div>
+
+                    <div id="description_wrapper">
+                        <h5>Description</h5>
+                        <textarea id="description">description</textarea>
+                    </div>
+
+                    <br>
+                    <h5>Background Image:</h5>
+                    <div class="chunk_div">
+                      <input type="file" class="fileUpload">
+                      <img id="background_img" class="entry_picture" src="" alt="No file chosen"/>
+                    </div>
+
+
+                    <!--Blog-->
+
+                    <div id="blog_div">
+
+                        <div class="page-header">
+                            <h5>Blog</h5>
+                        </div>
+
+                        <!--<div class="chunk_div">-->
+                            <!--&lt;!&ndash;<button class="choose_file_buttons btn btn-link">Choose File</button>&ndash;&gt;-->
+                            <!--<input type="file" class="fileUpload">-->
+                            <!--<button class="remove_chunk_buttons" onclick="test()">Remove</button>-->
+                            <!--&lt;!&ndash;<div class="entry_picture">&ndash;&gt;-->
+                            <!--<img class="entry_picture" src="" alt="No file chosen"/>-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                            <!--<div class="entry">Description: <textarea class="blog_description_textarea entry_textarea">description</textarea></div>-->
+                        <!--</div>-->
+
+                    </div>
+
+                    <div class="button_right_wrapper">
+                        <button id="blog_add_button" class="btn btn-primary">Add</button>
+                    </div>
+
+
+                    <!--Style-->
+
+                    <div id="style_div">
+                        <div class="page-header">
+                            <h5>Style</h5>
+                        </div>
+                        <!--<div class="chunk_div">-->
+                            <!--&lt;!&ndash;<button class="choose_file_buttons btn btn-link">Choose File</button>&ndash;&gt;-->
+                            <!--<input type="file" class="fileUpload">-->
+                            <!--<button class="remove_chunk_buttons" onclick="test()">Remove</button>-->
+                            <!--&lt;!&ndash;<div class="entry_picture">&ndash;&gt;-->
+                            <!--<img class="entry_picture" src="" alt="No file chosen"/>-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                            <!--<div class="entry">Main Title: <input type="text" class="style_main_title_input entry_input"/></div>-->
+                            <!--<div class="entry">Subtitle: <input type="text" class="style_subtitle_input entry_input"/></div>-->
+                            <!--<div class="entry">Link: <input type="text" class="style_link_input entry_input"/></div>-->
+                            <!--<div class="entry">Description: <textarea class="style_description_textarea entry_textarea">description</textarea></div>-->
+                        <!--</div>-->
+                    </div>
+
+                    <div class="button_right_wrapper">
+                        <button id="style_add_button" class="btn btn-primary">Add</button>
+                    </div>
+
+
+                    <!--Pick-->
+
+                    <div id="pick_div">
+
+                        <div class="page-header">
+                            <h5>Pick</h5>
+                        </div>
+
+                        <!--<div class="chunk_div">-->
+                            <!--&lt;!&ndash;<button class="choose_file_buttons btn btn-link">Choose File</button>&ndash;&gt;-->
+                            <!--<input type="file" class="fileUpload">-->
+                            <!--<button class="remove_chunk_buttons" onclick="test()">Remove</button>-->
+                            <!--&lt;!&ndash;<div class="entry_picture">&ndash;&gt;-->
+                            <!--<img class="entry_picture" src="" alt="No file chosen"/>-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+
+                            <!--<div class="entry">Money: <input type="text" class="pick_money_input entry_input"/></div>-->
+                            <!--<div class="entry">Link: <input type="text" class="pick_link_input entry_input"/></div>-->
+                            <!--<div class="entry">Description: <textarea class="pick_description_textarea entry_textarea">description</textarea></div>-->
+                        <!--</div>-->
+                    </div>
+
+                    <div class="button_right_wrapper">
+                        <button id="pick_add_button" class="btn btn-primary">Add</button>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="save_button">Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--<div class="j-container w100">-->
+    <!--<div class="mb-meta mb-meta-cls">-->
+        <!--<div class="mb-btn mb-add-button">Add</div>-->
+    <!--</div>-->
+    <!--<ul class="mb-list mb-list-cls">-->
+
+    <!--</ul>-->
+<!--</div>-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="setInfluencer.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</body>
+
+</html>
