@@ -52,12 +52,18 @@ h3{
     height: 100px;
 }
 
+#icon_img_uploader{
+    width: 175px;
+    margin: auto;
+}
+
 /*Influencer Modal*/
 
 /*header*/
 #icon_img{
     width: 100px;
     height: 100px;
+    margin: 10px;
 }
 
 #name{
