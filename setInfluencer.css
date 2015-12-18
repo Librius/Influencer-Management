@@ -107,7 +107,9 @@ h3{
 /*chunk_div*/
 
 .remove_chunk_buttons{
-    float: right
+    float: right;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 .chunk_div{
     background-color: whitesmoke;
