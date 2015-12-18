@@ -57,6 +57,10 @@ h3{
     margin: auto;
 }
 
+#create_button{
+    float: left;
+}
+
 /*Influencer Modal*/
 
 /*header*/
