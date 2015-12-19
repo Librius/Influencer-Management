@@ -214,6 +214,7 @@ function readFromJson(data){
     jQuery("#name").val(data["name"]);
     jQuery("#icon_img").attr("src", data["profile_icon"]);
     jQuery("#description").val(data["description"]);
+    jQuery("#background_img").attr("src", data["big_image"]);
 
     var blogs = data["blog"];
     for(var i=0; i<blogs.length; i++){
@@ -257,7 +258,8 @@ function readFromJson(data){
             "<div class=\"chunk_div\">" +
             "<button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>" +
             "<input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>" +
-            "<img class=\"entry_picture\" src=\"\" alt=\"No file chosen\"/>" +
+            "<img class=\"entry_picture\" src=\""+
+            data["picks"][i]["img"] +  "\" alt=\"No file chosen\"/>" +
             "<div class=\"entry\">Money: <input type=\"text\" class=\"pick_money_input entry_input\" value=\"" +
             data["picks"][i]["money"] +
             "\"/></div>" +
