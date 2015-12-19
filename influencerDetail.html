@@ -207,7 +207,7 @@
             <div class="carousel-inner " role="listbox" style="height:400px;">
                 <div class="item active" style="text-align:center;width:60%;left:20%;">
                     <div class="col-md-12">
-                        <img class="image-auto-resizing" src="{{media url="wysiwyg/influencer2/influencer-blog-bra1.png"}}" alt="" pagespeed_url_hash="4266083714" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                        <img class="image-auto-resizing blog_img" src="{{media url="wysiwyg/influencer2/influencer-blog-bra1.png"}}" alt="" pagespeed_url_hash="4266083714" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
                     </div>
                     <div class="col-md-12" style="padding-top:30px;">
                         <span class="influencer-blog">Katie Arnold is a 20-something Social Media maven by day and style blogger by night. She has lived all over the globe in cities including Paris, New York, and San Francisco, though she currently bounces between Orange County and LA. Katie believes anything is possible and lives by the mantra &#8220;rules are meant to be broken.&#8221;</span>
@@ -216,7 +216,7 @@
 
                 <div class="item" style="text-align:center;width:60%;left:20%;">
                     <div class="col-md-12">
-                        <img class="image-auto-resizing" src="{{media url="wysiwyg/influencer2/influencer-blog-image2.png"}}" alt="" pagespeed_url_hash="4266083714" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                        <img class="image-auto-resizing blog_img" src="{{media url="wysiwyg/influencer2/influencer-blog-image2.png"}}" alt="" pagespeed_url_hash="4266083714" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
                     </div>
                     <div class="col-md-12" style="padding-top:30px;">
                         <span class="influencer-blog">Katie Arnold is a 20-something Social Media maven by day and style blogger by night. She has lived all over the globe in cities including Paris, New York, and San Francisco, though she currently bounces between Orange County and LA. Katie believes anything is possible and lives by the mantra &#8220;rules are meant to be broken.&#8221;</span>
@@ -225,7 +225,7 @@
 
                 <div class="item" style="text-align:center;width:60%;left:20%;">
                     <div class="col-md-12">
-                        <img class="image-auto-resizing" src="{{media url="wysiwyg/influencer2/influencer-blog-image3.png"}}" alt="" pagespeed_url_hash="4266083714" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                        <img class="image-auto-resizing blog_img" src="{{media url="wysiwyg/influencer2/influencer-blog-image3.png"}}" alt="" pagespeed_url_hash="4266083714" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
                     </div>
                     <div class="col-md-12" style="padding-top:30px;">
                         <span class="influencer-blog">Katie Arnold is a 20-something Social Media maven by day and style blogger by night. She has lived all over the globe in cities including Paris, New York, and San Francisco, though she currently bounces between Orange County and LA. Katie believes anything is possible and lives by the mantra &#8220;rules are meant to be broken.&#8221;</span>
@@ -459,6 +459,13 @@
             // image.style.marginLeft=left.toString()+"px";
             image.style.marginTop="-10px";
             // image.style.width="2300px !important";
+
+//            jQuery.get("getinfluencerinfo.php", function(data){
+//                jQuery("#influencerimage").attr("src", data["big_image"]);
+//                var blogImgs = jQuery(".blog_img");
+//                for( var i = 0; i < blogImgs.length; i++){}
+//
+//            });
         </script>
 
 
