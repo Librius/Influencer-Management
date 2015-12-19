@@ -28,6 +28,7 @@ h3{
 }
 
 .fileUpload{
+    width: 80px;
     margin: 10px 0;
 }
 
@@ -53,7 +54,7 @@ h3{
 }
 
 #icon_img_uploader{
-    width: 175px;
+    width: 80px;
     margin: auto;
 }
 
