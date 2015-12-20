@@ -170,7 +170,7 @@ function writeToJson(){
       jsonStr += "\"money\": \"" + jQuery("input", picks[i])[1].value + "\", ";
       jsonStr += "\"link\": \"" + jQuery("input", picks[i])[2].value + "\"";
 
-      if(i==blogs.length-1)  jsonStr += "} ";
+      if(i==picks.length-1)  jsonStr += "} ";
       else jsonStr += "}, ";
   }
 
