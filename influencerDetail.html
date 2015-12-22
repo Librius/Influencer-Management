@@ -190,7 +190,7 @@
 
 <div class="col-md-12">
     <!--<img id="influencerimage"  src="test images/maxresdefault.jpg" alt="" />-->
-    <img id="influencerimage"  src="{{media url="wysiwyg/influencer2/influencer_detail_header1.png"}}" alt="" />
+    <img id="influencerimage"  src="{{media url='wysiwyg/influencer2/influencer_detail_header1.png'}}" alt="" />
     <div class="semitrans-box-above">
         <div class="semitrans-subbox">
             <span class="influencer-name1" id="influencer_name"> Influencer One</span>
@@ -395,7 +395,7 @@
             <span class="subheader_block-span3"></span>
         </div>
 
-        <div class="row">
+        <div class="row" id="moreinfluencers-container">
             <div class="col-md-2 col-xs-3 top-bot-padding">
                 <div class="influencer-img">
                     <img class="influencer-icon img-circle" src="{{media url="wysiwyg/influencer2/influencer_style4.png"}}" alt=""/>
@@ -461,7 +461,7 @@
         <div class="row">
             <div class="col-md-12" style="text-align:center;">
                 <div class="buttom-border" style="text-align:center;vertical-align:center;">
-                    <button class="influence-button" type="button">SEE MORE INFLUENCERS</button>
+                    <button class="influence-button" type="button" onclick="seeMoreInfluencers(event)">SEE MORE INFLUENCERS</button>
                 </div>
             </div>
         </div>
@@ -495,7 +495,7 @@
                         break;
                     }
                 }
-                parseJSON(influencerJsonObj);
+                parseJSON(influencerJsonObj,allJSON);
             },
             error:function()
             {
@@ -504,7 +504,7 @@
         });
     });
 
-    function parseJSON(JSONObj)
+    function parseJSON(JSONObj,allJSON)
     {
         jQuery("#influencerimage").attr("src",JSONObj.big_image);
         jQuery("#influencer_name").html(JSONObj.name);
@@ -560,6 +560,57 @@
             }
         }
         jQuery("#picks-container").html(pick_html);
+
+        //create more influencer section
+        var moreinfluencer_html = "";
+        for(var i= 0;i<allJSON.influencers.length;i++)
+        {
+            if(i%12 == 0)
+            {
+                if(i == 0)
+                {
+                    moreinfluencer_html += "<div class='MoreInfluencersDiv' style='display:block;'>";
+                }
+                else
+                {
+                    moreinfluencer_html += "<div class='MoreInfluencersDiv' style='display:none;'>";
+                }
+            }
+
+            moreinfluencer_html += "<div class=\"col-md-2 col-xs-3 top-bot-padding\"><div class=\"influencer-img\"><a href='"+window.location.href.split('?')[0]+"?id="+allJSON.influencers[i].id+"'>< img class=\"influencer-icon img-circle\" src=\""+allJSON.influencers[i].profile_icon+"\" alt=\""+allJSON.influencers[i].name+"\"\/></a ><\/div><\/div>";
+
+            if(i%12 == 0)
+            {
+                if(i == 0)
+                {
+                    moreinfluencer_html += "</div>";
+                }
+                else
+                {
+                    moreinfluencer_html += "</div>";
+                }
+            }
+        }
+        jQuery("#moreinfluencers-container").html(moreinfluencer_html);
+    }
+
+    function seeMoreInfluencers(event)
+    {
+        var moreInfluencersList = document.getElementById("moreinfluencers-container").getElementsByClassName("MoreInfluencersDiv");
+        var i = 0;
+        for(;i<moreInfluencersList.length;i++)
+        {
+            if(moreInfluencersList[i].style.display=="none")
+                break;
+        }
+        if(i == moreInfluencersList.length)
+        {
+            event.target.parentNode.style.display = "none";
+        }
+        else
+        {
+            moreInfluencersList[i].style.display = "block";
+        }
     }
 </script>
 
