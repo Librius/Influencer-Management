@@ -196,6 +196,7 @@
     <div class="semitrans-box-above">
         <div class="semitrans-subbox">
             <span class="influencer-name1" id="influencer_name"> Influencer One</span>
+            <br>
             <span class="influencer-name2" id="influencer_description"> CURATION</span>
         </div>
     </div>
@@ -540,7 +541,7 @@
         var style_html = "";
         for(var i = 0;i<JSONObj.style.length;i++)
         {
-            style_html+="<div class=\"row\"><div class=\"col-md-12 top-bot-padding2\"><a href=\""+JSONObj.style[i].link+"\"><img class=\"image-auto-resizing\" src=\""+JSONObj.style[i].img+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><\/a><div class=\"semitrans-box-above2\"><div class=\"semitrans-subbox\"><span class=\"influencer-name2\">"+JSONObj.style[i].main_title+"<\/span><span class=\"influencer-name1\">"+JSONObj.style[i].subtitle+"<\/span><\/div><\/div><\/div><\/div>";
+            style_html+="<div class=\"row\"><div class=\"col-md-12 top-bot-padding2\"><a href=\""+JSONObj.style[i].link+"\"><img class=\"image-auto-resizing\" src=\""+JSONObj.style[i].img+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><\/a><div class=\"semitrans-box-above2\"><div class=\"semitrans-subbox\"><span class=\"influencer-name2\">"+JSONObj.style[i].main_title+"<\/span><br><span class=\"influencer-name1\">"+JSONObj.style[i].subtitle+"<\/span><\/div><\/div><\/div><\/div>";
         }
         jQuery("#style-container").html(style_html);
 
