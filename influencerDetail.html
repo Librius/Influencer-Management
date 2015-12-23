@@ -379,13 +379,13 @@
             </div>
         </div>
 
-        <div class="row">
+        <!--<div class="row">
             <div class="col-md-12" style="text-align:center;">
                 <div class="buttom-border2" style="text-align:center;vertical-align:center;">
                     <span >SHARE WITH FRIEND</span>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
 
@@ -554,7 +554,7 @@
                 pick_html+="<div class='row'>";
             }
 
-            pick_html+="<div class=\"col-md-3\"><img class=\"image-auto-resizing\" src=\""+JSONObj.picks[i].img+"\"}}\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><div class=\"col-md-12\" style=\"padding-top:20px;\"><span>"+JSONObj.picks[i].description+"<\/span><\/div><div class=\"col-md-12\"><span>"+JSONObj.picks[i].money+"<\/span><\/div><div class=\"col-md-12\"><img class=\"image-auto-resizing\" style=\"padding-bottom:20px;padding-right:20px;\" src=\"{{media url=\"wysiwyg\/influencer2\/add-to-bag-icon.png\"}}\" alt=\"\" \/><img class=\"image-auto-resizing\" style=\"padding-bottom:20px;\" src=\"{{media url=\"wysiwyg\/influencer2\/add-to-wishlist-icon.png\"}}\" alt=\"\"\/><\/div><\/div>";
+            pick_html+="<div class=\"col-md-3\"><a href='"+JSONObj.picks[i].link+"'><img class=\"image-auto-resizing\" src=\""+JSONObj.picks[i].img+"\"}}\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/></a><div class=\"col-md-12\" style=\"padding-top:20px;\"><span>"+JSONObj.picks[i].description+"<\/span><\/div><div class=\"col-md-12\"><span>"+JSONObj.picks[i].money+"<\/span><\/div><div class=\"col-md-12\"><a href='"+JSONObj.picks[i].link+"'><img class=\"image-auto-resizing\" style=\"padding-bottom:20px;padding-right:20px;\" src=\"{{media url=\"wysiwyg\/influencer2\/add-to-bag-icon.png\"}}\" alt=\"\" \/></a><a href='"+JSONObj.picks[i].link+"'><img class=\"image-auto-resizing\" style=\"padding-bottom:20px;\" src=\"{{media url=\"wysiwyg\/influencer2\/add-to-wishlist-icon.png\"}}\" alt=\"\"\/></a><\/div><\/div>";
 
             if(i%4 == 0)
             {
