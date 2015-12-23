@@ -196,6 +196,7 @@
     <div class="semitrans-box-above">
         <div class="semitrans-subbox">
             <span class="influencer-name1" id="influencer_name"> Influencer One</span>
+            <br>
             <span class="influencer-name2" id="influencer_description"> CURATION</span>
         </div>
     </div>
@@ -255,12 +256,12 @@
         <!-- Left and right controls -->
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
       <span class="glyphicon" aria-hidden="true"  >
-        <img class="carousel-arrow" src="{{media url="/wysiwyg/influencer2/arrowleft.png"}}" alt=""/>
+        <img class="carousel-arrow" src=" https://www.evestemptation.com:443/media//wysiwyg/influencer2/arrowleft.png" alt=""/>
       </span>
         </a>
         <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
       <span class="glyphicon" aria-hidden="true">
-        <img class="carousel-arrow" src="{{media url="/wysiwyg/influencer2/arrowright.png"}}" alt=""/>
+        <img class="carousel-arrow" src="https://www.evestemptation.com:443/media//wysiwyg/influencer2/arrowright.png" alt=""/>
       </span>
         </a>
     </div>
@@ -379,13 +380,13 @@
             </div>
         </div>
 
-        <div class="row">
+        <!--<div class="row">
             <div class="col-md-12" style="text-align:center;">
                 <div class="buttom-border2" style="text-align:center;vertical-align:center;">
                     <span >SHARE WITH FRIEND</span>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </div>
 
@@ -532,7 +533,7 @@
             blog_inner_html+="' style=\"text-align:center;width:60%;left:20%;\"><div class=\"col-md-12\"><img class=\"image-auto-resizing blog_img\" src='"+JSONObj.blog[i].img+"'alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"/></div>";
             blog_inner_html+="<div class=\"col-md-12\" style=\"padding-top:30px;\"><span class=\"influencer-blog\">"+JSONObj.blog[i].description+"</span></div></div>";
         }
-        blog_inner_html+="<a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">\r\n              <span class=\"glyphicon\" aria-hidden=\"true\"  >\r\n                <img class=\"carousel-arrow\" src=\"{{media url=\"\/wysiwyg\/influencer2\/arrowleft.png\"}}\" alt=\"\"\/>\r\n              <\/span>\r\n                <\/a>\r\n                <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\">\r\n              <span class=\"glyphicon\" aria-hidden=\"true\">\r\n                <img class=\"carousel-arrow\" src=\"{{media url=\"\/wysiwyg\/influencer2\/arrowright.png\"}}\" alt=\"\"\/>\r\n              <\/span>\r\n                <\/a>";
+        blog_inner_html+="<a class=\"left carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"prev\">\r\n              <span class=\"glyphicon\" aria-hidden=\"true\"  >\r\n                \r\n              <\/span>\r\n                <\/a>\r\n                <a class=\"right carousel-control\" href=\"#myCarousel\" role=\"button\" data-slide=\"next\">\r\n              <span class=\"glyphicon\" aria-hidden=\"true\">\r\n                              <\/span>\r\n                <\/a>";
         jQuery("#carousel-indicators").html(blog_ol_html);
         jQuery("#carousel-inner").html(blog_inner_html);
 
@@ -540,7 +541,7 @@
         var style_html = "";
         for(var i = 0;i<JSONObj.style.length;i++)
         {
-            style_html+="<div class=\"row\"><div class=\"col-md-12 top-bot-padding2\"><a href=\""+JSONObj.style[i].link+"\"><img class=\"image-auto-resizing\" src=\""+JSONObj.style[i].img+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><\/a><div class=\"semitrans-box-above2\"><div class=\"semitrans-subbox\"><span class=\"influencer-name2\">"+JSONObj.style[i].main_title+"<\/span><span class=\"influencer-name1\">"+JSONObj.style[i].subtitle+"<\/span><\/div><\/div><\/div><\/div>";
+            style_html+="<div class=\"row\"><div class=\"col-md-12 top-bot-padding2\"><a href=\""+JSONObj.style[i].link+"\"><img class=\"image-auto-resizing\" src=\""+JSONObj.style[i].img+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><\/a><div class=\"semitrans-box-above2\"><div class=\"semitrans-subbox\"><span class=\"influencer-name2\">"+JSONObj.style[i].main_title+"<\/span><br><span class=\"influencer-name1\">"+JSONObj.style[i].subtitle+"<\/span><\/div><\/div><\/div><\/div>";
         }
         jQuery("#style-container").html(style_html);
 
@@ -554,7 +555,7 @@
                 pick_html+="<div class='row'>";
             }
 
-            pick_html+="<div class=\"col-md-3\"><img class=\"image-auto-resizing\" src=\""+JSONObj.picks[i].img+"\"}}\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><div class=\"col-md-12\" style=\"padding-top:20px;\"><span>"+JSONObj.picks[i].description+"<\/span><\/div><div class=\"col-md-12\"><span>"+JSONObj.picks[i].money+"<\/span><\/div><div class=\"col-md-12\"><img class=\"image-auto-resizing\" style=\"padding-bottom:20px;padding-right:20px;\" src=\"{{media url=\"wysiwyg\/influencer2\/add-to-bag-icon.png\"}}\" alt=\"\" \/><img class=\"image-auto-resizing\" style=\"padding-bottom:20px;\" src=\"{{media url=\"wysiwyg\/influencer2\/add-to-wishlist-icon.png\"}}\" alt=\"\"\/><\/div><\/div>";
+            pick_html+="<div class=\"col-md-3\"><a href='"+JSONObj.picks[i].link+"'><img class=\"image-auto-resizing\" src=\""+JSONObj.picks[i].img+"\"}}\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/></a><div class=\"col-md-12\" style=\"padding-top:20px;\"><span>"+JSONObj.picks[i].description+"<\/span><\/div><div class=\"col-md-12\"><span>"+JSONObj.picks[i].money+"<\/span><\/div><div class=\"col-md-12\"><a href='"+JSONObj.picks[i].link+"'><img class=\"image-auto-resizing\" style=\"padding-bottom:20px;padding-right:20px;\" src=\" https://www.evestemptation.com:443/media/wysiwyg/influencer2/add-to-bag-icon.png\" alt=\"\" \/></a><a href='"+JSONObj.picks[i].link+"'><img class=\"image-auto-resizing\" style=\"padding-bottom:20px;\" src=\"https://www.evestemptation.com:443/media/wysiwyg/influencer2/add-to-wishlist-icon.png\" alt=\"\"\/></a><\/div><\/div>";
 
             if(i%4 == 0)
             {

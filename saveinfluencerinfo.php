@@ -56,13 +56,13 @@ if(isset($_POST["data"]))
     //check each blog
     for($j = 0;$j<count($data->influencers[$i]->blog);$j++)
     {
-      if(!isset($data->influencers[$i]->blog[$j]->img))
+      if(!isset($data->influencers[$i]->blog[$j]->img) || trim($data->influencers[$i]->blog[$j]->img) == "")
       {
         $result = array("status"=>"error","message"=>"Each blog should have an image.");
         echo json_encode($result);
         return;
       }
-      if(!isset($data->influencers[$i]->blog[$j]->description))
+      if(!isset($data->influencers[$i]->blog[$j]->description) || trim($data->influencers[$i]->blog[$j]->description) == "")
       {
         $result = array("status"=>"error","message"=>"Each blog should have a description.");
         echo json_encode($result);
@@ -78,25 +78,25 @@ if(isset($_POST["data"]))
     //check each style
     for($j = 0;$j<count($data->influencers[$i]->style);$j++)
     {
-      if(!isset($data->influencers[$i]->style[$j]->img))
+      if(!isset($data->influencers[$i]->style[$j]->img) || trim($data->influencers[$i]->style[$j]->img) == "")
       {
         $result = array("status"=>"error","message"=>"Each style should have an image.");
         echo json_encode($result);
         return;
       }
-      if(!isset($data->influencers[$i]->style[$j]->main_title))
+      if(!isset($data->influencers[$i]->style[$j]->main_title) || trim($data->influencers[$i]->style[$j]->main_title) == "")
       {
         $result = array("status"=>"error","message"=>"Each style should have a main title.");
         echo json_encode($result);
         return;
       }
-      if(!isset($data->influencers[$i]->style[$j]->subtitle))
+      if(!isset($data->influencers[$i]->style[$j]->subtitle) || trim($data->influencers[$i]->style[$j]->subtitle) == "")
       {
         $result = array("status"=>"error","message"=>"Each style should have a subtitle.");
         echo json_encode($result);
         return;
       }
-      if(!isset($data->influencers[$i]->style[$j]->link))
+      if(!isset($data->influencers[$i]->style[$j]->link) || trim($data->influencers[$i]->style[$j]->link) == "")
       {
         $result = array("status"=>"error","message"=>"Each style should have a link.");
         echo json_encode($result);
@@ -112,25 +112,25 @@ if(isset($_POST["data"]))
     //check each pick
     for($j = 0;$j<count($data->influencers[$i]->picks);$j++)
     {
-      if(!isset($data->influencers[$i]->picks[$j]->img))
+      if(!isset($data->influencers[$i]->picks[$j]->img) || trim($data->influencers[$i]->picks[$j]->img) == "")
       {
         $result = array("status"=>"error","message"=>"Each pick should have an image.");
         echo json_encode($result);
         return;
       }
-      if(!isset($data->influencers[$i]->picks[$j]->description))
+      if(!isset($data->influencers[$i]->picks[$j]->description) || trim($data->influencers[$i]->picks[$j]->description) == "")
       {
         $result = array("status"=>"error","message"=>"Each pick should have a description.");
         echo json_encode($result);
         return;
       }
-      if(!isset($data->influencers[$i]->picks[$j]->money))
+      if(!isset($data->influencers[$i]->picks[$j]->money) || trim($data->influencers[$i]->picks[$j]->money) == "")
       {
         $result = array("status"=>"error","message"=>"Each pick should have a prize.");
         echo json_encode($result);
         return;
       }
-      if(!isset($data->influencers[$i]->picks[$j]->link))
+      if(!isset($data->influencers[$i]->picks[$j]->link) || trim($data->influencers[$i]->picks[$j]->link) == "")
       {
         $result = array("status"=>"error","message"=>"Each pick should have a link.");
         echo json_encode($result);
