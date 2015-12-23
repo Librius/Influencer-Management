@@ -76,26 +76,32 @@ if(isset($_POST["data"]))
       return;
     }
     //check each style
+    $n = count($data->influencers[$i]->style);
+    if ($n!=5) {
+      $result = array("status"=>"error","message"=>"There should be five images for style.");
+      echo json_encode($result);
+      return;
+    }
     for($j = 0;$j<count($data->influencers[$i]->style);$j++)
     {
       if(!isset($data->influencers[$i]->style[$j]->img) || trim($data->influencers[$i]->style[$j]->img) == "")
       {
-        $result = array("status"=>"error","message"=>"Each style should have an image.");
+        $result = array("status"=>"error","message"=>"Each style should have a image.");
         echo json_encode($result);
         return;
       }
-      if(!isset($data->influencers[$i]->style[$j]->main_title) || trim($data->influencers[$i]->style[$j]->main_title) == "")
-      {
-        $result = array("status"=>"error","message"=>"Each style should have a main title.");
-        echo json_encode($result);
-        return;
-      }
-      if(!isset($data->influencers[$i]->style[$j]->subtitle) || trim($data->influencers[$i]->style[$j]->subtitle) == "")
-      {
-        $result = array("status"=>"error","message"=>"Each style should have a subtitle.");
-        echo json_encode($result);
-        return;
-      }
+//      if(!isset($data->influencers[$i]->style[$j]->main_title) || trim($data->influencers[$i]->style[$j]->main_title) == "")
+//      {
+//        $result = array("status"=>"error","message"=>"Each style should have a main title.");
+//        echo json_encode($result);
+//        return;
+//      }
+//      if(!isset($data->influencers[$i]->style[$j]->subtitle) || trim($data->influencers[$i]->style[$j]->subtitle) == "")
+//      {
+//        $result = array("status"=>"error","message"=>"Each style should have a subtitle.");
+//        echo json_encode($result);
+//        return;
+//      }
       if(!isset($data->influencers[$i]->style[$j]->link) || trim($data->influencers[$i]->style[$j]->link) == "")
       {
         $result = array("status"=>"error","message"=>"Each style should have a link.");

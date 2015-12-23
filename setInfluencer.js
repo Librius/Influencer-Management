@@ -65,7 +65,8 @@ function viewandedit(event)
 
 function createInfluencer(){
     var emptyJson = jQuery.parseJSON('{"id":0,"name":"","profile_icon":"","description":"","big_image":"","blog":[{"img":  "","description": ""}],'+
-        '"style":[{"img":"","main_title":"","subtitle":"","link":""}],'+
+        '"style":[{"img":"","link":""}],'+
+        //'"style":[{"img":"","main_title":"","subtitle":"","link":""}],'+
         '"picks":[{ "img":"","description":"","money":"","link": ""}]}');
         readFromJson(emptyJson);
 }
@@ -149,9 +150,9 @@ function writeToJson(){
       jsonStr += "{";
 
       jsonStr += "\"img\": \"" + jQuery("img", styles[i]).attr("src") + "\", ";
-      jsonStr += "\"main_title\": \"" + jQuery("input", styles[i])[1].value + "\", ";
-      jsonStr += "\"subtitle\": \"" + jQuery("input", styles[i])[2].value + "\", ";
-      jsonStr += "\"link\": \"" + jQuery("input", styles[i])[3].value + "\"";
+      //jsonStr += "\"main_title\": \"" + jQuery("input", styles[i])[1].value + "\", ";
+      //jsonStr += "\"subtitle\": \"" + jQuery("input", styles[i])[2].value + "\", ";
+      jsonStr += "\"link\": \"" + jQuery("input", styles[i])[1].value + "\"";
 
       if(i==styles.length-1)  jsonStr += "} ";
       else jsonStr += "}, ";
@@ -240,12 +241,12 @@ function readFromJson(data){
             "<img class=\"entry_picture\" src=\"" +
             data["style"][i]["img"] +
             "\" alt=\"No file chosen\"/>\ " +
-            "<div class=\"entry\">Main Title: <input type=\"text\" class=\"style_main_title_input entry_input\" value=\"" +
-            data["style"][i]["main_title"] +
-            "\"/></div>" +
-            "<div class=\"entry\">Subtitle: <input type=\"text\" class=\"style_subtitle_input entry_input\" value=\"" +
-            data["style"][i]["subtitle"] +
-            "\"/></div>" +
+            //"<div class=\"entry\">Main Title: <input type=\"text\" class=\"style_main_title_input entry_input\" value=\"" +
+            //data["style"][i]["main_title"] +
+            //"\"/></div>" +
+            //"<div class=\"entry\">Subtitle: <input type=\"text\" class=\"style_subtitle_input entry_input\" value=\"" +
+            //data["style"][i]["subtitle"] +
+            //"\"/></div>" +
               "<div class=\"entry\">Link: <input type=\"text\" class=\"style_link_input entry_input\" value=\"" +
                 data["style"][i]["link"] +
                 "\"/></div>" +"</div>"
@@ -425,8 +426,8 @@ jQuery(document).ready(function(){
             "<input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>" +
             "<button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>" +
             "<img class=\"entry_picture\" src=\"\" alt=\"No file chosen\"/>" +
-            "<div class=\"entry\">Main Title: <input type=\"text\" class=\"style_main_title_input entry_input\"/></div>" +
-            "<div class=\"entry\">Subtitle: <input type=\"text\" class=\"style_subtitle_input entry_input\"/></div>" +
+            //"<div class=\"entry\">Main Title: <input type=\"text\" class=\"style_main_title_input entry_input\"/></div>" +
+            //"<div class=\"entry\">Subtitle: <input type=\"text\" class=\"style_subtitle_input entry_input\"/></div>" +
             "<div class=\"entry\">Link: <input type=\"text\" class=\"style_link_input entry_input\"/></div></div>"
         );
     });
