@@ -607,19 +607,12 @@
 
     </div>
 </div>
-<div id="test_div"></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script>
     var image=document.getElementById("influencerimage");
     image.style.marginTop="-10px";
-
-    jQuery(window).resize(function(){
-        if (jQuery(window).width() <= 700){
-            jQuery("#test_div").html("<h1>Here</h1>");
-        }
-    });
 
     var influencerJson;
     var influencerJsonObj;
