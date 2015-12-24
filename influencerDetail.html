@@ -6,6 +6,68 @@
         h2{text-align: center;}
         h3{text-align: center;}
 
+        /*div.styleImg*/
+        /*{*/
+            /*position: relative;*/
+            /*float:left;*/
+            /*margin:5px;*/
+        /*}*/
+
+        div.styleImg:hover input
+        {
+            display: block;
+        }
+
+        div.styleImg input
+        {
+            position:absolute;
+            top:0;
+            left:0;
+            display:none;
+        }
+
+        /*style images*/
+
+        /*div.styleImg {*/
+            /*position: relative;*/
+            /*float:left;*/
+            /*margin:5px;*/
+        /*}*/
+        div.styleImg:hover img{
+            opacity:0.5;
+        }
+        .col-md-6.styleImg:hover input {
+            display: block;
+            padding:8px 75px;
+            background-color: #454545;
+            color: white;
+            position: absolute;
+            top: 75%;
+            left: 35%;
+            border: none;
+            font-size: 18px;
+        }
+
+        .col-md-4.styleImg:hover input {
+            display: block;
+            padding:8px 75px;
+            background-color: #454545;
+            color: white;
+            position: absolute;
+            top: 65%;
+            left: 25%;
+            border: none;
+            font-size: 18px;
+        }
+        div.styleImg input {
+            /*position:absolute;*/
+            display:none;
+        }
+        /*div.styleImg button{*/
+            /*top:0;*/
+            /*left:0;*/
+        /*}*/
+
         .subheader_block-span1{
             border-top:1.5px solid #a89f9f;
             width:35%;
@@ -103,7 +165,7 @@
             padding-bottom: 15px;
         }
         .top-bot-padding2{
-            padding-top: 15px;
+            margin-top: 15px;
             padding-bottom: 15px;
         }
         .influencer-blog{
@@ -280,28 +342,33 @@
                 <div class="col-md-6 top-bot-padding2 styleImg">
                     <a href="#">
                         <img class="image-auto-resizing" src="test%20images/3561953-6157147575-2013-.jpg" alt="" pagespeed_url_hash="4266083714" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                        <input class="style-buttons" type="button" value="Shop" />
                     </a>
                 </div>
-                <div class="col-md-6 top-bot-padding2">
+                <div class="col-md-6 top-bot-padding2 styleImg">
                     <a href="#">
                         <img class="image-auto-resizing" src="test%20images/3561953-6157147575-2013-.jpg" alt="" pagespeed_url_hash="4266083714" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                        <input class="style-buttons" type="button" value="Shop" />
                     </a>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-4 top-bot-padding2">
+                <div class="col-md-4 top-bot-padding2 styleImg">
                     <a href="#">
                         <img class="image-auto-resizing" src="test%20images/3561953-6157147575-2013-.jpg" alt="" pagespeed_url_hash="4266083714" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                        <input class="style-buttons" type="button" value="Shop" />
                     </a>
                 </div>
-                <div class="col-md-4 top-bot-padding2">
+                <div class="col-md-4 top-bot-padding2 styleImg">
                     <a href="#">
                         <img class="image-auto-resizing" src="test%20images/3561953-6157147575-2013-.jpg" alt="" pagespeed_url_hash="4266083714" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                        <input class="style-buttons" type="button" value="Shop" />
                     </a>
                 </div>
-                <div class="col-md-4 top-bot-padding2">
+                <div class="col-md-4 top-bot-padding2 styleImg">
                     <a href="#">
                         <img class="image-auto-resizing" src="test%20images/3561953-6157147575-2013-.jpg" alt="" pagespeed_url_hash="4266083714" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
+                        <input class="style-buttons" type="button" value="Shop" />
                     </a>
                 </div>
             </div>
@@ -483,7 +550,9 @@
                     <button class="influence-button" type="button" onclick="seeMoreInfluencers(event)">SEE MORE INFLUENCERS</button>
                 </div>
             </div>
-            <a href="https://www.evestemptation.com/influencer-curation" class="back-link ebe-theme-color">&#171; Back</a>
+            <div style="margin-bottom: 20px;">
+            <a href="https://www.evestemptation.com/influencer-curation" class="back-link ebe-theme-color" style="font-size: 17px;">&#171; Back</a>
+            </div>
         </div>
 
     </div>
@@ -561,12 +630,12 @@
 //            style_html+="<div class=\"row\"><div class=\"col-md-12 top-bot-padding2\"><a href=\""+JSONObj.style[i].link+"\"><img class=\"image-auto-resizing\" src=\""+JSONObj.style[i].img+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><\/a><div class=\"semitrans-box-above2\"><div class=\"semitrans-subbox\"><span class=\"influencer-name2\">"+JSONObj.style[i].main_title+"<\/span><br><span class=\"influencer-name1\">"+JSONObj.style[i].subtitle+"<\/span><\/div><\/div><\/div><\/div>";
 //        }
         style_html += "<div class=\"row\">";
-        style_html += "<div class=\"col-md-6 top-bot-padding2\"><a href=\""+JSONObj.style[0].link+"\"><img class=\"image-auto-resizing\" src=\""+JSONObj.style[0].img+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><\/a><\/div>";
-        style_html += "<div class=\"col-md-6 top-bot-padding2\"><a href=\""+JSONObj.style[1].link+"\"><img class=\"image-auto-resizing\" src=\""+JSONObj.style[1].img+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><\/a><\/div>";
+        style_html += "<div class=\"col-md-6 top-bot-padding2 styleImg\"><a href=\""+JSONObj.style[0].link+"\"><img class=\"image-auto-resizing\" src=\""+JSONObj.style[0].img+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><input class=\"style-buttons\" type=\"button\" value=\"Shop\" /><\/a><\/div>";
+        style_html += "<div class=\"col-md-6 top-bot-padding2 styleImg\"><a href=\""+JSONObj.style[1].link+"\"><img class=\"image-auto-resizing\" src=\""+JSONObj.style[1].img+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><input class=\"style-buttons\" type=\"button\" value=\"Shop\" /><\/a><\/div>";
         style_html += "</div><div class=\"row\">";
-        style_html += "<div class=\"col-md-4 top-bot-padding2\"><a href=\""+JSONObj.style[2].link+"\"><img class=\"image-auto-resizing\" src=\""+JSONObj.style[2].img+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><\/a><\/div>";
-        style_html += "<div class=\"col-md-4 top-bot-padding2\"><a href=\""+JSONObj.style[3].link+"\"><img class=\"image-auto-resizing\" src=\""+JSONObj.style[3].img+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><\/a><\/div>";
-        style_html += "<div class=\"col-md-4 top-bot-padding2\"><a href=\""+JSONObj.style[4].link+"\"><img class=\"image-auto-resizing\" src=\""+JSONObj.style[4].img+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><\/a><\/div>";
+        style_html += "<div class=\"col-md-4 top-bot-padding2 styleImg\"><a href=\""+JSONObj.style[2].link+"\"><img class=\"image-auto-resizing\" src=\""+JSONObj.style[2].img+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><input class=\"style-buttons\" type=\"button\" value=\"Shop\" /><\/a><\/div>";
+        style_html += "<div class=\"col-md-4 top-bot-padding2 styleImg\"><a href=\""+JSONObj.style[3].link+"\"><img class=\"image-auto-resizing\" src=\""+JSONObj.style[3].img+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><input class=\"style-buttons\" type=\"button\" value=\"Shop\" /><\/a><\/div>";
+        style_html += "<div class=\"col-md-4 top-bot-padding2 styleImg\"><a href=\""+JSONObj.style[4].link+"\"><img class=\"image-auto-resizing\" src=\""+JSONObj.style[4].img+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><input class=\"style-buttons\" type=\"button\" value=\"Shop\" /><\/a><\/div>";
         style_html += "</div>";
         jQuery("#style-container").html(style_html);
 
