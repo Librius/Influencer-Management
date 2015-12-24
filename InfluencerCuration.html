@@ -355,20 +355,21 @@
         </div>
 
     </div>
-    <script type="text/javascript">
-        jQuery(document).ready(function(){
+  </div>
+  <script type="text/javascript">
+      jQuery(document).ready(function(){
 
-            jQuery.getJSON("influencer/getlink.php", function(data){
-                console.log(data);
-                var html_content;
-                for(var i=0; i<data.length; i++) {
-                    html_content = data[i]["html"];
-                    console.log(html_content);
-                    jQuery("#ins_post_div").append("<div class=\"col-md-3\">" + html_content + "</div");
-                }
-            });
+          jQuery.getJSON("influencer/getlink.php", function(data){
+              console.log(data);
+              var html_content;
+              for(var i=0; i<data.length; i++) {
+                  html_content = data[i]["html"];
+                  console.log(html_content);
+                  jQuery("#ins_post_div").append("<div class=\"col-md-3\">" + html_content + "</div");
+              }
+          });
 
-        });
-    </script>
+      });
+  </script>
 </body>
 </html>
