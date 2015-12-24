@@ -30,6 +30,7 @@ function parseJSON(JSONObj)
   entrieshtml += "<th>Profile Image</th>";
   entrieshtml += "<th>Name</th>";
   entrieshtml += "<th>Operations</th>";
+  entrieshtml += "<th>Curation Picture</th>";
   entrieshtml += "</tr>";
   entrieshtml += "</thead>";
   
@@ -40,6 +41,7 @@ function parseJSON(JSONObj)
     entrieshtml += "<th><img class='icon' src='"+JSONObj.influencers[i].profile_icon+"'></img></th>";
     entrieshtml += "<th class=\"name\">"+JSONObj.influencers[i].name+"</th>";
     entrieshtml += "<th class=\"function_button_wrapper\"><button class=\"btn btn-link\" id='editbutton"+JSONObj.influencers[i].id+"' data-toggle=\"modal\" data-target=\"#myModal\" onclick='viewandedit(event)'>view&edit</button><br><button class=\"btn btn-link\" id='deletebutton"+JSONObj.influencers[i].id+"' onclick='deleteentry(event)'>delete</button></th>";
+    entrieshtml += "<th><input type='checkbox' id='showCurationCheckbox"+JSONObj.influencers[i].id+"'>Show in the curation page</input><br><div style='float:left;margin-right:20px;'><input type='file' class='fileUpload'></input><img class='icon'></img></div><div><input type='file' class='fileUpload'></input><img class='icon'></img></div></th>";
     entrieshtml += "</tr>";
   }
   entrieshtml += "</tbody>";
