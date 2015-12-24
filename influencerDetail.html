@@ -677,22 +677,15 @@
                 }
                 else
                 {
-                    moreinfluencer_html += "<div class='MoreInfluencersDiv' style='display:none;'>";
+                    moreinfluencer_html += "</div><div class='MoreInfluencersDiv' style='display:none;'>";
                 }
             }
 
             moreinfluencer_html += "<div class=\"col-md-2 col-xs-3 top-bot-padding\"><div class=\"influencer-img\"><a href='"+window.location.href.split('?')[0]+"?id="+allJSON.influencers[i].id+"'><img class=\"influencer-icon img-circle\" src=\""+allJSON.influencers[i].profile_icon+"\" alt=\""+allJSON.influencers[i].name+"\"\/></a><\/div><\/div>";
 
-            if(i%12 == 0)
+            if(i%12 == 0 && i+12>=allJSON.influencers.length)
             {
-                if(i == 0)
-                {
-                    moreinfluencer_html += "</div>";
-                }
-                else
-                {
-                    moreinfluencer_html += "</div>";
-                }
+                moreinfluencer_html+="</div>";
             }
         }
         jQuery("#moreinfluencers-container").html(moreinfluencer_html);
