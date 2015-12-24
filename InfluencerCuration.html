@@ -1,0 +1,374 @@
+<html>
+<head>
+    <title>test </title>
+    <style>
+        h1{text-align: center;}
+        h2{text-align: center;}
+        h3{text-align: center;}
+        .influencer-instagram{
+        }
+        .coverfull{
+            max-width:100%;
+            display:block;
+            margin:auto;
+            margin-top:5px;
+            margin-bottom:5px;
+        }
+        .influencer-icon{
+
+        }
+        .subheader_block-span1{
+            border-top:1.5px solid #a89f9f;
+            width:35%;
+            display:inline-block;
+            margin-bottom:6px;
+            text-align:left;
+        }
+        .subheader_block-span2{
+            display:inline-block;
+            margin-left:2%;
+            margin-right:2%;
+            letter-spacing:2px;
+            width:24%;
+            text-align: center;
+        }
+        .subheader_block-span3{
+            border-top:1.5px solid #a89f9f;
+            width:35%;
+            display:inline-block;
+            margin-bottom:6px;
+            text-align:right;
+        }
+        .influence-button{
+            margin-top: 5px;
+            text-align:center;
+            background:#4e4051;
+            color: #ffffff;
+            width: 97%;
+            height:75%;
+            letter-spacing: 5px;
+        }
+        .buttom-border{
+            margin-bottom: 40px;
+            margin-top: 60px;
+            width: 30%;
+            text-align:center;
+            height: 47px;
+            border: #4e4051;
+            border-style: solid;
+            border-width: 1px;
+            position:inherit;
+            top:10px;
+            left:35%;
+        }
+        .become-influencer{
+            margin-bottom: 20px;
+            text-align:center;
+            width: 482px;
+            height: 24px;
+            color: #4e4051;
+            font-size:24px;
+            color: #4e4051;
+            letter-spacing: 5px;
+        }
+
+        .influencer-email{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            letter-spacing: 1px;
+            text-align:center;
+            color: #4e4051;
+        }
+        .semitrans-box-above-left{
+            position: absolute;
+            top: 30%;
+            width: 40%;
+            height:40%;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            vertical-align: middle;
+        }
+        .semitrans-box-above-right{
+            position: absolute;
+            top: 30%;
+            width: 40%;
+            height:40%;
+            left:58.8%;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            vertical-align: middle;
+        }
+        .semitrans-subbox{
+            vertical-align: middle;
+            text-align: center;
+            height:40%;
+        }
+        .influencer-name{
+            color: #ffffff;
+            font-size:20px;
+            letter-spacing: 5px;
+        }
+        .influencer-story{
+            color: #ffffff;
+            font-size:15px;
+        }
+        .semitrans-enter-store{
+            position: absolute;
+            top: 65%; /*box_above top+height-   store height/2*/
+            width: 16%;
+            height:10%;
+            color:#4e4051;
+            text-align: center;
+            vertical-align: middle;
+            background:transparent;
+            padding: 0.58%;
+            vertical-align: middle;
+            font-size: 16px;
+            border: #ffffff;
+            border-style: solid;
+            border-width: 1px;
+        }
+        .semitrans-enter-store-inbox{
+            background: rgba(255, 255, 255, 0.8);
+        }
+        .enter-store-right{
+            left: 70%;  /*left= semitrans-box-above.width/2- width/2*/
+        }
+        .enter-store-left{
+            left: 13%; /*left= semitrans-box-above.width/2- width/2*/
+        }
+        .img-circle{
+            width:165px;
+            height: 165px;
+            overflow: hidden;
+            position: relative;
+
+        }
+        .influencer-img{
+            width: 100%;
+            text-align: center;
+        }
+        .top-bot-padding{
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        @media only screen and (max-width: 1200px) {
+            .influencer-name{font-size: 12px;}
+            .influencer-story{font-size: 10px;}
+            .semitrans-subbox{height:30%;}
+            .img-circle{height: 131px !important;width: 131px !important;}
+        }
+        @media only screen and (max-width: 1000px) {
+            .influencer-name{font-size: 15px;}
+            .influencer-story{font-size: 10px;}
+            .semitrans-enter-store{font-size:10px !important;}
+            .subheader_block-span1{width:20%;}
+            .subheader_block-span2{width:40%;}
+            .subheader_block-span3{width:20%;}
+            .influencer-name{letter-spacing:1px;}
+            .semitrans-subbox {margin-top: -10px;}
+
+
+        }
+
+        @media only screen and (max-width: 600px) {
+            .influencer-story{display:none;}
+            .semitrans-enter-store{font-size:8px !important;}
+            .semitrans-enter-store{height:13%;}
+        }
+        @media only screen and (max-width:700px){
+            .col-xs-3{width:50%;}
+            .semitrans-subbox{height:30%;}
+        }
+        @media only screen and (max-width: 321px) {
+            .semitrans-enter-store{height:25%;}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="grid-container" style="text-align:center;">
+        <div style="margin-top:20px;margin-bottom:20px; color:#a89f9f">
+            <span class="subheader_block-span1"></span>
+            <span class="h4 subheader_block-span2">EVE'S TEMPTATION</span>
+            <span class="subheader_block-span3"></span>
+        </div>
+    </div>
+    <div class="row" style="text-align:center;">
+        <div id="ins_post_div"></div >
+    </div>
+
+
+    <div class="row">
+        <div class="grid-container" style="text-align:center;">
+            <div style="margin-top:20px;margin-bottom:20px; color:#a89f9f">
+                <span class="subheader_block-span1"></span>
+                <span class="h4 subheader_block-span2">FEATURED STORIES</span>
+                <span class="subheader_block-span3"></span>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <img class="coverfull" src="{{media url="wysiwyg/influencer/feature-1.png"}}" alt="" />
+            <div class="semitrans-box-above-left">
+                <div class="semitrans-subbox">
+                    <span class="influencer-name"> INFLUENCER NAME</span>
+                </div>
+                <div class="semitrans-subbox">
+                    <span class="influencer-story"> with a firm grip on the interests of fashion fans around the world. And they are one of many reasons marketers are</span>
+                </div>
+            </div>
+            <div class="semitrans-enter-store enter-store-left" style="vertical-aligh:middle;">
+                <div class="semitrans-enter-store-inbox">
+                    <span >ENTER STORE</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <img class="coverfull" src="{{media url="wysiwyg/influencer/feature-2.png"}}" alt="" />
+            <div class="semitrans-box-above-right">
+                <div class="semitrans-subbox">
+                    <span class="influencer-name"> INFLUENCER NAME</span>
+                </div>
+                <div class="semitrans-subbox">
+                    <span class="influencer-story"> with a firm grip on the interests of fashion fans around the world. And they are one of many reasons marketers are</span>
+                </div>
+            </div>
+            <div class="semitrans-enter-store enter-store-right">
+                <div class="semitrans-enter-store-inbox">
+                    <span>ENTER STORE</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <img class="coverfull" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
+            <div class="semitrans-box-above-left">
+                <div class="semitrans-subbox">
+                    <span class="influencer-name"> INFLUENCER NAME</span>
+                </div>
+                <div class="semitrans-subbox">
+                    <span class="influencer-story"> with a firm grip on the interests of fashion fans around the world. And they are one of many reasons marketers are</span>
+                </div>
+            </div>
+            <div class="semitrans-enter-store enter-store-left">
+                <div class="semitrans-enter-store-inbox">
+                    <span>ENTER STORE</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div>
+        <div class="grid-container" style="text-align:center;">
+            <div style="margin-top:20px;margin-bottom:20px; color:#a89f9f">
+                <span class="subheader_block-span1"></span>
+                <span class="h4 subheader_block-span2">MEET MORE INFLUENCERS</span>
+                <span class="subheader_block-span3"></span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-2 col-xs-3  top-bot-padding">
+                <div class="influencer-img">
+                    <img class="influencer-icon img-circle" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-3  top-bot-padding">
+                <div class="influencer-img">
+                    <img class="influencer-icon img-circle" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-3 top-bot-padding">
+                <div class="influencer-img">
+                    <img class="influencer-icon img-circle" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-3  top-bot-padding">
+                <div class="influencer-img">
+                    <img class="influencer-icon img-circle" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-3 top-bot-padding">
+                <div class="influencer-img">
+                    <img class="influencer-icon img-circle" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-3 top-bot-padding">
+                <div class="influencer-img">
+                    <img class="influencer-icon img-circle" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
+                </div>
+            </div>
+
+            <div class="col-md-2 col-xs-3 top-bot-padding">
+                <div class="influencer-img">
+                    <img class="influencer-icon img-circle" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-3  top-bot-padding">
+                <div class="influencer-img">
+                    <img class="influencer-icon img-circle" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-3 top-bot-padding">
+                <div class="influencer-img">
+                    <img class="influencer-icon img-circle" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-3 top-bot-padding">
+                <div class="influencer-img">
+                    <img class="influencer-icon img-circle" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-3 top-bot-padding">
+                <div class="influencer-img">
+                    <img class="influencer-icon img-circle" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
+                </div>
+            </div>
+            <div class="col-md-2 col-xs-3 top-bot-padding">
+                <div class="influencer-img">
+                    <img class="influencer-icon img-circle" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12" style="text-align:center;">
+                <div class="buttom-border">
+                    <button class="influence-button" type="button">SEE MORE INFLUENCERS</button>
+                </div>
+            </div>
+            <div class="col-md-12" style="text-align:center;">
+                <a class="become-influencer" href=""> <span >BECOME OUR INFLUENCER</span></a>
+            </div>
+            <div class="col-md-12">
+                <img class="coverfull influencer-email" src="{{media url="wysiwyg/influencer/infulencer-email.png"}}" alt="" />
+            </div>
+            <div class="col-md-12" style="text-align:center;">
+                <span class="influencer-email">Please contact us with following e-mail</span>
+            </div>
+            <div class="col-md-12" style="text-align:center;">
+                <span class="influencer-email">influence@eves.com</span>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        jQuery(document).ready(function(){
+
+            jQuery.getJSON("influencer/getlink.php", function(data){
+                console.log(data);
+                var html_content;
+                for(var i=0; i<data.length; i++) {
+                    html_content = data[i]["html"];
+                    console.log(html_content);
+                    jQuery("#ins_post_div").append("<div class=\"col-md-3\">" + html_content + "</div");
+                }
+            });
+
+        });
+    </script>
+</body>
+</html>
