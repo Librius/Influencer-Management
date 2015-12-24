@@ -225,6 +225,16 @@
             height:auto;
             margin-top: 150px;
         }
+
+        /*picks span*/
+
+        .pick-span{
+            display: inline-block;
+            width: 160px;
+            /*background-color: red;*/
+            word-wrap: break-word;
+        }
+
         @media only screen and (max-width: 1000px) {
             .subheader_block-span1{width:20%;}
             .subheader_block-span2{width:40%;}
@@ -705,7 +715,7 @@
             }
 
 
-            pick_html+="<div class=\"col-md-3 col-xs-6\"><a href='"+JSONObj.picks[i].link+"'><img class=\"image-auto-resizing\" src=\""+JSONObj.picks[i].img+"\"}}\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/></a><div class=\"col-md-12\" style=\"padding-top:20px;\"><span>"+JSONObj.picks[i].description+"<\/span><\/div><div class=\"col-md-12\"><span>"+JSONObj.picks[i].money+"<\/span><\/div><div class=\"col-md-12\"><a href='"+JSONObj.picks[i].link+"'><img class=\"image-auto-resizing\" style=\"padding-bottom:20px;padding-right:20px;\" src=\" https://www.evestemptation.com:443/media/wysiwyg/influencer2/add-to-bag-icon.png\" alt=\"\" \/></a><a href='"+JSONObj.picks[i].link+"'><img class=\"image-auto-resizing\" style=\"padding-bottom:20px;\" src=\"https://www.evestemptation.com:443/media/wysiwyg/influencer2/add-to-wishlist-icon.png\" alt=\"\"\/></a><\/div><\/div>";
+            pick_html+="<div class=\"col-md-3 col-xs-6\"><a href='"+JSONObj.picks[i].link+"'><img class=\"image-auto-resizing\" src=\""+JSONObj.picks[i].img+"\"}}\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/></a><div class=\"col-md-12\" style=\"padding-top:20px;\"><span class=\"pick-span\">"+JSONObj.picks[i].description+"<\/span><\/div><div class=\"col-md-12\"><span>"+JSONObj.picks[i].money+"<\/span><\/div><div class=\"col-md-12\"><a href='"+JSONObj.picks[i].link+"'><img class=\"image-auto-resizing\" style=\"padding-bottom:20px;padding-right:20px;\" src=\" https://www.evestemptation.com:443/media/wysiwyg/influencer2/add-to-bag-icon.png\" alt=\"\" \/></a><a href='"+JSONObj.picks[i].link+"'><img class=\"image-auto-resizing\" style=\"padding-bottom:20px;\" src=\"https://www.evestemptation.com:443/media/wysiwyg/influencer2/add-to-wishlist-icon.png\" alt=\"\"\/></a><\/div><\/div>";
 
             if(i%4 == 0 && i+4>=JSONObj.picks.length)
             {
