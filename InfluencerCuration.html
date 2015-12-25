@@ -339,7 +339,7 @@
         <div class="row">
             <div class="col-md-12" style="text-align:center;">
                 <div class="buttom-border">
-                    <button class="influence-button" type="button">SEE MORE INFLUENCERS</button>
+                    <button class="influence-button" type="button" onclick="seeMoreInfluencers(event)">SEE MORE INFLUENCERS</button>
                 </div>
             </div>
             <div class="col-md-12" style="text-align:center;">
@@ -429,11 +429,38 @@
         //featured stories
         if(influencersJSONObj.influencers[i].show_curation == 1)
         {
-          featured_stories_html+="<div class=\"col-md-12\"><img class=\"coverfull\" src=\""+influencersJSONObj.influencers[i].curation_image_big+"\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-left\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> "+influencersJSONObj.influencers[i].name+"<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> "+influencersJSONObj.influencers[i].description+"<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-left\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
+          if(i%2 == 0)
+          {
+            featured_stories_html+="<div class=\"col-md-12\"><img class=\"coverfull\" src=\""+influencersJSONObj.influencers[i].curation_image_big+"\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-left\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> "+influencersJSONObj.influencers[i].name+"<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> "+influencersJSONObj.influencers[i].description+"<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-left\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
+          }
+          else
+          {
+            featured_stories_html+="<div class=\"col-md-12\"><img class=\"coverfull\" src=\""+influencersJSONObj.influencers[i].curation_image_big+"\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-right\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> "+influencersJSONObj.influencers[i].name+"<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> "+influencersJSONObj.influencers[i].description+"<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-right\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
+          }
+          
         }
       }
       jQuery("#featured_stories").html(featured_stories_html);
       jQuery("#moreinfluencers-container").html(moreinfluencer_html);
+    }
+    
+    function seeMoreInfluencers(event)
+    {
+        var moreInfluencersList = document.getElementById("moreinfluencers-container").getElementsByClassName("MoreInfluencersDiv");
+        var i = 0;
+        for(;i<moreInfluencersList.length;i++)
+        {
+            if(moreInfluencersList[i].style.display=="none")
+                break;
+        }
+        if(i == moreInfluencersList.length)
+        {
+            event.target.parentNode.style.display = "none";
+        }
+        else
+        {
+            moreInfluencersList[i].style.display = "block";
+        }
     }
   </script>
 </body>
