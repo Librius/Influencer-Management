@@ -88,6 +88,7 @@
             color: white;
             background: rgba(0, 0, 0, 0.5);
             padding: 10px;
+            padding-top: 40px;
             vertical-align: middle;
         }
         .semitrans-box-above-right{
@@ -99,22 +100,24 @@
             color: white;
             background: rgba(0, 0, 0, 0.5);
             padding: 0;
+            padding-top: 40px;
             vertical-align: middle;
         }
         .semitrans-subbox{
             vertical-align: middle;
             text-align: center;
             height:40%;
+            margin-top: 10px;
         }
         .influencer-name{
-            line-height: 16px;
+            line-height: 110%;
             font-family: STHeitiTC;
             color: #ffffff;
             font-size: 34px;
             font-weight: 300;
             letter-spacing: 5px;
             display: inline-block;
-            margin-top: 45px;
+            /*margin-top: 45px;*/
             text-transform: uppercase;
         }
         .influencer-story{
@@ -168,28 +171,29 @@
             padding-bottom: 15px;
         }
         @media only screen and (max-width: 1200px) {
-            .influencer-name{font-size: 12px;}
-            .influencer-story{font-size: 10px;}
+            /*.influencer-name{font-size: 12px;}*/
+            /*.influencer-story{font-size: 10px;}*/
             .semitrans-subbox{height:30%;}
             .img-circle{height: 131px !important;width: 131px !important;}
         }
         @media only screen and (max-width: 1000px) {
-            .influencer-name{font-size: 15px;}
-            .influencer-story{font-size: 10px;}
+            /*.influencer-name{font-size: 15px;}*/
+            /*.influencer-story{font-size: 10px;}*/
+            .influencer-story{display:none;}
             .semitrans-enter-store{font-size:10px !important;}
             .subheader_block-span1{width:20%;}
             .subheader_block-span2{width:40%;}
             .subheader_block-span3{width:20%;}
-            .influencer-name{letter-spacing:1px;}
+            /*.influencer-name{letter-spacing:1px;}*/
             .semitrans-subbox {margin-top: -10px;}
 
 
         }
 
         @media only screen and (max-width: 600px) {
+            .influencer-name{font-size: 15px;}
             .influencer-story{display:none;}
-            .semitrans-enter-store{font-size:8px !important;}
-            .semitrans-enter-store{height:13%;}
+            .semitrans-enter-store{font-size:8px !important; height:20px;}
         }
         @media only screen and (max-width:700px){
             .col-xs-3{width:50%;}
@@ -203,17 +207,6 @@
 </head>
 <body>
 <div class="container">
-    <div class="grid-container" style="text-align:center;">
-        <div style="margin-top:20px;margin-bottom:20px; color:#a89f9f">
-            <span class="subheader_block-span1"></span>
-            <span class="h4 subheader_block-span2">EVE'S TEMPTATION</span>
-            <span class="subheader_block-span3"></span>
-        </div>
-    </div>
-    <div class="row" style="text-align:center;">
-        <div id="ins_post_div"></div >
-    </div>
-
 
     <div class="row">
         <div class="grid-container" style="text-align:center;">
@@ -275,6 +268,19 @@
           </div>
         </div>
     </div>
+
+    <div class="grid-container" style="text-align:center;">
+        <div style="margin-top:20px;margin-bottom:20px; color:#a89f9f">
+            <span class="subheader_block-span1"></span>
+            <span class="h4 subheader_block-span2">EVE'S TEMPTATION</span>
+            <span class="subheader_block-span3"></span>
+        </div>
+    </div>
+
+    <div class="row" style="text-align:center;">
+        <div id="ins_post_div"></div >
+    </div>
+
     <div>
         <div class="grid-container" style="text-align:center;">
             <div style="margin-top:20px;margin-bottom:20px; color:#a89f9f">
@@ -387,7 +393,7 @@
               for(var i=0; i<instagraminOBJ.length; i++) 
               {
                 html_content = instagraminOBJ[i].html;
-                jQuery("#ins_post_div").append("<div class=\"col-md-3\">" + html_content + "</div");
+                jQuery("#ins_post_div").append("<div style=\"margin:15px 0;\" class=\"col-md-3 col-xs-6\">" + html_content + "</div");
               }
             },
             error:function(xhr, status, error)
