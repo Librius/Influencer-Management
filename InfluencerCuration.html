@@ -187,6 +187,7 @@
             .semitrans-enter-store{height:25%;}
         }
     </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
@@ -211,55 +212,56 @@
             </div>
         </div>
 
-        <div class="col-md-12">
-            <img class="coverfull" src="{{media url="wysiwyg/influencer/feature-1.png"}}" alt="" />
-            <div class="semitrans-box-above-left">
-                <div class="semitrans-subbox">
-                    <span class="influencer-name"> INFLUENCER NAME</span>
-                </div>
-                <div class="semitrans-subbox">
-                    <span class="influencer-story"> with a firm grip on the interests of fashion fans around the world. And they are one of many reasons marketers are</span>
-                </div>
-            </div>
-            <div class="semitrans-enter-store enter-store-left" style="vertical-aligh:middle;">
-                <div class="semitrans-enter-store-inbox">
-                    <span >ENTER STORE</span>
-                </div>
-            </div>
+        <div id="featured_stories">
+          <div class="col-md-12">
+              <img class="coverfull" src="{{media url="wysiwyg/influencer/feature-1.png"}}" alt="" />
+              <div class="semitrans-box-above-left">
+                  <div class="semitrans-subbox">
+                      <span class="influencer-name"> INFLUENCER NAME</span>
+                  </div>
+                  <div class="semitrans-subbox">
+                      <span class="influencer-story"> with a firm grip on the interests of fashion fans around the world. And they are one of many reasons marketers are</span>
+                  </div>
+              </div>
+              <div class="semitrans-enter-store enter-store-left" style="vertical-aligh:middle;">
+                  <div class="semitrans-enter-store-inbox">
+                      <span >ENTER STORE</span>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-12">
+              <img class="coverfull" src="{{media url="wysiwyg/influencer/feature-2.png"}}" alt="" />
+              <div class="semitrans-box-above-right">
+                  <div class="semitrans-subbox">
+                      <span class="influencer-name"> INFLUENCER NAME</span>
+                  </div>
+                  <div class="semitrans-subbox">
+                      <span class="influencer-story"> with a firm grip on the interests of fashion fans around the world. And they are one of many reasons marketers are</span>
+                  </div>
+              </div>
+              <div class="semitrans-enter-store enter-store-right">
+                  <div class="semitrans-enter-store-inbox">
+                      <span>ENTER STORE</span>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-12">
+              <img class="coverfull" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
+              <div class="semitrans-box-above-left">
+                  <div class="semitrans-subbox">
+                      <span class="influencer-name"> INFLUENCER NAME</span>
+                  </div>
+                  <div class="semitrans-subbox">
+                      <span class="influencer-story"> with a firm grip on the interests of fashion fans around the world. And they are one of many reasons marketers are</span>
+                  </div>
+              </div>
+              <div class="semitrans-enter-store enter-store-left">
+                  <div class="semitrans-enter-store-inbox">
+                      <span>ENTER STORE</span>
+                  </div>
+              </div>
+          </div>
         </div>
-        <div class="col-md-12">
-            <img class="coverfull" src="{{media url="wysiwyg/influencer/feature-2.png"}}" alt="" />
-            <div class="semitrans-box-above-right">
-                <div class="semitrans-subbox">
-                    <span class="influencer-name"> INFLUENCER NAME</span>
-                </div>
-                <div class="semitrans-subbox">
-                    <span class="influencer-story"> with a firm grip on the interests of fashion fans around the world. And they are one of many reasons marketers are</span>
-                </div>
-            </div>
-            <div class="semitrans-enter-store enter-store-right">
-                <div class="semitrans-enter-store-inbox">
-                    <span>ENTER STORE</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-12">
-            <img class="coverfull" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
-            <div class="semitrans-box-above-left">
-                <div class="semitrans-subbox">
-                    <span class="influencer-name"> INFLUENCER NAME</span>
-                </div>
-                <div class="semitrans-subbox">
-                    <span class="influencer-story"> with a firm grip on the interests of fashion fans around the world. And they are one of many reasons marketers are</span>
-                </div>
-            </div>
-            <div class="semitrans-enter-store enter-store-left">
-                <div class="semitrans-enter-store-inbox">
-                    <span>ENTER STORE</span>
-                </div>
-            </div>
-        </div>
-
     </div>
     <div>
         <div class="grid-container" style="text-align:center;">
@@ -270,7 +272,7 @@
             </div>
         </div>
 
-        <div class="row">
+        <div class="row" id="moreinfluencers-container">
             <div class="col-md-2 col-xs-3  top-bot-padding">
                 <div class="influencer-img">
                     <img class="influencer-icon img-circle" src="{{media url="wysiwyg/influencer/feature-3.png"}}" alt="" />
@@ -356,20 +358,83 @@
 
     </div>
   </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script type="text/javascript">
-      jQuery(document).ready(function(){
-
-          jQuery.getJSON("influencer/getlink.php", function(data){
-              console.log(data);
+    
+    var influencersJSONObj;
+    
+    jQuery(document).ready(function(){
+        jQuery.ajax({
+            type:"GET",
+            url:"getlink.php",
+            success:function(result)
+            {
+              var instagraminOBJ = JSON.parse(result);
               var html_content;
-              for(var i=0; i<data.length; i++) {
-                  html_content = data[i]["html"];
-                  console.log(html_content);
-                  jQuery("#ins_post_div").append("<div class=\"col-md-3\">" + html_content + "</div");
+              for(var i=0; i<instagraminOBJ.length; i++) 
+              {
+                html_content = instagraminOBJ[i].html;
+                jQuery("#ins_post_div").append("<div class=\"col-md-3\">" + html_content + "</div");
               }
-          });
+            },
+            error:function(xhr, status, error)
+            {
+              alert("load instagram error!");
+            }
+        });
 
+        jQuery.ajax({
+          type:"GET",
+          url:"getinfluencerinfo.php",
+          success:function(result)
+          {
+            influencersJSONObj = JSON.parse(result);
+            parseJSON(influencersJSONObj);
+          },
+          error:function()
+          {
+              alert("error!");
+          }
       });
+    });
+    
+    function parseJSON(influencersJSONObj)
+    {
+      var moreinfluencer_html = "";
+      var featured_stories_html = "";
+      
+      for(var i= 0;i<influencersJSONObj.influencers.length;i++)
+      {
+        //more influencers
+        if(i%12 == 0)
+        {
+            if(i == 0)
+            {
+                moreinfluencer_html += "<div class='MoreInfluencersDiv' style='display:block;'>";
+            }
+            else
+            {
+                moreinfluencer_html += "</div><div class='MoreInfluencersDiv' style='display:none;'>";
+            }
+        }
+
+        moreinfluencer_html += "<div class=\"col-md-2 col-xs-3 top-bot-padding\"><div class=\"influencer-img\"><a href='"+window.location.href.split('?')[0]+"?id="+influencersJSONObj.influencers[i].id+"'><img class=\"influencer-icon img-circle\" src=\""+influencersJSONObj.influencers[i].profile_icon+"\" alt=\""+influencersJSONObj.influencers[i].name+"\"\/></a><\/div><\/div>";
+
+        if(i%12 == 0 && i+12>=influencersJSONObj.influencers.length)
+        {
+            moreinfluencer_html+="</div>";
+        }
+        
+        //featured stories
+        if(influencersJSONObj.influencers[i].show_curation == 1)
+        {
+          featured_stories_html+="<div class=\"col-md-12\"><img class=\"coverfull\" src=\""+influencersJSONObj.influencers[i].curation_image_big+"\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-left\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> "+influencersJSONObj.influencers[i].name+"<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> "+influencersJSONObj.influencers[i].description+"<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-left\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
+        }
+      }
+      jQuery("#featured_stories").html(featured_stories_html);
+      jQuery("#moreinfluencers-container").html(moreinfluencer_html);
+    }
   </script>
 </body>
 </html>

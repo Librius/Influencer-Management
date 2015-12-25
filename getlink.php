@@ -1,13 +1,14 @@
 <?php
+
   $taglist = array();
   $tokenlist = array();
 
-  $influencerfile = fopen("influencerinfo.txt", "r") or die("Unable to open file!");
+  $influencerfile = fopen("influencerinfo.txt", "r") or die("Unable to open influencerinfo.txt!");
   $content = fread($influencerfile,filesize("influencerinfo.txt"));
   $json = json_decode($content);
   $taglist = $json->hashtag;
 
-  $handle = fopen("tokenlist.txt", "r");
+  $handle = fopen("tokenlist.txt", "r") or die("Unable to open tokenlist.txt!");
   if ($handle) {
      while (($buffer = fgets($handle, 4096)) !== false) {
          array_push($tokenlist,trim($buffer));
@@ -64,6 +65,7 @@
       }
       return ($a['likes'] < $b['likes']) ? 1 : -1;
   }
-  print_r($html);
+  //print_r($html);
   echo json_encode($html);
+  
 ?>

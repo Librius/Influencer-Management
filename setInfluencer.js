@@ -41,12 +41,79 @@ function parseJSON(JSONObj)
     entrieshtml += "<th><img class='icon' src='"+JSONObj.influencers[i].profile_icon+"'></img></th>";
     entrieshtml += "<th class=\"name\">"+JSONObj.influencers[i].name+"</th>";
     entrieshtml += "<th class=\"function_button_wrapper\"><button class=\"btn btn-link\" id='editbutton"+JSONObj.influencers[i].id+"' data-toggle=\"modal\" data-target=\"#myModal\" onclick='viewandedit(event)'>view&edit</button><br><button class=\"btn btn-link\" id='deletebutton"+JSONObj.influencers[i].id+"' onclick='deleteentry(event)'>delete</button></th>";
-    entrieshtml += "<th><input type='checkbox' id='showCurationCheckbox"+JSONObj.influencers[i].id+"'>Show in the curation page</input><br><div style='float:left;margin-right:20px;'><input type='file' class='fileUpload'></input><img class='icon'></img></div><div><input type='file' class='fileUpload'></input><img class='icon'></img></div></th>";
+    var isChecked = JSONObj.influencers[i].show_curation == 1?"checked":"";
+    var DisplayCuration = JSONObj.influencers[i].show_curation == 1?"block":"none";
+    entrieshtml += "<th><input type='checkbox' id='showCurationCheckbox"+JSONObj.influencers[i].id+"' onclick='checkShowCuration(event)' "+isChecked+">Show in the curation page</input><br><div style='float:left;margin-right:20px;display:"+DisplayCuration+";'><input type='file' class='fileUpload' onchange='UpLoadCurationImageBig(event)'></input><img class='icon' src='"+JSONObj.influencers[i].curation_image_big+"'></img><br><font>Big Image</font></div><div style='display:"+DisplayCuration+";'><input type='file' class='fileUpload' onchange='UpLoadCurationImageSmall(event)'></input><img class='icon' src='"+JSONObj.influencers[i].curation_image_small+"'></img><br><font>Small Image</font></div></th>";
     entrieshtml += "</tr>";
   }
   entrieshtml += "</tbody>";
   entrieshtml += "</table>";
   jQuery("#entries").html(entrieshtml);
+}
+
+function checkShowCuration(event)
+{
+  var uploadDivs = event.target.parentNode.getElementsByTagName("div");
+  var id_str = jQuery(event.target).attr("id").substring(jQuery(event.target).attr("id").indexOf("showCurationCheckbox")+20);//get the influencer's id
+  var id = parseInt(id_str);
+  var i;
+  for(i = 0;i<newJsonObj.influencers.length;i++)
+  {
+    if(newJsonObj.influencers[i].id == id)
+      break;
+  }
+  if(event.target.checked)
+  {
+    jQuery(uploadDivs).css("display","block");
+    newJsonObj.influencers[i].show_curation = 1;
+  }
+  else
+  {
+    jQuery(uploadDivs).css("display","none");
+    newJsonObj.influencers[i].show_curation = 0;
+    newJsonObj.influencers[i].curation_image_big="";
+    newJsonObj.influencers[i].curation_image_small="";
+  }
+}
+
+function UpLoadCurationImageBig(event)
+{
+  UpLoadFile(event);
+  var target = event.target;
+  var parent = target.parentElement;
+  var imgtag = parent.getElementsByTagName("img")[0];
+  var imgSrc = jQuery(imgtag).attr("src");
+  
+  var checkboxBeside = jQuery(event.target.parentElement.parentElement).children("input")[0];
+  var id_str = jQuery(checkboxBeside).attr("id").substring(jQuery(checkboxBeside).attr("id").indexOf("showCurationCheckbox")+20);//get the influencer's id
+  var id = parseInt(id_str);
+  var i;
+  for(i = 0;i<newJsonObj.influencers.length;i++)
+  {
+    if(newJsonObj.influencers[i].id == id)
+      break;
+  }
+  newJsonObj.influencers[i].curation_image_big = imgSrc;
+}
+
+function UpLoadCurationImageSmall(event)
+{
+  UpLoadFile(event);
+  var target = event.target;
+  var parent = target.parentElement;
+  var imgtag = parent.getElementsByTagName("img")[0];
+  var imgSrc = jQuery(imgtag).attr("src");
+  
+  var checkboxBeside = jQuery(event.target.parentElement.parentElement).children("input")[0];
+  var id_str = jQuery(checkboxBeside).attr("id").substring(jQuery(checkboxBeside).attr("id").indexOf("showCurationCheckbox")+20);//get the influencer's id
+  var id = parseInt(id_str);
+  var i;
+  for(i = 0;i<newJsonObj.influencers.length;i++)
+  {
+    if(newJsonObj.influencers[i].id == id)
+      break;
+  }
+  newJsonObj.influencers[i].curation_image_small = imgSrc;
 }
 
 //view and edit an influencer entry
@@ -188,6 +255,9 @@ function writeToJson(){
   {
     jsonObj.id = newJsonObj.global_available_id;
     newJsonObj.global_available_id++;
+    jsonObj.show_curation = 0;
+    jsonObj.curation_image_big="";
+    jsonObj.curation_image_small="";
     newJsonObj.influencers.push(jsonObj);
   }
   else
@@ -290,6 +360,7 @@ function UpLoadFile(event)
     processData: false,
     contentType: false,
     data:fd,
+    async: false,
     success:function(result)
     {
       //alert(result);
@@ -297,6 +368,7 @@ function UpLoadFile(event)
       var parent = target.parentElement;
       var imgtag = parent.getElementsByTagName("img")[0];
       jQuery(imgtag).attr("src",result);
+      //return result;
       //jQuery("#showimg").attr("src",result);
     },
     error:function()
