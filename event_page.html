@@ -22,6 +22,69 @@
             width: auto;
         }
 
+        .subheader_block-span1{
+            border-top:1.5px solid #a89f9f;
+            width:35%;
+            display:inline-block;
+            margin-bottom:6px;
+            text-align:left;
+        }
+        .subheader_block-span2{
+            display:inline-block;
+            margin-left:2%;
+            margin-right:2%;
+            letter-spacing:2px;
+            width:24%;
+            text-align: center;
+        }
+        .subheader_block-span3{
+            border-top:1.5px solid #a89f9f;
+            width:35%;
+            display:inline-block;
+            margin-bottom:6px;
+            text-align:right;
+        }
+
+        .big-picture{
+            width: 100%;
+        }
+
+        .semitrans-box-above{
+            position: absolute;
+            top: 50%;
+            width: 40%;
+            left:17%;
+            color: white;
+            background: transparent;
+            padding: 10px;
+            vertical-align: middle;
+        }
+        .semitrans-box-above2{
+            position: absolute;
+            top: 60%;
+            width: 35%;
+            left:10%;
+            color: white;
+            background: transparent;
+            padding: 10px;
+            vertical-align: middle;
+        }
+        .semitrans-subbox{
+            vertical-align: middle;
+            text-align: center;
+        }
+        .influencer-name1{
+            /*font-size:30px;*/
+            font-size:2vw;
+            letter-spacing: 2px;
+
+        }
+        .influencer-name2{
+            font-size: 3.5vw;
+            letter-spacing: 3px;
+            text-align: center;
+        }
+
         /*style image*/
 
         div.styleImg:hover input
@@ -311,70 +374,146 @@
 </head>
 <body>
 
-<!--carousel-->
-
+<!--new carousel-->
 <div class="container">
-    <div class="grid-container" style="text-align:center;">
-        <div style="margin-top:20px; margin-bottom:20px; color:#a89f9f">
-            <span class="subheader_block-span1"></span>
-            <span class="h4 subheader_block-span2">INFLUENCER</span>
-            <span class="subheader_block-span3"></span>
+    <div id="image-carousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin: -10px -49px 0px;">
+
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+            <div class="item" id="cr1">
+                <div>
+                    <img src="https://www.evestemptation.com:443/media/wysiwyg/homepage/cr1.jpg" alt="" pagespeed_url_hash="3376258919" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                    <div class="semitrans-box-above">
+                        <div class="semitrans-subbox">
+                            <span class="influencer-name1" id="influencer_name"> Influencer One</span>
+                            <br>
+                            <span class="influencer-name2" id="influencer_description"> CURATION</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" id="cr2">
+                <div>
+                    <img src="https://www.evestemptation.com:443/media/wysiwyg/homepage/cr2.jpg" alt="" pagespeed_url_hash="3670758840" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                    <div class="semitrans-box-above">
+                        <div class="semitrans-subbox">
+                            <span class="influencer-name1" id="influencer_name"> Influencer One</span>
+                            <br>
+                            <span class="influencer-name2" id="influencer_description"> CURATION</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item active" id="cr3">
+                <div>
+                    <img src="https://www.evestemptation.com:443/media/wysiwyg/homepage/cr3.jpg" alt="" pagespeed_url_hash="3965258761" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                    <div class="semitrans-box-above">
+                        <div class="semitrans-subbox">
+                            <span class="influencer-name1" id="influencer_name"> Influencer One</span>
+                            <br>
+                            <span class="influencer-name2" id="influencer_description"> CURATION</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="item" id="cr3">
+                <div>
+                    <img src="https://www.evestemptation.com:443/media/wysiwyg/homepage/cr4.jpg" alt="" pagespeed_url_hash="4259758682" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+                    <div class="semitrans-box-above">
+                        <div class="semitrans-subbox">
+                            <span class="influencer-name1" id="influencer_name"> Influencer One</span>
+                            <br>
+                            <span class="influencer-name2" id="influencer_description"> CURATION</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators" id="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-            <li data-target="#myCarousel" data-slide-to="3"></li>
-        </ol>
-
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner " role="listbox" style="height:400px;" id="carousel-inner">
-            <div class="item active" style="text-align:center;width:60%;left:20%;">
-                <div class="col-md-12">
-                    <img class="image-auto-resizing blog_img" src="{{media url="wysiwyg/influencer2/influencer-blog-bra1.png"}}" alt="" pagespeed_url_hash="4266083714" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
-                </div>
-                <div class="col-md-12" style="padding-top:30px;">
-                    <span class="influencer-blog">Katie Arnold is a 20-something Social Media maven by day and style blogger by night. She has lived all over the globe in cities including Paris, New York, and San Francisco, though she currently bounces between Orange County and LA. Katie believes anything is possible and lives by the mantra &#8220;rules are meant to be broken.&#8221;</span>
-                </div>
-            </div>
-
-            <div class="item" style="text-align:center;width:60%;left:20%;">
-                <div class="col-md-12">
-                    <img class="image-auto-resizing blog_img" src="{{media url="wysiwyg/influencer2/influencer-blog-image2.png"}}" alt="" pagespeed_url_hash="4266083714" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
-                </div>
-                <div class="col-md-12" style="padding-top:30px;">
-                    <span class="influencer-blog">Katie Arnold is a 20-something Social Media maven by day and style blogger by night. She has lived all over the globe in cities including Paris, New York, and San Francisco, though she currently bounces between Orange County and LA. Katie believes anything is possible and lives by the mantra &#8220;rules are meant to be broken.&#8221;</span>
-                </div>
-            </div>
-
-            <div class="item" style="text-align:center;width:60%;left:20%;">
-                <div class="col-md-12">
-                    <img class="image-auto-resizing blog_img" src="{{media url="wysiwyg/influencer2/influencer-blog-image3.png"}}" alt="" pagespeed_url_hash="4266083714" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"/>
-                </div>
-                <div class="col-md-12" style="padding-top:30px;">
-                    <span class="influencer-blog">Katie Arnold is a 20-something Social Media maven by day and style blogger by night. She has lived all over the globe in cities including Paris, New York, and San Francisco, though she currently bounces between Orange County and LA. Katie believes anything is possible and lives by the mantra &#8220;rules are meant to be broken.&#8221;</span>
-                </div>
-            </div>
-        </div>
-
-
-        <!-- Left and right controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon" aria-hidden="true"  >
-        <img class="carousel-arrow" src=" https://www.evestemptation.com:443/media//wysiwyg/influencer2/arrowleft.png" alt=""/>
-      </span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon" aria-hidden="true">
-        <img class="carousel-arrow" src="https://www.evestemptation.com:443/media//wysiwyg/influencer2/arrowright.png" alt=""/>
-      </span>
-        </a>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#carousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+        <a class="carousel-control right" href="#carousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div>
 </div>
+
+<!--carousel-->
+
+<!--<div class="container">-->
+    <!--<div class="grid-container" style="text-align:center;">-->
+        <!--<div style="margin-top:20px; margin-bottom:20px; color:#a89f9f">-->
+            <!--<span class="subheader_block-span1"></span>-->
+            <!--<span class="h4 subheader_block-span2">INFLUENCER</span>-->
+            <!--<span class="subheader_block-span3"></span>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div id="myCarousel" class="carousel slide" data-ride="carousel">-->
+        <!--&lt;!&ndash; Indicators &ndash;&gt;-->
+        <!--<ol class="carousel-indicators" id="carousel-indicators">-->
+            <!--<li data-target="#myCarousel" data-slide-to="0" class="active"></li>-->
+            <!--<li data-target="#myCarousel" data-slide-to="1"></li>-->
+            <!--<li data-target="#myCarousel" data-slide-to="2"></li>-->
+            <!--<li data-target="#myCarousel" data-slide-to="3"></li>-->
+        <!--</ol>-->
+
+        <!--&lt;!&ndash; Wrapper for slides &ndash;&gt;-->
+        <!--<div class="carousel-inner " role="listbox" id="carousel-inner">-->
+            <!--<div class="item active" style="text-align:center;width:60%;left:20%;">-->
+                <!--<div class="col-md-12" style="margin-bottom: 30px;">-->
+                    <!--&lt;!&ndash;<img id="influencerimage"  src="test images/maxresdefault.jpg" alt="" />&ndash;&gt;-->
+                    <!--<img class="big-picture" id="influencerimage"  src="uploads/background.jpg" alt="" />-->
+                    <!--<div class="semitrans-box-above">-->
+                        <!--<div class="semitrans-subbox">-->
+                            <!--<span class="influencer-name1" id="influencer_name"> Influencer One</span>-->
+                            <!--<br>-->
+                            <!--<span class="influencer-name2" id="influencer_description"> CURATION</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="item" style="text-align:center;width:60%;left:20%;">-->
+                <!--<div class="col-md-12" style="margin-bottom: 30px;">-->
+                    <!--&lt;!&ndash;<img id="influencerimage"  src="test images/maxresdefault.jpg" alt="" />&ndash;&gt;-->
+                    <!--<img class="big-picture" id="influencerimage"  src="uploads/background1.jpg" alt="" />-->
+                    <!--<div class="semitrans-box-above">-->
+                        <!--<div class="semitrans-subbox">-->
+                            <!--<span class="influencer-name1" id="influencer_name"> Influencer One</span>-->
+                            <!--<br>-->
+                            <!--<span class="influencer-name2" id="influencer_description"> CURATION</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="item" style="text-align:center;width:60%;left:20%;">-->
+                <!--<div class="col-md-12" style="margin-bottom: 30px;">-->
+                    <!--&lt;!&ndash;<img id="influencerimage"  src="test images/maxresdefault.jpg" alt="" />&ndash;&gt;-->
+                    <!--<img class="big-picture" id="influencerimage"  src="uploads/background2.jpg" alt="" />-->
+                    <!--<div class="semitrans-box-above">-->
+                        <!--<div class="semitrans-subbox">-->
+                            <!--<span class="influencer-name1" id="influencer_name"> Influencer One</span>-->
+                            <!--<br>-->
+                            <!--<span class="influencer-name2" id="influencer_description"> CURATION</span>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+        <!--&lt;!&ndash; Left and right controls &ndash;&gt;-->
+        <!--<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">-->
+      <!--<span class="glyphicon" aria-hidden="true"  >-->
+        <!--<img class="carousel-arrow" src=" https://www.evestemptation.com:443/media//wysiwyg/influencer2/arrowleft.png" alt=""/>-->
+      <!--</span>-->
+        <!--</a>-->
+        <!--<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">-->
+      <!--<span class="glyphicon" aria-hidden="true">-->
+        <!--<img class="carousel-arrow" src="https://www.evestemptation.com:443/media//wysiwyg/influencer2/arrowright.png" alt=""/>-->
+      <!--</span>-->
+        <!--</a>-->
+    <!--</div>-->
+<!--</div>-->
 
 <div class="container">
 
@@ -544,7 +683,30 @@
     var influencersJSONObj, html_content_4="", html_content_2="";
 
     jQuery(document).ready(function(){
-        console.log("document ready");
+
+        var screenWidth = jQuery(window).width();
+        if (screenWidth>1170){
+            jQuery('#image-carousel').css('margin', '-10px ' + (1170-screenWidth)/2 + 'px ' + '0');
+        }
+
+        jQuery('.carousel-control.left').click(function() {
+            console.log("left control");
+            jQuery('#image-carousel').carousel('prev');
+        });
+
+        jQuery('.carousel-control.right').click(function() {
+            console.log("right control");
+            jQuery('#image-carousel').carousel('next');
+        });
+
+        jQuery('.image-carousel').carousel();
+
+
+
+
+
+
+//        console.log("document ready");
         jQuery.ajax({
             type:"GET",
             url:"getlink.php",
