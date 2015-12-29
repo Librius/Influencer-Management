@@ -408,10 +408,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script type="text/javascript">
-    
+
     var influencersJSONObj, html_content_4="", html_content_2="";
 
     jQuery(document).ready(function(){
+        console.log("document ready");
         jQuery.ajax({
             type:"GET",
             url:"getlink.php",
@@ -423,7 +424,7 @@
 //                console.log(jQuery( window ).width());
 //                if (jQuery( window ).width() < 1024) n = 2;
 //                else n = 4;
-              for(var i=0; i<instagraminOBJ.length; i++) 
+              for(var i=0; i<instagraminOBJ.length; i++)
               {
                   if (i%4==0)
                   {
@@ -514,12 +515,12 @@
         if (jQuery( window ).width() < 992) jQuery("#ins_post_div").html(html_content_2);
         else jQuery("#ins_post_div").html(html_content_4);
     });
-    
+
     function parseJSON(influencersJSONObj)
     {
       var moreinfluencer_html = "";
       var featured_stories_html = "";
-      
+
       for(var i= 0;i<influencersJSONObj.influencers.length;i++) {
           //more influencers
           if (i % 12 == 0) {
@@ -562,7 +563,7 @@
       jQuery("#featured_stories").html(featured_stories_html);
       jQuery("#moreinfluencers-container").html(moreinfluencer_html);
     }
-    
+
     function seeMoreInfluencers(event)
     {
         var moreInfluencersList = document.getElementById("moreinfluencers-container").getElementsByClassName("MoreInfluencersDiv");
