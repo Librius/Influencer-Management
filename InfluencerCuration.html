@@ -171,6 +171,34 @@
             padding-top: 15px;
             padding-bottom: 15px;
         }
+
+
+        .small-influencer-name{
+            text-align: center;
+            font-family: STHeitiTC;
+            font-size: large;
+            font-weight: 500;
+            letter-spacing: 5px;
+            margin: 5px;
+        }
+        .small-enter-store{
+            width: 180px;
+            line-height: 20px;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.5);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 10px;
+        }
+        .small-enter-store-outter{
+            background: rgba(255, 255, 255, 0.8);
+            width: 190px;
+            height: 28px;
+            margin: 0 auto;
+            border: 2px rgba(0,0,0,0.5) solid;
+            padding: 2px;
+        }
+
         @media only screen and (max-width: 1200px) {
             /*.influencer-name{font-size: 12px;}*/
             .influencer-story{line-height: 40px;}
@@ -463,13 +491,7 @@
         if (jQuery(window).width() < 992) {
             for (var i = 0; i < influencersJSONObj.influencers.length; i++) {
                 if (influencersJSONObj.influencers[i].show_curation == 1) {
-                    if (i % 2 == 0) {
-                        featured_stories_html += "<div class=\"col-md-12\"><img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_small + "\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-left\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> " + influencersJSONObj.influencers[i].name + "<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> " + influencersJSONObj.influencers[i].description + "<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-left\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
-                    }
-                    else {
-                        featured_stories_html += "<div class=\"col-md-12\"><img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_small + "\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-right\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> " + influencersJSONObj.influencers[i].name + "<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> " + influencersJSONObj.influencers[i].description + "<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-right\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
-                    }
-
+                    featured_stories_html += "<div class=\"col-md-12\">" +"<img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_small + "\"}}\" alt=\"\" \/>" + "<div class=\"small-influencer-name\">"+influencersJSONObj.influencers[i].name+"</div>"+"<div class=\"small-enter-store-outter\"><div class=\"small-enter-store\">"+"ENTER STORE"+"</div></div>"+"<\/div>";
                 }
             }
         } else {
@@ -509,7 +531,7 @@
 
           moreinfluencer_html += "<div class=\"col-md-2 col-xs-3 top-bot-padding\"><div class=\"influencer-img\"><a href='" + window.location.href.split('?')[0] + "?id=" + influencersJSONObj.influencers[i].id + "'><img class=\"influencer-icon img-circle\" src=\"" + influencersJSONObj.influencers[i].profile_icon + "\" alt=\"" + influencersJSONObj.influencers[i].name + "\"\/></a><\/div><\/div>";
 
-          if (i % 12 == 0 && i + 12 >= influencersJSONObj.influencers.length) {
+          if (i== influencersJSONObj.influencers.length-1) {
               moreinfluencer_html += "</div>";
           }
 
@@ -518,13 +540,7 @@
           if (jQuery(window).width() < 992) {
               for (var i = 0; i < influencersJSONObj.influencers.length; i++) {
                   if (influencersJSONObj.influencers[i].show_curation == 1) {
-                      if (i % 2 == 0) {
-                          featured_stories_html += "<div class=\"col-md-12\"><img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_small + "\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-left\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> " + influencersJSONObj.influencers[i].name + "<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> " + influencersJSONObj.influencers[i].description + "<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-left\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
-                      }
-                      else {
-                          featured_stories_html += "<div class=\"col-md-12\"><img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_small + "\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-right\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> " + influencersJSONObj.influencers[i].name + "<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> " + influencersJSONObj.influencers[i].description + "<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-right\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
-                      }
-
+                      featured_stories_html += "<div class=\"col-md-12\">" +"<img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_small + "\"}}\" alt=\"\" \/>" + "<div class=\"small-influencer-name\">"+influencersJSONObj.influencers[i].name+"</div>"+"<div class=\"small-enter-store-outter\"><div class=\"small-enter-store\">"+"ENTER STORE"+"</div></div>"+"<\/div>";
                   }
               }
           } else {
