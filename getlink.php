@@ -65,7 +65,6 @@
       }
       return ($a['likes'] < $b['likes']) ? 1 : -1;
   }
-  //print_r($html);
   echo json_encode($html);
   
 ?>
