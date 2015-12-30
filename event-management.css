@@ -1,0 +1,43 @@
+h3{
+    text-align: center;
+    margin: 15px;
+}
+
+body{
+    margin: 3%;
+}
+
+.modal-row{
+    margin: 15px;
+}
+
+/*tag pool*/
+
+#tag_pool{
+    padding: 2%;
+    width: 100%;
+    background-color: whitesmoke;
+    border: 1px lightgrey solid;
+}
+
+/*chunk*/
+
+.entry_picture{
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 100px;
+    text-align: center;
+    background-color: lightgrey;
+}
+
+.button_right_wrapper{
+    text-align: right;
+    margin-top: 5px;
+}
+
+.chunk_div{
+    background-color: whitesmoke;
+    padding: 0 10px 10px 10px;
+    border: 1px lightgrey solid;
+    margin-top: 10px;
+}
