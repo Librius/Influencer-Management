@@ -6,6 +6,13 @@ var singleEventJsonObj;
 var events;
 var tags = [];
 
+function getEventEntry(name, timeBegin, timeEnd, briefIntro ){
+    return "<td>" + timeBegin + "</td>" +
+        "<td>" + timeEnd + "</td>" +
+        "<td>" + briefIntro + "</td>" +
+        "<button class=\"btn btn-link\" id=\"editbutton\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"viewandedit(event)\">view&amp;edit </button>" +
+        "<button class=\"btn btn-link\" id=\"deletebutton\" onclick=\"deleteentry(event)\">disable</button></td>"
+}
 function getChunk(imgSrc, mainTitle, subTitle, link){
     return "<div class=\"chunk_div\">" +
     "<input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>" +
