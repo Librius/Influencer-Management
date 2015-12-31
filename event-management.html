@@ -38,8 +38,6 @@
                 <button class="btn btn-link" id="editbutton6" data-toggle="modal" data-target="#myModal"
                         onclick="viewandedit(event)">view&amp;edit
                 </button>
-                <!--<br>-->
-                <button class="btn btn-link" id="deletebutton6" onclick="deleteentry(event)">disable</button>
             </td>
         </tr>
         <tr>
@@ -80,6 +78,10 @@
 
                 <div class="modal-body">
 
+                    <!--status-->
+                    <div class="modal-row">Status:&nbsp;<span id="modal_status">On</span>
+                        <button class="btn btn-link" id="status_control_button">disable</button>
+                    </div>
 
                     <!--name-->
                     <div class="modal-row">Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="modal_name_input" type="text"></div>

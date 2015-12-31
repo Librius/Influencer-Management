@@ -415,7 +415,8 @@
         console.log("document ready");
         jQuery.ajax({
             type:"GET",
-            url:"getlink.php",
+//            url:"getlink.php",
+            url:"Influencer/getlink.php",
             success:function(result)
             {
               var instagraminOBJ = JSON.parse(result);
@@ -475,7 +476,8 @@
 
         jQuery.ajax({
           type:"GET",
-          url:"getinfluencerinfo.php",
+//          url:"getinfluencerinfo.php",
+          url:"Influencer/getinfluencerinfo.php",
           success:function(result)
           {
             influencersJSONObj = JSON.parse(result);
