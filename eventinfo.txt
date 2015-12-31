@@ -1,7 +1,7 @@
 {
-"global_available_id":1,
+"global_available_id":2,
 "events":[{
-"id":0,
+"id":1,
 "enabled":1,
 "name":"New Year Event",
 "time_begin":"2015-01-01T01:00",
