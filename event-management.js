@@ -6,6 +6,32 @@ var singleEventJsonObj;
 var events;
 var tags = [];
 
+
+function UpLoadFile(event)
+{
+    var fd = new FormData();
+    fd.append("fileToUpload", event.target.files[0]);
+    jQuery.ajax({
+        type:"POST",
+        url:"uploadfile.php",
+        processData: false,
+        contentType: false,
+        data:fd,
+        async: false,
+        success:function(result)
+        {
+            var target = event.target;
+            var parent = target.parentElement;
+            var imgtag = parent.getElementsByTagName("img")[0];
+            jQuery(imgtag).attr("src",result);
+        },
+        error:function()
+        {
+            alert("error!");
+        }
+    });
+}
+
 function getEventEntry(name, timeBegin, timeEnd, briefIntro ){
     return "<td>" + timeBegin + "</td>" +
         "<td>" + timeEnd + "</td>" +
@@ -13,6 +39,7 @@ function getEventEntry(name, timeBegin, timeEnd, briefIntro ){
         "<button class=\"btn btn-link\" id=\"editbutton\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"viewandedit(event)\">view&amp;edit </button>" +
         "<button class=\"btn btn-link\" id=\"deletebutton\" onclick=\"deleteentry(event)\">disable</button></td>"
 }
+
 function getChunk(imgSrc, mainTitle, subTitle, link){
     return "<div class=\"chunk_div\">" +
     "<input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>" +
@@ -26,6 +53,7 @@ function getChunk(imgSrc, mainTitle, subTitle, link){
 
 var eventsJsonObj = {
     "id":0,
+    "enabled":0,
     "name": "Test Name",
     "time_begin":"2015-01-01T01:00",
     "time_end":"2015-12-31T12:59",
@@ -37,6 +65,14 @@ var eventsJsonObj = {
 
 function readFromJson(){
     jQuery("#modal_name_input").val(eventsJsonObj.name);
+    if(eventsJsonObj.enabled==1) {
+        jQuery("#modal_status").text("On");
+        jQuery("#status_control_button").html("Disable");
+    }
+    else {
+        jQuery("#modal_status").text("Off");
+        jQuery("#status_control_button").html("Enable");
+    }
     jQuery("#modal_begin_time").val(eventsJsonObj.time_begin);
     jQuery("#modal_end_time").val(eventsJsonObj.time_end);
     jQuery("#modal_intro").val(eventsJsonObj.brief);
@@ -52,8 +88,12 @@ function readFromJson(){
 }
 
 function writeToJson(){
+    var status;
+    if (jQuery("#modal_status").text()=="On") status = 1;
+    else status = 0;
     events = {
         "id":0,
+        "enabled": status,
         "name":jQuery("#modal_name_input").val(),
         "time_begin":jQuery("#modal_begin_time").val(),
         "time_end":jQuery("#modal_end_time").val(),
@@ -96,6 +136,17 @@ jQuery(document).ready(function() {
     //});
 
     //chunk add
+
+    jQuery("#status_control_button").click(function(event){
+        if(jQuery("#modal_status").text()=="Off"){
+            jQuery("#modal_status").text("On");
+            jQuery("#status_control_button").html("Disable");
+        }
+        else{
+            jQuery("#modal_status").text("Off");
+            jQuery("#status_control_button").html("Enable");
+        }
+    });
 
     jQuery("#big_img_add_btn").click(function(){
         jQuery("#big_img_div").append(
