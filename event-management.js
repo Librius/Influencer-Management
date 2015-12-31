@@ -6,6 +6,24 @@ var singleEventJsonObj;
 var events;
 var tags = [];
 
+var oldJSONObj;
+var newJSONObj;
+
+var ROWS_PER_PAGE=1;
+var current_page=0;
+
+
+function showFirstPage(JSONObj)
+{
+  var table_body_html = "";
+  for(var i =0;i<JSONObj.events.length && i<ROWS_PER_PAGE;i++)
+  {
+    table_body_html+="<tr>";
+    table_body_html+=getEventEntry(JSONObj.events[i].id,JSONObj.events[i].name,JSONObj.events[i].time_begin,JSONObj.events[i].time_end,JSONObj.events[i].brief);
+    table_body_html+="</tr>";
+  }
+  jQuery("#tableBody").html(table_body_html);
+}
 
 function UpLoadFile(event)
 {
@@ -32,13 +50,28 @@ function UpLoadFile(event)
     });
 }
 
-function getEventEntry(name, timeBegin, timeEnd, briefIntro ){
-    return "<td>" + timeBegin + "</td>" +
+function getEventEntry(id,name, timeBegin, timeEnd, briefIntro ){
+    return "<td>" + name + "</td>" +
+        "<td>" + timeBegin + "</td>" +
         "<td>" + timeEnd + "</td>" +
         "<td>" + briefIntro + "</td>" +
-        "<button class=\"btn btn-link\" id=\"editbutton\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"viewandedit(event)\">view&amp;edit </button>" +
-        "<button class=\"btn btn-link\" id=\"deletebutton\" onclick=\"deleteentry(event)\">disable</button></td>"
+        "<td><button class=\"btn btn-link\" id=\"editbutton"+id+"\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"viewandedit(event)\">view&amp;edit </button></td>";
 }
+
+function viewandedit(event)
+{
+  var id_str = jQuery(event.target).attr("id").substring(jQuery(event.target).attr("id").indexOf("editbutton")+10);//get the influencer's id
+  var id = parseInt(id_str);
+  var i;
+  for(i = 0;i<newJSONObj.events.length;i++)
+  {
+    if(newJSONObj.events[i].id == id)
+      break;
+  }
+  var currentEvent = newJSONObj.events[i];
+  readFromJson(currentEvent);
+}
+
 
 function getChunk(imgSrc, mainTitle, subTitle, link){
     return "<div class=\"chunk_div\">" +
@@ -48,9 +81,10 @@ function getChunk(imgSrc, mainTitle, subTitle, link){
     "Subtitle: <input type=\"text\" class=\"entry_input\" value=\""+ subTitle +"\">" +
     "Link: <input type=\"text\" class=\"entry_input\" value=\""+ link +"\">" +
     "<button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>" +
-    "</div>"
+    "</div>";
 }
 
+/*
 var eventsJsonObj = {
     "id":0,
     "enabled":0,
@@ -61,9 +95,9 @@ var eventsJsonObj = {
     "event_hashtag": ["tag1", "tag2", "tag3"],
     "big_image":[{"url": "#","main_title":"b1m","subtitle":"b1s","link":"b1l"},{"url": "#","main_title":"b2m","subtitle":"b2s","link":"b2l"}],
     "middle_image":[{"url": "#","main_title":"m1m","subtitle":"m1s","link":"m1l"},{"url": "#","main_title":"m2m","subtitle":"m2s","link":"m2l"}]
-}
+};*/
 
-function readFromJson(){
+function readFromJson(eventsJsonObj){
     jQuery("#modal_name_input").val(eventsJsonObj.name);
     if(eventsJsonObj.enabled==1) {
         jQuery("#modal_status").text("On");
@@ -101,22 +135,37 @@ function writeToJson(){
         "event_hashtag":tags,
         "big_image":[],
         "middle_image":[]
-    }
+    };
 
     var bigImages = jQuery("#big_img_div .chunk_div");
     //var bigImages = jQuery("#big_img_div input[type=file]");
     for(var i=0; i<bigImages.length; i++){
-        events.big_image[i] = {"url": "#","main_title":bigImages[i].children[2].value,"subtitle":bigImages[i].children[3].value,"link":bigImages[i].children[4].value}
+        events.big_image[i] = {"url": "#","main_title":bigImages[i].children[2].value,"subtitle":bigImages[i].children[3].value,"link":bigImages[i].children[4].value};
     }
     var middleImages = jQuery("#middle_img_div .chunk_div");
     for(var i=0; i<middleImages.length; i++){
-        events.middle_image[i] = {"url": "#","main_title":middleImages[i].children[2].value,"subtitle":middleImages[i].children[3].value,"link":middleImages[i].children[4].value}
+        events.middle_image[i] = {"url": "#","main_title":middleImages[i].children[2].value,"subtitle":middleImages[i].children[3].value,"link":middleImages[i].children[4].value};
     }
 
     console.log(events);
 }
 jQuery(document).ready(function() {
 
+  jQuery.ajax({
+    type:"GET",
+    url:"geteventinfo.php",
+    success:function(result)
+    {
+      oldJSONObj = JSON.parse(result);
+      newJSONObj = JSON.parse(result);
+      showFirstPage(oldJSONObj);
+    },
+    error:function()
+    {
+      alert("error!");
+    }
+  });
+  
     jQuery("#save_button").click(function(){
         writeToJson();
     });
@@ -210,7 +259,7 @@ jQuery(document).ready(function() {
             jQuery("#new_tag_input").remove();
             input_open = false;
             jQuery(".tag_button").click(function (event) {
-                remove_hashtag_button(event)
+                remove_hashtag_button(event);
             });
         }
     }
