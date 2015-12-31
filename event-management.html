@@ -68,7 +68,7 @@
 
 <div class="container">
     <!-- Modal -->
-    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal fade" id="myModal" role="dialog" data-backdrop="static" data-keyboard="false">
         <div class="modal-dialog">
 
             <!-- Modal content-->
@@ -83,18 +83,18 @@
 
 
                     <!--name-->
-                    <div class="modal-row">Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="name" type="text"></div>
+                    <div class="modal-row">Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="modal_name_input" type="text"></div>
 
                     <!--time_begin-->
-                    <div class="modal-row">Begin Time:&nbsp;&nbsp;<input type="datetime-local" name="begin-time"></div>
+                    <div class="modal-row">Begin Time:&nbsp;&nbsp;<input id="modal_begin_time" type="datetime-local" name="begin-time"></div>
 
                     <!--time_end-->
-                    <div class="modal-row">End Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="datetime-local" name="end-time"></div>
+                    <div class="modal-row">End Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="modal_end_time" type="datetime-local" name="end-time"></div>
 
                     <!--brief intro-->
                     <div class="modal-row">
                         <h5>Brief Introduction</h5>
-                        <textarea style="width: 100%">description</textarea>
+                        <textarea id="modal_intro" style="width: 100%"></textarea>
                     </div>
 
                     <!--tag pool-->
@@ -112,6 +112,9 @@
                             <div class="chunk_div">
                                 <input type="file" class="fileUpload" onchange='UpLoadFile(event)'>
                                 <img class="entry_picture" src="" alt="No file chosen"/>
+                                Main Title: <input type="text" class="entry_input" value="">
+                                Subtitle: <input type="text" class="entry_input" value="">
+                                Link: <input type="text" class="entry_input" value="">
                             </div>
                         </div>
                         <div class="button_right_wrapper">
@@ -126,6 +129,9 @@
                             <div class="chunk_div">
                                 <input type="file" class="fileUpload" onchange='UpLoadFile(event)'>
                                 <img class="entry_picture" src="" alt="No file chosen"/>
+                                Main Title: <input type="text" class="entry_input" value="">
+                                Subtitle: <input type="text" class="entry_input" value="">
+                                Link: <input type="text" class="entry_input" value="">
                             </div>
                         </div>
                         <div class="button_right_wrapper">

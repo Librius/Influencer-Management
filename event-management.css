@@ -22,6 +22,14 @@ body{
 
 /*chunk*/
 
+.entry{
+    margin: 8px 0;
+}
+
+.entry_input{
+    width: 100%;
+}
+
 .entry_picture{
     max-width: 100%;
     min-width: 100%;
@@ -33,6 +41,11 @@ body{
 .button_right_wrapper{
     text-align: right;
     margin-top: 5px;
+}
+
+.remove_chunk_buttons{
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .chunk_div{
