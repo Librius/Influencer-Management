@@ -110,11 +110,14 @@ function readFromJson(eventsJsonObj){
     jQuery("#modal_begin_time").val(eventsJsonObj.time_begin);
     jQuery("#modal_end_time").val(eventsJsonObj.time_end);
     jQuery("#modal_intro").val(eventsJsonObj.brief);
+    jQuery("#tag_pool").html("<button id=\"add_tag_button\" class=\"btn btn-primary\">Add</button>");
     for(var i=0; i<eventsJsonObj.event_hashtag.length; i++) jQuery("#tag_pool").prepend("<button class=\"tag_button btn btn-default\">" + eventsJsonObj.event_hashtag[i] + "</button>");
+    jQuery("#big_img_div").html("");
     for(var i=0; i<eventsJsonObj.big_image.length; i++) {
         var bigImgJson = eventsJsonObj.big_image[i]
         jQuery("#big_img_div").append(getChunk(bigImgJson.url, bigImgJson.main_title, bigImgJson.subtitle, bigImgJson.link));
     }
+    jQuery("#middle_img_div").html("");
     for(var i=0; i<eventsJsonObj.middle_image.length; i++) {
         var middleImgJson = eventsJsonObj.middle_image[i]
         jQuery("#middle_img_div").append(getChunk(middleImgJson.url, middleImgJson.main_title, middleImgJson.subtitle, middleImgJson.link));
