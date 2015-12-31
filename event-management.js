@@ -53,7 +53,7 @@ function getChunk(imgSrc, mainTitle, subTitle, link){
 
 var eventsJsonObj = {
     "id":0,
-    "enabled":1,
+    "enabled":0,
     "name": "Test Name",
     "time_begin":"2015-01-01T01:00",
     "time_end":"2015-12-31T12:59",
@@ -65,8 +65,14 @@ var eventsJsonObj = {
 
 function readFromJson(){
     jQuery("#modal_name_input").val(eventsJsonObj.name);
-    if(eventsJsonObj.enabled==1) jQuery("#modal_status").text("On");
-    else jQuery("#modal_status").text("Off");
+    if(eventsJsonObj.enabled==1) {
+        jQuery("#modal_status").text("On");
+        jQuery("#status_control_button").html("Disable");
+    }
+    else {
+        jQuery("#modal_status").text("Off");
+        jQuery("#status_control_button").html("Enable");
+    }
     jQuery("#modal_begin_time").val(eventsJsonObj.time_begin);
     jQuery("#modal_end_time").val(eventsJsonObj.time_end);
     jQuery("#modal_intro").val(eventsJsonObj.brief);
