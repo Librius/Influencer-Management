@@ -13,16 +13,41 @@ var ROWS_PER_PAGE=1;
 var current_page=0;
 
 
-function showFirstPage(JSONObj)
+function showPage(page_num)
 {
   var table_body_html = "";
-  for(var i =0;i<JSONObj.events.length && i<ROWS_PER_PAGE;i++)
+  for(var i =page_num*ROWS_PER_PAGE;i<newJSONObj.events.length && i<page_num*ROWS_PER_PAGE+ROWS_PER_PAGE;i++)
   {
     table_body_html+="<tr>";
-    table_body_html+=getEventEntry(JSONObj.events[i].id,JSONObj.events[i].name,JSONObj.events[i].time_begin,JSONObj.events[i].time_end,JSONObj.events[i].brief);
+    table_body_html+=getEventEntry(newJSONObj.events[i].id,newJSONObj.events[i].name,newJSONObj.events[i].time_begin,newJSONObj.events[i].time_end,newJSONObj.events[i].brief);
     table_body_html+="</tr>";
   }
   jQuery("#tableBody").html(table_body_html);
+  if(current_page == 0)
+    jQuery("#previous_button").css("display","none");
+  else
+    jQuery("#previous_button").css("display","block");
+  if((current_page+1)*ROWS_PER_PAGE >= newJSONObj.events.length)
+    jQuery("#next_button").css("display","none");
+  else
+    jQuery("#next_button").css("display","block");
+}
+
+function previousPage()
+{
+  if(current_page == 0)
+    return;
+  current_page--;
+  showPage(current_page);
+
+}
+
+function nextPage()
+{
+  if((current_page+1)*ROWS_PER_PAGE >= newJSONObj.events.length)
+    return;
+  current_page++;
+  showPage(current_page);
 }
 
 function UpLoadFile(event)
@@ -97,7 +122,9 @@ var eventsJsonObj = {
     "middle_image":[{"url": "#","main_title":"m1m","subtitle":"m1s","link":"m1l"},{"url": "#","main_title":"m2m","subtitle":"m2s","link":"m2l"}]
 };*/
 
+var event_id;
 function readFromJson(eventsJsonObj){
+    event_id = eventsJsonObj.id;
     jQuery("#modal_name_input").val(eventsJsonObj.name);
     if(eventsJsonObj.enabled==1) {
         jQuery("#modal_status").text("On");
@@ -237,7 +264,7 @@ jQuery(document).ready(function() {
     {
       oldJSONObj = JSON.parse(result);
       newJSONObj = JSON.parse(result);
-      showFirstPage(oldJSONObj);
+      showPage(0);
     },
     error:function()
     {
