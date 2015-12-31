@@ -80,7 +80,7 @@ function getChunk(imgSrc, mainTitle, subTitle, link){
     "Main Title: <input type=\"text\" class=\"entry_input\" value=\""+ mainTitle +"\">" +
     "Subtitle: <input type=\"text\" class=\"entry_input\" value=\""+ subTitle +"\">" +
     "Link: <input type=\"text\" class=\"entry_input\" value=\""+ link +"\">" +
-    "<button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>" +
+    "<button class=\"remove_chunk_buttons\" onclick=\"closestDiv()\">Remove</button>" +
     "</div>";
 }
 
@@ -110,7 +110,7 @@ function readFromJson(eventsJsonObj){
     jQuery("#modal_begin_time").val(eventsJsonObj.time_begin);
     jQuery("#modal_end_time").val(eventsJsonObj.time_end);
     jQuery("#modal_intro").val(eventsJsonObj.brief);
-    jQuery("#tag_pool").html("<button id=\"add_tag_button\" class=\"btn btn-primary\">Add</button>");
+    jQuery("#tag_pool").html("<button id=\"add_tag_button\" class=\"btn btn-primary\" onclick=\"addTag()\">Add</button>");
     for(var i=0; i<eventsJsonObj.event_hashtag.length; i++) jQuery("#tag_pool").prepend("<button class=\"tag_button btn btn-default\">" + eventsJsonObj.event_hashtag[i] + "</button>");
     jQuery("#big_img_div").html("");
     for(var i=0; i<eventsJsonObj.big_image.length; i++) {
@@ -152,6 +152,82 @@ function writeToJson(){
 
     console.log(events);
 }
+
+//remove image div
+function closestDiv(){
+    ((event.currentTarget).closest("div")).remove();
+}
+
+function createEvent(){
+    var emptyJson = {
+        "id":0,
+        "enabled":0,
+        "name": "",
+        "time_begin":"",
+        "time_end":"",
+        "brief":"",
+        "event_hashtag": [],
+        "big_image":[{"url": "","main_title":"","subtitle":"","link":""},{"url": "","main_title":"","subtitle":"","link":""}],
+        "middle_image":[{"url": "","main_title":"","subtitle":"","link":""},{"url": "","main_title":"","subtitle":"","link":""}]
+    };
+    readFromJson(emptyJson);
+}
+
+//tag pool
+
+var input_open = false;
+var new_tag_content = "";
+
+function addTag() {
+
+    console.log("click");
+
+    if (input_open) {
+        new_tag_content = encodeURI(jQuery("#new_tag_input").val());
+        console.log(new_tag_content);
+        input_confirm();
+    }
+    else {
+        jQuery("#tag_pool").append("<input type=\"text\" name=\"input\" id=\"new_tag_input\">");
+        input_open = true;
+        jQuery("#new_tag_input").keypress(function (event) {
+            if (event.which == 13) {
+                new_tag_content = encodeURI(jQuery("#new_tag_input").val());
+                input_confirm();
+            }
+        });
+    }
+
+}
+
+function input_confirm() {
+    if (new_tag_content.length != 0) {
+        jQuery("#tag_pool").prepend("<button class=\"tag_button btn btn-default\">" + new_tag_content + "</button>");
+        tags.push(jQuery("#new_tag_input").val());
+        //newJsonObj.hashtag.push(jQuery("#new_tag_input").val());
+        jQuery("#new_tag_input").remove();
+        input_open = false;
+        jQuery(".tag_button").click(function (event) {
+            //remove_hashtag_button(event);
+            //console.log(event.target);
+            event.target.remove();
+        });
+    }
+}
+
+function remove_hashtag_button(event)
+{
+    //find the removed hashtag content in newjsonobj
+    var j = 0;
+    for(;j<newJsonObj.hashtag.length;j++)
+    {
+        if(newJsonObj.hashtag[j] == event.currentTarget.innerHTML)
+            break;
+    }
+    newJsonObj.hashtag.splice(j,1);
+    event.currentTarget.remove();
+}
+
 jQuery(document).ready(function() {
 
   jQuery.ajax({
@@ -208,21 +284,12 @@ jQuery(document).ready(function() {
 
     jQuery("#middle_img_add_btn").click(function(){
         jQuery("#middle_img_div").append(
-            "<div class=\"chunk_div\">" +
-            "<input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>" +
-            "<button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>" +
-            "<img class=\"entry_picture\" src=\"\" alt=\"No file chosen\"/>" +
-            "Main Title: <input type=\"text\" class=\"entry_input\">" +
-            "Subtitle: <input type=\"text\" class=\"entry_input\">" +
-            "Link: <input type=\"text\" class=\"entry_input\">" +
-            "</div>"
+            getChunk("", "", "", "")
         );
     });
 
-    //tag pool
-
     jQuery("#create_button").click(function () {
-        createInfluencer();
+        createEvent();
     });
 
     jQuery("#reset_button").click(function () {
@@ -231,39 +298,41 @@ jQuery(document).ready(function() {
         parseJSON(oldJsonObj);
     });
 
-    var input_open = false;
-    var new_tag_content = "";
-
-    jQuery("#add_tag_button").click(function () {
-
-        if (input_open) {
-            new_tag_content = encodeURI(jQuery("#new_tag_input").val());
-            console.log(new_tag_content);
-            input_confirm();
-        }
-        else {
-            jQuery("#tag_pool").append("<input type=\"text\" name=\"input\" id=\"new_tag_input\">");
-            input_open = true;
-            jQuery("#new_tag_input").keypress(function (event) {
-                if (event.which == 13) {
-                    new_tag_content = encodeURI(jQuery("#new_tag_input").val());
-                    input_confirm();
-                }
-            });
-        }
-
-    });
-
-    function input_confirm() {
-        if (new_tag_content.length != 0) {
-            jQuery("#tag_pool").prepend("<button class=\"tag_button btn btn-default\">" + new_tag_content + "</button>");
-            tags.push(jQuery("#new_tag_input").val());
-            //newJsonObj.hashtag.push(jQuery("#new_tag_input").val());
-            jQuery("#new_tag_input").remove();
-            input_open = false;
-            jQuery(".tag_button").click(function (event) {
-                remove_hashtag_button(event);
-            });
-        }
-    }
+    ////tag pool
+    //
+    //var input_open = false;
+    //var new_tag_content = "";
+    //
+    //jQuery("#add_tag_button").click(function () {
+    //
+    //    if (input_open) {
+    //        new_tag_content = encodeURI(jQuery("#new_tag_input").val());
+    //        console.log(new_tag_content);
+    //        input_confirm();
+    //    }
+    //    else {
+    //        jQuery("#tag_pool").append("<input type=\"text\" name=\"input\" id=\"new_tag_input\">");
+    //        input_open = true;
+    //        jQuery("#new_tag_input").keypress(function (event) {
+    //            if (event.which == 13) {
+    //                new_tag_content = encodeURI(jQuery("#new_tag_input").val());
+    //                input_confirm();
+    //            }
+    //        });
+    //    }
+    //
+    //});
+    //
+    //function input_confirm() {
+    //    if (new_tag_content.length != 0) {
+    //        jQuery("#tag_pool").prepend("<button class=\"tag_button btn btn-default\">" + new_tag_content + "</button>");
+    //        tags.push(jQuery("#new_tag_input").val());
+    //        //newJsonObj.hashtag.push(jQuery("#new_tag_input").val());
+    //        jQuery("#new_tag_input").remove();
+    //        input_open = false;
+    //        jQuery(".tag_button").click(function (event) {
+    //            remove_hashtag_button(event);
+    //        });
+    //    }
+    //}
 });
