@@ -1,0 +1,14 @@
+{
+"global_available_id":1,
+"events":{
+"id":0,
+"enabled":1,
+"name":"",
+"time_begin":"",
+"time_end":"",
+"brief":"",
+"event_hashtag":[],
+"big_image":[{"url":"","main_title":"","subtitle":"","link":""}],
+"middle_image":[{"url":"","main_title":"","subtitle":"","link":""}]
+}
+}
