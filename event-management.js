@@ -4,7 +4,7 @@
 
 var singleEventJsonObj;
 var events;
-var tags = [];
+//var tags = [];
 
 var oldJSONObj;
 var newJSONObj;
@@ -155,6 +155,8 @@ function writeToJson(){
     var status;
     if (jQuery("#modal_status").text()=="On") status = 1;
     else status = 0;
+    var tags = [];
+    for (var i=0; i<jQuery("#tag_pool button").length-1; i++) tags.push(jQuery("#tag_pool button")[i].innerHTML);
     events = {
         "id":0,
         "enabled": status,
@@ -230,29 +232,14 @@ function addTag() {
 function input_confirm() {
     if (new_tag_content.length != 0) {
         jQuery("#tag_pool").prepend("<button class=\"tag_button btn btn-default\">" + new_tag_content + "</button>");
-        tags.push(jQuery("#new_tag_input").val());
+        //tags.push(jQuery("#new_tag_input").val());
         //newJsonObj.hashtag.push(jQuery("#new_tag_input").val());
         jQuery("#new_tag_input").remove();
         input_open = false;
         jQuery(".tag_button").click(function (event) {
-            //remove_hashtag_button(event);
-            //console.log(event.target);
             event.target.remove();
         });
     }
-}
-
-function remove_hashtag_button(event)
-{
-    //find the removed hashtag content in newjsonobj
-    var j = 0;
-    for(;j<newJsonObj.hashtag.length;j++)
-    {
-        if(newJsonObj.hashtag[j] == event.currentTarget.innerHTML)
-            break;
-    }
-    newJsonObj.hashtag.splice(j,1);
-    event.currentTarget.remove();
 }
 
 jQuery(document).ready(function() {
