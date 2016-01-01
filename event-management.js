@@ -26,11 +26,11 @@ function showPage(page_num)
   if(current_page == 0)
     jQuery("#previous_button").css("display","none");
   else
-    jQuery("#previous_button").css("display","block");
+    jQuery("#previous_button").css("display","inline");
   if((current_page+1)*ROWS_PER_PAGE >= newJSONObj.events.length)
     jQuery("#next_button").css("display","none");
   else
-    jQuery("#next_button").css("display","block");
+    jQuery("#next_button").css("display","inline");
 }
 
 function previousPage()
