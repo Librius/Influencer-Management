@@ -248,18 +248,18 @@ function writeToJson(){
     var bigImages = jQuery("#big_img_div .chunk_div");
     //var bigImages = jQuery("#big_img_div input[type=file]");
     for(var i=0; i<bigImages.length; i++){
-        events.big_image[i] = {"url": "#","main_title":bigImages[i].children[2].value,"subtitle":bigImages[i].children[3].value,"link":bigImages[i].children[4].value};
+        events.big_image[i] = {"url": jQuery(bigImages[i].children[1]).attr("src"),"main_title":bigImages[i].children[2].value,"subtitle":bigImages[i].children[3].value,"link":bigImages[i].children[4].value};
     }
     var middleImages = jQuery("#middle_img_div .chunk_div");
     for(var i=0; i<middleImages.length; i++){
-        events.middle_image[i] = {"url": "#","main_title":middleImages[i].children[2].value,"subtitle":middleImages[i].children[3].value,"link":middleImages[i].children[4].value};
+        events.middle_image[i] = {"url": jQuery(middleImages[i].children[1]).attr("src"),"main_title":middleImages[i].children[2].value,"subtitle":middleImages[i].children[3].value,"link":middleImages[i].children[4].value};
     }
   
     if(event_id == 0)
     {
       events.id = eventJSON.global_available_id;
       eventJSON.global_available_id++;
-      eventJSON.events.push(jsonObj);
+      eventJSON.events.push(events);
     }
     else
     {
@@ -313,8 +313,8 @@ function createEvent(){
         "time_end":"",
         "brief":"",
         "event_hashtag": [],
-        "big_image":[{"url": "","main_title":"","subtitle":"","link":""},{"url": "","main_title":"","subtitle":"","link":""}],
-        "middle_image":[{"url": "","main_title":"","subtitle":"","link":""},{"url": "","main_title":"","subtitle":"","link":""}]
+        "big_image":[],
+        "middle_image":[]
     };
     readFromJson(emptyJson);
 }
