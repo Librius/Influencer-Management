@@ -11,6 +11,8 @@ var eventJSON;
 var ROWS_PER_PAGE=1;
 var current_page=0;
 
+var sortOrder = 0;//0 means asc, 1 means desc
+
 
 function showPage(page_num)
 {
@@ -47,6 +49,94 @@ function nextPage()
     return;
   current_page++;
   showPage(current_page);
+}
+
+function sortTable(event)
+{
+  var keyword = jQuery(event.target).attr("id");
+  eventJSON.events.sort(function(a,b){
+    if(keyword == "name_head")
+    {
+      if(sortOrder == 0)
+      {
+        if(a.name<b.name)
+          return -1;
+        if(a.name>b.name)
+          return 1;
+        return 0;
+      }
+      else
+      {
+        if(a.name<b.name)
+          return 1;
+        if(a.name>b.name)
+          return -1;
+        return 0;
+      }
+    }
+    if(keyword == "time_begin_head")
+    {
+      if(sortOrder == 0)
+      {
+        if(a.time_begin<b.time_begin)
+          return -1;
+        if(a.time_begin>b.time_begin)
+          return 1;
+        return 0;
+      }
+      else
+      {
+        if(a.time_begin<b.time_begin)
+          return 1;
+        if(a.time_begin>b.time_begin)
+          return -1;
+        return 0;
+      }
+    }
+    if(keyword == "time_end_head")
+    {
+      if(sortOrder == 0)
+      {
+        if(a.time_end<b.time_end)
+          return -1;
+        if(a.time_end>b.time_end)
+          return 1;
+        return 0;
+      }
+      else
+      {
+        if(a.time_end<b.time_end)
+          return 1;
+        if(a.time_end>b.time_end)
+          return -1;
+        return 0;
+      }
+    }
+    if(keyword == "brief_head")
+    {
+      if(sortOrder == 0)
+      {
+        if(a.brief<b.brief)
+          return -1;
+        if(a.brief>b.brief)
+          return 1;
+        return 0;
+      }
+      else
+      {
+        if(a.brief<b.brief)
+          return 1;
+        if(a.brief>b.brief)
+          return -1;
+        return 0;
+      }
+    }
+  });
+  if(sortOrder == 0)
+    sortOrder = 1;
+  else
+    sortOrder = 0;
+  showPage(0);
 }
 
 function UpLoadFile(event)
@@ -182,10 +272,11 @@ function writeToJson(){
       eventJSON.events[j] = events;
     }
     
+    var jsonString = JSON.stringify(eventJSON);
     jQuery.ajax({
       type:"POST",
-      data:{"data":eventJSON},
-      url:"saveevent.php",
+      data:{"data":jsonString},
+      url:"saveeventinfo.php",
       success: function(result)
       {
         var resultJson = JSON.parse(result);

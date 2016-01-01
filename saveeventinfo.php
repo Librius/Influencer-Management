@@ -1,6 +1,7 @@
 <?php
 if(isset($_POST["data"]))
 {
+    $data = json_decode($_POST["data"]);
     for($i = 0;$i<count($data->events);$i++)
     {
         if(!isset($data->events[$i]->name) || trim($data->events[$i]->name) == "")
@@ -41,29 +42,64 @@ if(isset($_POST["data"]))
             echo json_encode($result);
             return;
         }
-        for($j = 0;$j<count($data->events[$i]->blog);$j++)
+        for($j = 0;$j<count($data->events[$i]->big_image);$j++)
         {
             if(!isset($data->events[$i]->big_image[$j]->url) || trim($data->events[$i]->big_image[$j]->url) == "")
             {
-                $result = array("status"=>"error","message"=>"Each blog should have an image.");
+                $result = array("status"=>"error","message"=>"Each image should have an url.");
                 echo json_encode($result);
                 return;
             }
             if(!isset($data->events[$i]->big_image[$j]->main_title) || trim($data->events[$i]->big_image[$j]->main_title) == "")
             {
-                $result = array("status"=>"error","message"=>"Each blog should have a main title.");
+                $result = array("status"=>"error","message"=>"Each image should have a main title.");
                 echo json_encode($result);
                 return;
             }
             if(!isset($data->events[$i]->big_image[$j]->subtitle) || trim($data->events[$i]->big_image[$j]->subtitle) == "")
             {
-                $result = array("status"=>"error","message"=>"Each blog should have a subtitle.");
+                $result = array("status"=>"error","message"=>"Each image should have a subtitle.");
                 echo json_encode($result);
                 return;
             }
             if(!isset($data->events[$i]->big_image[$j]->link) || trim($data->events[$i]->big_image[$j]->link) == "")
             {
-                $result = array("status"=>"error","message"=>"Each blog should have a link.");
+                $result = array("status"=>"error","message"=>"Each image should have a link.");
+                echo json_encode($result);
+                return;
+            }
+        }
+      
+        // check middle images
+        if(!isset($data->events[$i]->middle_image) || count($data->events[$i]->middle_image) == 0)
+        {
+            $result = array("status"=>"error","message"=>"Each event should have at least one middle image.");
+            echo json_encode($result);
+            return;
+        }
+        for($j = 0;$j<count($data->events[$i]->middle_image);$j++)
+        {
+            if(!isset($data->events[$i]->middle_image[$j]->url) || trim($data->events[$i]->middle_image[$j]->url) == "")
+            {
+                $result = array("status"=>"error","message"=>"Each image should have an url.");
+                echo json_encode($result);
+                return;
+            }
+            if(!isset($data->events[$i]->middle_image[$j]->main_title) || trim($data->events[$i]->middle_image[$j]->main_title) == "")
+            {
+                $result = array("status"=>"error","message"=>"Each image should have a main title.");
+                echo json_encode($result);
+                return;
+            }
+            if(!isset($data->events[$i]->middle_image[$j]->subtitle) || trim($data->events[$i]->middle_image[$j]->subtitle) == "")
+            {
+                $result = array("status"=>"error","message"=>"Each image should have a subtitle.");
+                echo json_encode($result);
+                return;
+            }
+            if(!isset($data->events[$i]->middle_image[$j]->link) || trim($data->events[$i]->middle_image[$j]->link) == "")
+            {
+                $result = array("status"=>"error","message"=>"Each image should have a link.");
                 echo json_encode($result);
                 return;
             }
