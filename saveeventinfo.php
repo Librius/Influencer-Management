@@ -68,82 +68,12 @@ if(isset($_POST["data"]))
                 return;
             }
         }
-
-//
-//        if(!isset($data->events[$i]->style) || count($data->events[$i]->style) == 0)
-//        {
-//            $result = array("status"=>"error","message"=>"Each event should have at least one style.");
-//            echo json_encode($result);
-//            return;
-//        }
-//        //check each style
-//        $n = count($data->events[$i]->style);
-//        if ($n!=5) {
-//            $result = array("status"=>"error","message"=>"There should be five images for style.");
-//            echo json_encode($result);
-//            return;
-//        }
-//        for($j = 0;$j<count($data->events[$i]->style);$j++)
-//        {
-//            if(!isset($data->events[$i]->style[$j]->img) || trim($data->events[$i]->style[$j]->img) == "")
-//            {
-//                $result = array("status"=>"error","message"=>"Each style should have a image.");
-//                echo json_encode($result);
-//                return;
-//            }
-////      if(!isset($data->events[$i]->style[$j]->main_title) || trim($data->events[$i]->style[$j]->main_title) == "")
-////      {
-////        $result = array("status"=>"error","message"=>"Each style should have a main title.");
-////        echo json_encode($result);
-////        return;
-////      }
-////      if(!isset($data->events[$i]->style[$j]->subtitle) || trim($data->events[$i]->style[$j]->subtitle) == "")
-////      {
-////        $result = array("status"=>"error","message"=>"Each style should have a subtitle.");
-////        echo json_encode($result);
-////        return;
-////      }
-//            if(!isset($data->events[$i]->style[$j]->link) || trim($data->events[$i]->style[$j]->link) == "")
-//            {
-//                $result = array("status"=>"error","message"=>"Each style should have a link.");
-//                echo json_encode($result);
-//                return;
-//            }
-//        }
-//        if(!isset($data->events[$i]->picks) || count($data->events[$i]->picks) == 0)
-//        {
-//            $result = array("status"=>"error","message"=>"Each event should have at least one pick.");
-//            echo json_encode($result);
-//            return;
-//        }
-//        //check each pick
-//        for($j = 0;$j<count($data->events[$i]->picks);$j++)
-//        {
-//            if(!isset($data->events[$i]->picks[$j]->img) || trim($data->events[$i]->picks[$j]->img) == "")
-//            {
-//                $result = array("status"=>"error","message"=>"Each pick should have an image.");
-//                echo json_encode($result);
-//                return;
-//            }
-//            if(!isset($data->events[$i]->picks[$j]->description) || trim($data->events[$i]->picks[$j]->description) == "")
-//            {
-//                $result = array("status"=>"error","message"=>"Each pick should have a description.");
-//                echo json_encode($result);
-//                return;
-//            }
-//            if(!isset($data->events[$i]->picks[$j]->money) || trim($data->events[$i]->picks[$j]->money) == "")
-//            {
-//                $result = array("status"=>"error","message"=>"Each pick should have a prize.");
-//                echo json_encode($result);
-//                return;
-//            }
-//            if(!isset($data->events[$i]->picks[$j]->link) || trim($data->events[$i]->picks[$j]->link) == "")
-//            {
-//                $result = array("status"=>"error","message"=>"Each pick should have a link.");
-//                echo json_encode($result);
-//                return;
-//            }
-//        }
     }
+
+    $myfile = fopen("eventinfo.txt", "w") or die("Unable to open file!");
+    fwrite($myfile, $_POST["data"]);
+    fclose($myfile);
+    $result = array("status"=>"success","message"=>"OK.");
+    echo json_encode($result);
 }
 ?>
