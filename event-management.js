@@ -259,7 +259,7 @@ function writeToJson(){
     {
       events.id = eventJSON.global_available_id;
       eventJSON.global_available_id++;
-      eventJSON.events.push(jsonObj);
+      eventJSON.events.push(events);
     }
     else
     {
