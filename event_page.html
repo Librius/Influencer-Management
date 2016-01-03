@@ -842,29 +842,6 @@
 
         jQuery('.image-carousel').carousel();
 
-
-        featured_stories_html = "";
-        if (jQuery(window).width() < 992) {
-            for (var i = 0; i < influencersJSONObj.influencers.length; i++) {
-                if (influencersJSONObj.influencers[i].show_curation == 1) {
-                    featured_stories_html += "<div class=\"col-md-12\">" +"<img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_small + "\"}}\" alt=\"\" \/>" + "<div class=\"small-influencer-name\">"+influencersJSONObj.influencers[i].name+"</div>"+"<div class=\"small-enter-store-outter\"><div class=\"small-enter-store\">"+"ENTER STORE"+"</div></div>"+"<\/div>";
-                }
-            }
-        } else {
-            for (var i = 0; i < influencersJSONObj.influencers.length; i++) {
-                if (influencersJSONObj.influencers[i].show_curation == 1) {
-                    if (i % 2 == 0) {
-                        featured_stories_html += "<div class=\"col-md-12\"><img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_big + "\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-left\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> " + influencersJSONObj.influencers[i].name + "<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> " + influencersJSONObj.influencers[i].description + "<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-left\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
-                    }
-                    else {
-                        featured_stories_html += "<div class=\"col-md-12\"><img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_big + "\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-right\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> " + influencersJSONObj.influencers[i].name + "<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> " + influencersJSONObj.influencers[i].description + "<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-right\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
-                    }
-
-                }
-            }
-        }
-        jQuery("#featured_stories").html(featured_stories_html);
-
         if (jQuery( window ).width() < 992) jQuery("#ins_post_div").html(html_content_2);
         else jQuery("#ins_post_div").html(html_content_4);
     });
@@ -872,7 +849,6 @@
     function parseJSON(influencersJSONObj)
     {
         var moreinfluencer_html = "";
-        var featured_stories_html = "";
 
         for(var i= 0;i<influencersJSONObj.influencers.length;i++) {
             //more influencers
@@ -890,30 +866,7 @@
             if (i== influencersJSONObj.influencers.length-1) {
                 moreinfluencer_html += "</div>";
             }
-
-            //featured stories
-            featured_stories_html = "";
-            if (jQuery(window).width() < 992) {
-                for (var i = 0; i < influencersJSONObj.influencers.length; i++) {
-                    if (influencersJSONObj.influencers[i].show_curation == 1) {
-                        featured_stories_html += "<div class=\"col-md-12\">" +"<img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_small + "\"}}\" alt=\"\" \/>" + "<div class=\"small-influencer-name\">"+influencersJSONObj.influencers[i].name+"</div>"+"<div class=\"small-enter-store-outter\"><div class=\"small-enter-store\">"+"ENTER STORE"+"</div></div>"+"<\/div>";
-                    }
-                }
-            } else {
-                for (var i = 0; i < influencersJSONObj.influencers.length; i++) {
-                    if (influencersJSONObj.influencers[i].show_curation == 1) {
-                        if (i % 2 == 0) {
-                            featured_stories_html += "<div class=\"col-md-12\"><img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_big + "\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-left\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> " + influencersJSONObj.influencers[i].name + "<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> " + influencersJSONObj.influencers[i].description + "<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-left\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
-                        }
-                        else {
-                            featured_stories_html += "<div class=\"col-md-12\"><img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_big + "\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-right\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> " + influencersJSONObj.influencers[i].name + "<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> " + influencersJSONObj.influencers[i].description + "<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-right\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
-                        }
-
-                    }
-                }
-            }
         }
-        jQuery("#featured_stories").html(featured_stories_html);
         jQuery("#moreinfluencers-container").html(moreinfluencer_html);
     }
 
