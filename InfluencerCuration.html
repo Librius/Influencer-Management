@@ -232,6 +232,7 @@
             .semitrans-enter-store{height:25%;}
         }
     </style>
+    <!--to comment when on server-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 </head>
 <body>
@@ -409,41 +410,46 @@
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script type="text/javascript">
 
-    var influencersJSONObj, html_content_4="", html_content_2="";
+    var influencersJSONObj, instagraminOBJ, html_content_4="", html_content_2="";
 
-    jQuery(document).ready(function(){
-        console.log("document ready");
+    function getInstagram(){
         jQuery.ajax({
             type:"GET",
+//            to change when on servers
 //            url:"getlink.php",
-            url:"Influencer/getlink.php",
+            url:"../influencer/getlink.php",
             success:function(result)
             {
-              var instagraminOBJ = JSON.parse(result);
-              var html_content="";
+                instagraminOBJ = JSON.parse(result);
+
+//                console.log(instagraminOBJ);
+//
+//                for (var i=0; i<instagraminOBJ; i++)
+//                    console.log(instagraminOBJ[i].html);
+                var html_content="";
 //                var n;
 //                console.log(jQuery( window ).width());
 //                if (jQuery( window ).width() < 1024) n = 2;
 //                else n = 4;
-              for(var i=0; i<instagraminOBJ.length; i++)
-              {
-                  if (i%4==0)
-                  {
-                      if(i == 0)
-                      {
-                          html_content_4+="<div class='Row'>";
-                      }
-                      else
-                      {
-                          html_content_4+="</div><div class='Row'>";
-                      }
-                  }
-                  html_content_4 += "<div style=\"margin:15px 0;\" class=\"col-md-3 col-sm-6 col-xs-6\">" + instagraminOBJ[i].html + "</div>";
-                  if(i ==instagraminOBJ.length-1)
-                  {
-                      html_content_4 += "</div>";
-                  }
-              }
+                for(var i=0; i<instagraminOBJ.length; i++)
+                {
+                    if (i%4==0)
+                    {
+                        if(i == 0)
+                        {
+                            html_content_4+="<div class='row'>";
+                        }
+                        else
+                        {
+                            html_content_4+="</div><div class='row'>";
+                        }
+                    }
+                    html_content_4 += "<div style=\"margin:15px 0;\" class=\"col-md-3 col-sm-6 col-xs-6\">" + instagraminOBJ[i].html + "</div>";
+                    if(i ==instagraminOBJ.length-1)
+                    {
+                        html_content_4 += "</div>";
+                    }
+                }
 
                 for(var i=0; i<instagraminOBJ.length; i++)
                 {
@@ -451,11 +457,11 @@
                     {
                         if(i == 0)
                         {
-                            html_content_2 += "<div class='Row'>";
+                            html_content_2 += "<div class='row'>";
                         }
                         else
                         {
-                            html_content_2 += "</div><div class='Row'>";
+                            html_content_2 += "</div><div class='row'>";
                         }
                     }
                     html_content_2 += "<div style=\"margin:15px 0;\" class=\"col-md-3 col-sm-6 col-xs-6\">" + instagraminOBJ[i].html + "</div>";
@@ -467,25 +473,36 @@
 
                 if (jQuery( window ).width() < 992) jQuery("#ins_post_div").html(html_content_2);
                 else jQuery("#ins_post_div").html(html_content_4);
+
+                console.log("html 2");
+                console.log(html_content_2);
+                console.log("html 4");
+                console.log(html_content_4)
             },
             error:function(xhr, status, error)
             {
-              //alert("load instagram error!");
+                //alert("load instagram error!");
             }
         });
+    }
+    jQuery(document).ready(function(){
+        console.log("document ready");
+
+        getInstagram();
 
         jQuery.ajax({
           type:"GET",
+//            to change when on servers
 //          url:"getinfluencerinfo.php",
-          url:"Influencer/getinfluencerinfo.php",
+          url:"../influencer/getinfluencerinfo.php",
           success:function(result)
           {
             influencersJSONObj = JSON.parse(result);
             parseJSON(influencersJSONObj);
           },
-          error:function()
+          error:function(xhr, status, error)
           {
-              alert("error!");
+              alert("getinfluencerinfo.php error!"+xhr.responseText);
           }
       });
     });
@@ -514,8 +531,15 @@
         }
         jQuery("#featured_stories").html(featured_stories_html);
 
+//        html_content_2="";
+//        html_content_4="";
+//        getInstagram();
+
+        console.log(instagraminOBJ);
+
         if (jQuery( window ).width() < 992) jQuery("#ins_post_div").html(html_content_2);
         else jQuery("#ins_post_div").html(html_content_4);
+
     });
 
     function parseJSON(influencersJSONObj)
