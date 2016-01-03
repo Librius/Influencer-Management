@@ -745,6 +745,31 @@
         jQuery('.image-carousel').carousel();
 
 //        console.log("document ready");
+      
+      var eventObj;
+      jQuery.ajax({
+        type:"GET",
+        url:"geteventinfo.php",
+        success:function(result)
+        {
+          var url = location.search;
+          var event_id = parseInt(url.substr(url.indexOf("=")+1));
+          var allJSON = JSON.parse(result);
+          for(var i = 0;i<allJSON.events.length;i++)
+          {
+              if(event_id == allJSON.events[i].id)
+              {
+                  eventObj = allJSON.events[i];
+                  break;
+              }
+          }
+        },
+        error:function()
+        {
+          alert("error");
+        }
+      });
+      
         jQuery.ajax({
             type:"GET",
             url:"getlink.php",
@@ -916,6 +941,8 @@
         jQuery("#featured_stories").html(featured_stories_html);
         jQuery("#moreinfluencers-container").html(moreinfluencer_html);
     }
+  
+  
 
     function seeMoreInfluencers(event)
     {
