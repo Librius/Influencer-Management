@@ -3,10 +3,29 @@
   $taglist = array();
   $tokenlist = array();
 
-  $influencerfile = fopen("influencerinfo.txt", "r") or die("Unable to open influencerinfo.txt!");
-  $content = fread($influencerfile,filesize("influencerinfo.txt"));
-  $json = json_decode($content);
-  $taglist = $json->hashtag;
+  if(isset($_GET["event_id"]))
+  {
+    $eventfile = fopen("eventinfo.txt", "r") or die("Unable to open eventinfo.txt!");
+    $content = fread($eventfile,filesize("eventinfo.txt"));
+    $json = json_decode($content);
+    $i = 0;
+    for(;$i<count($json->events);$i++)
+    {
+      if($json->events[$i]->id==$_GET["event_id"])
+      {
+        break;
+      }
+    }
+    $taglist = $json->events[$i]->event_hashtag;
+  }
+  else
+  {
+    $influencerfile = fopen("influencerinfo.txt", "r") or die("Unable to open influencerinfo.txt!");
+    $content = fread($influencerfile,filesize("influencerinfo.txt"));
+    $json = json_decode($content);
+    $taglist = $json->hashtag;
+  }
+
 
   $handle = fopen("tokenlist.txt", "r") or die("Unable to open tokenlist.txt!");
   if ($handle) {
@@ -47,24 +66,28 @@
       }
     }
   }
-  if($json->sort_by == "time")
+  if(!isset($_GET["event_id"]))
   {
-    usort($html, function($a, $b) {
-      return $b['createtime'] - $a['createtime'];
-    });
-  }
-  else if($json->sort_by == "like")
-  {
-    usort($html, 'likecmp');
-  }
+    if($json->sort_by == "time")
+    {
+      usort($html, function($a, $b) {
+        return $b['createtime'] - $a['createtime'];
+      });
+    }
+    else if($json->sort_by == "like")
+    {
+      usort($html, 'likecmp');
+    }
 
-  function likecmp($a, $b)
-  {
-      if ($a['likes'] == $b['likes']) {
-          return 0;
-      }
-      return ($a['likes'] < $b['likes']) ? 1 : -1;
+    function likecmp($a, $b)
+    {
+        if ($a['likes'] == $b['likes']) {
+            return 0;
+        }
+        return ($a['likes'] < $b['likes']) ? 1 : -1;
+    }
   }
+  
   echo json_encode($html);
   
 ?>

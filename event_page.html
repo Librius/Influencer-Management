@@ -391,7 +391,7 @@
     <div id="image-carousel" class="carousel slide carousel-fade" data-ride="carousel" style="margin: -10px -49px 0px;">
 
         <!-- Carousel items -->
-        <div class="carousel-inner">
+        <div class="carousel-inner" id="big_image_div">
             <div class="item" id="cr1">
                 <div>
                     <img class="carousel-img" src="https://www.evestemptation.com:443/media/wysiwyg/homepage/cr1.jpg" alt="" pagespeed_url_hash="3376258919" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
@@ -634,7 +634,7 @@
             <span class="h4 subheader_block-span2">SHOW IMAGES</span>
             <span class="subheader_block-span3"></span>
         </div>
-        <div id="style-container">
+        <div id="mid_image_div">
             <div class="row">
                 <div class="col-md-6 top-bot-padding2 styleImg">
                     <a href="#">
@@ -695,7 +695,7 @@
     </div>
     <div class="col-md-12" style="text-align:center;">
         <div class="buttom-border">
-            <button class="influence-button" type="button">SEE MORE PICTURES</button>
+            <button class="influence-button" type="button" onclick="seeMorePictures(event)">SEE MORE PICTURES</button>
         </div>
     </div>
 </div>
@@ -743,13 +743,14 @@
         });
 
         jQuery('.image-carousel').carousel();
-
+      
 //        console.log("document ready");
       
       var eventObj;
       jQuery.ajax({
         type:"GET",
         url:"geteventinfo.php",
+        async: false,
         success:function(result)
         {
           var url = location.search;
@@ -763,6 +764,7 @@
                   break;
               }
           }
+          customizeEvent(eventObj);
         },
         error:function()
         {
@@ -773,6 +775,7 @@
         jQuery.ajax({
             type:"GET",
             url:"getlink.php",
+            data:{"event_id":eventObj.id},
             success:function(result)
             {
                 var instagraminOBJ = JSON.parse(result);
@@ -787,11 +790,11 @@
                     {
                         if(i == 0)
                         {
-                            html_content_4+="<div class='Row'>";
+                            html_content_4+="<div class='row'>";
                         }
                         else
                         {
-                            html_content_4+="</div><div class='Row'>";
+                            html_content_4+="</div><div class='row'>";
                         }
                     }
                     html_content_4 += "<div style=\"margin:15px 0;\" class=\"col-md-3 col-sm-6 col-xs-6\">" + instagraminOBJ[i].html + "</div>";
@@ -807,11 +810,11 @@
                     {
                         if(i == 0)
                         {
-                            html_content_2 += "<div class='Row'>";
+                            html_content_2 += "<div class='row'>";
                         }
                         else
                         {
-                            html_content_2 += "</div><div class='Row'>";
+                            html_content_2 += "</div><div class='row'>";
                         }
                     }
                     html_content_2 += "<div style=\"margin:15px 0;\" class=\"col-md-3 col-sm-6 col-xs-6\">" + instagraminOBJ[i].html + "</div>";
@@ -836,7 +839,7 @@
             success:function(result)
             {
                 influencersJSONObj = JSON.parse(result);
-                parseJSON(influencersJSONObj);
+                showInfluencer(influencersJSONObj);
             },
             error:function()
             {
@@ -871,7 +874,7 @@
         else jQuery("#ins_post_div").html(html_content_4);
     });
 
-    function parseJSON(influencersJSONObj)
+    function showInfluencer(influencersJSONObj)
     {
         var moreinfluencer_html = "";
 
@@ -895,6 +898,36 @@
         jQuery("#moreinfluencers-container").html(moreinfluencer_html);
     }
   
+    function customizeEvent(eventObj)
+    {
+      var big_image_html = "";
+      for(var i = 0;i<eventObj.big_image.length;i++)
+      {
+        if(i == 0)
+          big_image_html+="<div class=\"item active\"><div><a href='"+eventObj.big_image[i].link+"'><img class=\"carousel-img\" src=\""+eventObj.big_image[i].url+"\" alt=\"\" pagespeed_url_hash=\"3376258919\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"></img></a><div class=\"semitrans-box-above\"><div class=\"semitrans-subbox\"><span class=\"influencer-name1\"> "+eventObj.big_image[i].main_title+"<\/span><br><span class=\"influencer-name2\"> "+eventObj.big_image[i].subtitle+"<\/span><\/div><\/div><\/div><\/div>";
+        else
+          big_image_html+="<div class=\"item\"><div><a href='"+eventObj.big_image[i].link+"'><img class=\"carousel-img\" src=\""+eventObj.big_image[i].url+"\" alt=\"\" pagespeed_url_hash=\"3376258919\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"></img></a><div class=\"semitrans-box-above\"><div class=\"semitrans-subbox\"><span class=\"influencer-name1\"> "+eventObj.big_image[i].main_title+"<\/span><br><span class=\"influencer-name2\"> "+eventObj.big_image[i].subtitle+"<\/span><\/div><\/div><\/div><\/div>";
+      }
+      jQuery("#big_image_div").html(big_image_html);
+      
+      
+      var mid_image_html = "";
+      for(var i = 0;i<eventObj.middle_image.length;i++)
+      {
+        if(i%2 == 0)
+        {
+          if(i == 0)
+            mid_image_html+="<div class='row' style='display:block;'>";
+          else
+            mid_image_html+="</div><div class='row' style='display:none;'>";
+        }
+        mid_image_html+="<div class=\"col-lg-6 col-md-6 col-sm-12 col-xs-12 top-bot-padding2 styleImg\"><a href=\""+eventObj.middle_image[i].link+"\"><img class=\"image-auto-resizing\" src=\""+eventObj.middle_image[i].url+"\" alt=\"\" pagespeed_url_hash=\"4266083714\" onload=\"pagespeed.CriticalImages.checkImageForCriticality(this);\"\/><div class=\"semitrans-box-above\"><div class=\"semitrans-subbox\"><span class=\"influencer-name1-img\"> "+eventObj.middle_image[i].main_title+"<\/span><br><span class=\"influencer-name2-img\"> "+eventObj.middle_image[i].subtitle+"<\/span><\/div><\/div><\/a><\/div>";
+        if(i == eventObj.middle_image.length-1)
+          mid_image_html+="</div>";
+      }
+      jQuery("#mid_image_div").html(mid_image_html);
+    }
+  
   
 
     function seeMoreInfluencers(event)
@@ -915,6 +948,26 @@
             moreInfluencersList[i].style.display = "block";
         }
     }
+  
+    function seeMorePictures(event)
+    {
+      var morePictureList = document.getElementById("mid_image_div").getElementsByClassName("row");
+        var i = 0;
+        for(;i<morePictureList.length;i++)
+        {
+            if(morePictureList[i].style.display=="none")
+                break;
+        }
+        if(i == morePictureList.length)
+        {
+            event.target.parentNode.style.display = "none";
+        }
+        else
+        {
+            morePictureList[i].style.display = "block";
+        }
+    }
+  
 </script>
 </body>
 </html>
