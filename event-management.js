@@ -254,7 +254,7 @@ function writeToJson(){
         events.big_image[i] = {"url": jQuery(bigImages[i].children[1]).attr("src"),"main_title":bigImages[i].children[2].value,"subtitle":bigImages[i].children[3].value,"link":bigImages[i].children[4].value};
     }
     var middleImages = jQuery("#middle_img_div .chunk_div");
-    for(var i=0; i<middleImages.length; i++){
+    for(var i=0; i<middleI8mages.length; i++){
         events.middle_image[i] = {"url": jQuery(middleImages[i].children[1]).attr("src"),"main_title":middleImages[i].children[2].value,"subtitle":middleImages[i].children[3].value,"link":middleImages[i].children[4].value};
     }
   

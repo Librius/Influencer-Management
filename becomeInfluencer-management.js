@@ -207,4 +207,31 @@ function writeToJson()
   newJSON.influencers[i].email = jQuery("#modal_email_input").val();
   newJSON.influencers[i].status = jQuery("#modal_status_input").val();
   
+  var jsonString = JSON.stringify(newJSON);
+  jQuery.ajax({
+    type:"POST",
+    data:{"data":jsonString},
+    url:"saveallinfluencers.php",
+    success: function(result)
+    {
+      var resultJson = JSON.parse(result);
+      if(resultJson.status == "error")
+      {
+        alert(resultJson.message);
+        newJSON = oldJSON;
+        return;
+      }
+      else
+      {
+        alert("Update succeeded!");
+        jQuery('#myModal').modal('hide');
+        oldJSON = newJSON;
+        showPage(0);
+      }
+    },
+    error:function()
+    {
+      alert("error!");
+    }
+  });
 }
