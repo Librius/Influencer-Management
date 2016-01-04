@@ -7,6 +7,7 @@ var events;
 //var tags = [];
 
 var eventJSON;
+var oldJSON;
 
 var ROWS_PER_PAGE=1;
 var current_page=0;
@@ -40,7 +41,6 @@ function previousPage()
     return;
   current_page--;
   showPage(current_page);
-
 }
 
 function nextPage()
@@ -286,12 +286,14 @@ function writeToJson(){
         if(resultJson.status == "error")
         {
           alert(resultJson.message);
+          eventJSON = oldJSON;
           return;
         }
         else
         {
           alert("Update succeeded!");
           jQuery('#myModal').modal('hide');
+          oldJSON = eventJSON;
           showPage(0);
         }
       },
@@ -369,6 +371,7 @@ jQuery(document).ready(function() {
     success:function(result)
     {
       eventJSON = JSON.parse(result);
+      oldJSON = JSON.parse(result);
       showPage(0);
     },
     error:function()

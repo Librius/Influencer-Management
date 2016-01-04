@@ -16,14 +16,14 @@
     <table class="table" id="myTable">
         <thead>
         <tr>
-            <th>Name</th>
-            <th>Country</th>
-            <th>Application Time</th>
-            <th>Status</th>
+            <th id="name_head" onclick="sortTable(event)">Name</th>
+            <th id="country_head" onclick="sortTable(event)">Country</th>
+            <th id="apply_time_head" onclick="sortTable(event)">Application Time</th>
+            <th id="status_head" onclick="sortTable(event)">Status</th>
             <th>Operations</th>
         </tr>
         </thead>
-        <tbody>
+        <tbody id="tableBody">
         <tr>
             <td>Influencer Name</td>
             <td>USA</td>
@@ -92,6 +92,10 @@
                             <tr>
                                 <td>Youtube Account:</td>
                                 <td><input id="modal_youtube_input" type="text" readonly></td>
+                            </tr>
+                            <tr>
+                                <td>Other Account:</td>
+                                <td><input id="modal_other_input" type="text" readonly></td>
                             </tr>
                             <tr>
                                 <td>Country:</td>
@@ -423,7 +427,7 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_button">Save</button>
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_button" onclick="writeToJson()">Save</button>
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                 </div>
             </div>
@@ -436,6 +440,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
         integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
         crossorigin="anonymous"></script>
-<script type="text/javascript" src="event-management.js"></script>
+<script type="text/javascript" src="becomeInfluencer-management.js"></script>
 </body>
 </html>
