@@ -215,6 +215,9 @@ function readFromJson(eventsJsonObj){
     jQuery("#modal_intro").val(eventsJsonObj.brief);
     jQuery("#tag_pool").html("<button id=\"add_tag_button\" class=\"btn btn-primary\" onclick=\"addTag()\">Add</button>");
     for(var i=0; i<eventsJsonObj.event_hashtag.length; i++) jQuery("#tag_pool").prepend("<button class=\"tag_button btn btn-default\">" + eventsJsonObj.event_hashtag[i] + "</button>");
+    jQuery(".tag_button").click(function (event) {
+        event.target.remove();
+    });
     jQuery("#big_img_div").html("");
     for(var i=0; i<eventsJsonObj.big_image.length; i++) {
         var bigImgJson = eventsJsonObj.big_image[i]
@@ -288,6 +291,7 @@ function writeToJson(){
         else
         {
           alert("Update succeeded!");
+          jQuery('#myModal').modal('hide');
           showPage(0);
         }
       },
