@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="event-management.css">
+    <title>Influencer Management</title>
+</head>
+<body>
+
+<h3>Influencer Management</h3>
+
+<div class="container">
+
+    <table class="table" id="myTable">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Application Time</th>
+            <th>Status</th>
+            <th>Operations</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Influencer Name</td>
+            <td>USA</td>
+            <td>2015-01-01T01:00</td>
+            <td>Pending</td>
+            <td><button class="btn btn-link" data-toggle="modal" data-target="#myModal">More</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="container">
+    <nav>
+        <ul class="pager">
+            <li><button id="previous_button" class="btn btn-secondary" onclick="previousPage()">Previous</button></li>
+            <li><button id="next_button" class="btn btn-secondary" onclick="nextPage()">Next</button></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="container">
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <!--Modal Header-->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Influencer Details</h4>
+                </div>
+
+                <div class="modal-body">
+
+                    <!--<div class="modal-row"><span id="modal_first_name"></span></div>-->
+                    <!--&lt;!&ndash;status&ndash;&gt;-->
+                    <!--<div class="modal-row">Status:&nbsp;<span id="modal_status">On</span>-->
+                        <!--<button class="btn btn-link" id="status_control_button">disable</button>-->
+                    <!--</div>-->
+
+                    <!--name-->
+                    <div class="modal-row"><label>First Name:</label><input id="modal_first_name_input" type="text" readonly></div>
+                    <div class="modal-row"><label>Last Name:</label><input id="modal_last_name_input" type="text" readonly></div>
+                    <div class="modal-row"><label>Blog URL:</label><input id="modal_blog_input" type="text" readonly></div>
+                    <div class="modal-row"><label>Facebook Account:</label><input id="modal_facebook_input" type="text" readonly></div>
+                    <div class="modal-row"><label>Instagram Account:</label><input id="modal_instagram_input" type="text" readonly></div>
+                    <div class="modal-row"><label>Youtube Account:</label><input id="modal_youtube_input" type="text" readonly></div>
+                    <div class="modal-row"><label>Country:</label><input id="modal_country_input" type="text" readonly></div>
+                    <div class="modal-row"><label>Email:</label><input id="modal_email_input" type="email" readonly></div>
+
+                    <!--&lt;!&ndash;time_begin&ndash;&gt;-->
+                    <!--<div class="modal-row">Begin Time:&nbsp;&nbsp;<input id="modal_begin_time" type="datetime-local" name="begin-time"></div>-->
+
+                    <!--&lt;!&ndash;time_end&ndash;&gt;-->
+                    <!--<div class="modal-row">End Time:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input id="modal_end_time" type="datetime-local" name="end-time"></div>-->
+
+                    <!--&lt;!&ndash;brief intro&ndash;&gt;-->
+                    <!--<div class="modal-row">-->
+                        <!--<h5>Brief Introduction</h5>-->
+                        <!--<textarea id="modal_intro" style="width: 100%"></textarea>-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash;tag pool&ndash;&gt;-->
+                    <!--<div class="modal-row">-->
+                        <!--<h5>Use the following hashtags:</h5>-->
+                        <!--<div id="tag_pool">-->
+                            <!--<button id="add_tag_button" class="btn btn-primary">Add</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash;big image&ndash;&gt;-->
+                    <!--<div class="modal-row">-->
+                        <!--<h5>Big Images</h5>-->
+                        <!--<div id="big_img_div">-->
+                            <!--&lt;!&ndash;<div class="chunk_div">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<input type="file" class="fileUpload" onchange='UpLoadFile(event)'>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<img class="entry_picture" src="" alt="No file chosen"/>&ndash;&gt;-->
+                            <!--&lt;!&ndash;Main Title: <input type="text" class="entry_input" value="">&ndash;&gt;-->
+                            <!--&lt;!&ndash;Subtitle: <input type="text" class="entry_input" value="">&ndash;&gt;-->
+                            <!--&lt;!&ndash;Link: <input type="text" class="entry_input" value="">&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--</div>-->
+                        <!--<div class="button_right_wrapper">-->
+                            <!--<button id="big_img_add_btn" class="btn btn-primary">Add</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <!--&lt;!&ndash;middle image&ndash;&gt;-->
+                    <!--<div class="modal-row">-->
+                        <!--<h5>Middle Images</h5>-->
+                        <!--<div id="middle_img_div">-->
+                            <!--&lt;!&ndash;<div class="chunk_div">&ndash;&gt;-->
+                            <!--&lt;!&ndash;<input type="file" class="fileUpload" onchange='UpLoadFile(event)'>&ndash;&gt;-->
+                            <!--&lt;!&ndash;<img class="entry_picture" src="" alt="No file chosen"/>&ndash;&gt;-->
+                            <!--&lt;!&ndash;Main Title: <input type="text" class="entry_input" value="">&ndash;&gt;-->
+                            <!--&lt;!&ndash;Subtitle: <input type="text" class="entry_input" value="">&ndash;&gt;-->
+                            <!--&lt;!&ndash;Link: <input type="text" class="entry_input" value="">&ndash;&gt;-->
+                            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+                        <!--</div>-->
+                        <!--<div class="button_right_wrapper">-->
+                            <!--<button id="middle_img_add_btn" class="btn btn-primary">Add</button>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" id="save_button">Save</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+        integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" src="event-management.js"></script>
+</body>
+</html>

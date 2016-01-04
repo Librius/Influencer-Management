@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Event Page</title>
+    <title>About Inflencer</title>
     <style>
 
         /*carousel*/
@@ -548,79 +548,79 @@
         jQuery('.image-carousel').carousel();
 
 //        console.log("document ready");
-        jQuery.ajax({
-            type:"GET",
-            url:"getlink.php",
-            success:function(result)
-            {
-                var instagraminOBJ = JSON.parse(result);
-                var html_content="";
-//                var n;
-//                console.log(jQuery( window ).width());
-//                if (jQuery( window ).width() < 1024) n = 2;
-//                else n = 4;
-                for(var i=0; i<instagraminOBJ.length; i++)
-                {
-                    if (i%4==0)
-                    {
-                        if(i == 0)
-                        {
-                            html_content_4+="<div class='Row'>";
-                        }
-                        else
-                        {
-                            html_content_4+="</div><div class='Row'>";
-                        }
-                    }
-                    html_content_4 += "<div style=\"margin:15px 0;\" class=\"col-md-3 col-sm-6 col-xs-6\">" + instagraminOBJ[i].html + "</div>";
-                    if(i ==instagraminOBJ.length-1)
-                    {
-                        html_content_4 += "</div>";
-                    }
-                }
-
-                for(var i=0; i<instagraminOBJ.length; i++)
-                {
-                    if (i%2==0)
-                    {
-                        if(i == 0)
-                        {
-                            html_content_2 += "<div class='Row'>";
-                        }
-                        else
-                        {
-                            html_content_2 += "</div><div class='Row'>";
-                        }
-                    }
-                    html_content_2 += "<div style=\"margin:15px 0;\" class=\"col-md-3 col-sm-6 col-xs-6\">" + instagraminOBJ[i].html + "</div>";
-                    if(i ==instagraminOBJ.length-1)
-                    {
-                        html_content_2 += "</div>";
-                    }
-                }
-
-                if (jQuery( window ).width() < 992) jQuery("#ins_post_div").html(html_content_2);
-                else jQuery("#ins_post_div").html(html_content_4);
-            },
-            error:function(xhr, status, error)
-            {
-                //alert("load instagram error!");
-            }
-        });
-
-        jQuery.ajax({
-            type:"GET",
-            url:"getinfluencerinfo.php",
-            success:function(result)
-            {
-                influencersJSONObj = JSON.parse(result);
-                parseJSON(influencersJSONObj);
-            },
-            error:function()
-            {
-                alert("error!");
-            }
-        });
+//        jQuery.ajax({
+//            type:"GET",
+//            url:"getlink.php",
+//            success:function(result)
+//            {
+//                var instagraminOBJ = JSON.parse(result);
+//                var html_content="";
+////                var n;
+////                console.log(jQuery( window ).width());
+////                if (jQuery( window ).width() < 1024) n = 2;
+////                else n = 4;
+//                for(var i=0; i<instagraminOBJ.length; i++)
+//                {
+//                    if (i%4==0)
+//                    {
+//                        if(i == 0)
+//                        {
+//                            html_content_4+="<div class='Row'>";
+//                        }
+//                        else
+//                        {
+//                            html_content_4+="</div><div class='Row'>";
+//                        }
+//                    }
+//                    html_content_4 += "<div style=\"margin:15px 0;\" class=\"col-md-3 col-sm-6 col-xs-6\">" + instagraminOBJ[i].html + "</div>";
+//                    if(i ==instagraminOBJ.length-1)
+//                    {
+//                        html_content_4 += "</div>";
+//                    }
+//                }
+//
+//                for(var i=0; i<instagraminOBJ.length; i++)
+//                {
+//                    if (i%2==0)
+//                    {
+//                        if(i == 0)
+//                        {
+//                            html_content_2 += "<div class='Row'>";
+//                        }
+//                        else
+//                        {
+//                            html_content_2 += "</div><div class='Row'>";
+//                        }
+//                    }
+//                    html_content_2 += "<div style=\"margin:15px 0;\" class=\"col-md-3 col-sm-6 col-xs-6\">" + instagraminOBJ[i].html + "</div>";
+//                    if(i ==instagraminOBJ.length-1)
+//                    {
+//                        html_content_2 += "</div>";
+//                    }
+//                }
+//
+//                if (jQuery( window ).width() < 992) jQuery("#ins_post_div").html(html_content_2);
+//                else jQuery("#ins_post_div").html(html_content_4);
+//            },
+//            error:function(xhr, status, error)
+//            {
+//                //alert("load instagram error!");
+//            }
+//        });
+//
+//        jQuery.ajax({
+//            type:"GET",
+//            url:"getinfluencerinfo.php",
+//            success:function(result)
+//            {
+//                influencersJSONObj = JSON.parse(result);
+//                parseJSON(influencersJSONObj);
+//            },
+//            error:function()
+//            {
+//                alert("error!");
+//            }
+//        });
     });
 
     jQuery(window).resize(function(){
@@ -644,100 +644,74 @@
         });
 
         jQuery('.image-carousel').carousel();
-
-
-        featured_stories_html = "";
-        if (jQuery(window).width() < 992) {
-            for (var i = 0; i < influencersJSONObj.influencers.length; i++) {
-                if (influencersJSONObj.influencers[i].show_curation == 1) {
-                    featured_stories_html += "<div class=\"col-md-12\">" +"<img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_small + "\"}}\" alt=\"\" \/>" + "<div class=\"small-influencer-name\">"+influencersJSONObj.influencers[i].name+"</div>"+"<div class=\"small-enter-store-outter\"><div class=\"small-enter-store\">"+"ENTER STORE"+"</div></div>"+"<\/div>";
-                }
-            }
-        } else {
-            for (var i = 0; i < influencersJSONObj.influencers.length; i++) {
-                if (influencersJSONObj.influencers[i].show_curation == 1) {
-                    if (i % 2 == 0) {
-                        featured_stories_html += "<div class=\"col-md-12\"><img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_big + "\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-left\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> " + influencersJSONObj.influencers[i].name + "<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> " + influencersJSONObj.influencers[i].description + "<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-left\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
-                    }
-                    else {
-                        featured_stories_html += "<div class=\"col-md-12\"><img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_big + "\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-right\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> " + influencersJSONObj.influencers[i].name + "<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> " + influencersJSONObj.influencers[i].description + "<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-right\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
-                    }
-
-                }
-            }
-        }
-        jQuery("#featured_stories").html(featured_stories_html);
-
-        if (jQuery( window ).width() < 992) jQuery("#ins_post_div").html(html_content_2);
-        else jQuery("#ins_post_div").html(html_content_4);
     });
 
-    function parseJSON(influencersJSONObj)
-    {
-        var moreinfluencer_html = "";
-        var featured_stories_html = "";
+//    function parseJSON(influencersJSONObj)
+//    {
+//        var moreinfluencer_html = "";
+//        var featured_stories_html = "";
+//
+//        for(var i= 0;i<influencersJSONObj.influencers.length;i++) {
+//            //more influencers
+//            if (i % 12 == 0) {
+//                if (i == 0) {
+//                    moreinfluencer_html += "<div class='MoreInfluencersDiv' style='display:block;'>";
+//                }
+//                else {
+//                    moreinfluencer_html += "</div><div class='MoreInfluencersDiv' style='display:none;'>";
+//                }
+//            }
+//
+//            moreinfluencer_html += "<div class=\"col-md-2 col-xs-3 top-bot-padding\"><div class=\"influencer-img\"><a href='" + window.location.href.split('?')[0] + "?id=" + influencersJSONObj.influencers[i].id + "'><img class=\"influencer-icon img-circle\" src=\"" + influencersJSONObj.influencers[i].profile_icon + "\" alt=\"" + influencersJSONObj.influencers[i].name + "\"\/></a><\/div><\/div>";
+//
+//            if (i== influencersJSONObj.influencers.length-1) {
+//                moreinfluencer_html += "</div>";
+//            }
+//
+//            //featured stories
+//            featured_stories_html = "";
+//            if (jQuery(window).width() < 992) {
+//                for (var i = 0; i < influencersJSONObj.influencers.length; i++) {
+//                    if (influencersJSONObj.influencers[i].show_curation == 1) {
+//                        featured_stories_html += "<div class=\"col-md-12\">" +"<img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_small + "\"}}\" alt=\"\" \/>" + "<div class=\"small-influencer-name\">"+influencersJSONObj.influencers[i].name+"</div>"+"<div class=\"small-enter-store-outter\"><div class=\"small-enter-store\">"+"ENTER STORE"+"</div></div>"+"<\/div>";
+//                    }
+//                }
+//            } else {
+//                for (var i = 0; i < influencersJSONObj.influencers.length; i++) {
+//                    if (influencersJSONObj.influencers[i].show_curation == 1) {
+//                        if (i % 2 == 0) {
+//                            featured_stories_html += "<div class=\"col-md-12\"><img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_big + "\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-left\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> " + influencersJSONObj.influencers[i].name + "<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> " + influencersJSONObj.influencers[i].description + "<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-left\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
+//                        }
+//                        else {
+//                            featured_stories_html += "<div class=\"col-md-12\"><img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_big + "\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-right\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> " + influencersJSONObj.influencers[i].name + "<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> " + influencersJSONObj.influencers[i].description + "<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-right\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
+//                        }
+//
+//                    }
+//                }
+//            }
+//        }
+//        jQuery("#featured_stories").html(featured_stories_html);
+//        jQuery("#moreinfluencers-container").html(moreinfluencer_html);
+//    }
 
-        for(var i= 0;i<influencersJSONObj.influencers.length;i++) {
-            //more influencers
-            if (i % 12 == 0) {
-                if (i == 0) {
-                    moreinfluencer_html += "<div class='MoreInfluencersDiv' style='display:block;'>";
-                }
-                else {
-                    moreinfluencer_html += "</div><div class='MoreInfluencersDiv' style='display:none;'>";
-                }
-            }
-
-            moreinfluencer_html += "<div class=\"col-md-2 col-xs-3 top-bot-padding\"><div class=\"influencer-img\"><a href='" + window.location.href.split('?')[0] + "?id=" + influencersJSONObj.influencers[i].id + "'><img class=\"influencer-icon img-circle\" src=\"" + influencersJSONObj.influencers[i].profile_icon + "\" alt=\"" + influencersJSONObj.influencers[i].name + "\"\/></a><\/div><\/div>";
-
-            if (i== influencersJSONObj.influencers.length-1) {
-                moreinfluencer_html += "</div>";
-            }
-
-            //featured stories
-            featured_stories_html = "";
-            if (jQuery(window).width() < 992) {
-                for (var i = 0; i < influencersJSONObj.influencers.length; i++) {
-                    if (influencersJSONObj.influencers[i].show_curation == 1) {
-                        featured_stories_html += "<div class=\"col-md-12\">" +"<img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_small + "\"}}\" alt=\"\" \/>" + "<div class=\"small-influencer-name\">"+influencersJSONObj.influencers[i].name+"</div>"+"<div class=\"small-enter-store-outter\"><div class=\"small-enter-store\">"+"ENTER STORE"+"</div></div>"+"<\/div>";
-                    }
-                }
-            } else {
-                for (var i = 0; i < influencersJSONObj.influencers.length; i++) {
-                    if (influencersJSONObj.influencers[i].show_curation == 1) {
-                        if (i % 2 == 0) {
-                            featured_stories_html += "<div class=\"col-md-12\"><img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_big + "\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-left\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> " + influencersJSONObj.influencers[i].name + "<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> " + influencersJSONObj.influencers[i].description + "<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-left\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
-                        }
-                        else {
-                            featured_stories_html += "<div class=\"col-md-12\"><img class=\"coverfull\" src=\"" + influencersJSONObj.influencers[i].curation_image_big + "\"}}\" alt=\"\" \/><div class=\"semitrans-box-above-right\"><div class=\"semitrans-subbox\"><span class=\"influencer-name\"> " + influencersJSONObj.influencers[i].name + "<\/span><\/div><div class=\"semitrans-subbox\"><span class=\"influencer-story\"> " + influencersJSONObj.influencers[i].description + "<\/span><\/div><\/div><div class=\"semitrans-enter-store enter-store-right\" style=\"vertical-aligh:middle;\"><div class=\"semitrans-enter-store-inbox\"><span >ENTER STORE<\/span><\/div><\/div><\/div>";
-                        }
-
-                    }
-                }
-            }
-        }
-        jQuery("#featured_stories").html(featured_stories_html);
-        jQuery("#moreinfluencers-container").html(moreinfluencer_html);
-    }
-
-    function seeMoreInfluencers(event)
-    {
-        var moreInfluencersList = document.getElementById("moreinfluencers-container").getElementsByClassName("MoreInfluencersDiv");
-        var i = 0;
-        for(;i<moreInfluencersList.length;i++)
-        {
-            if(moreInfluencersList[i].style.display=="none")
-                break;
-        }
-        if(i == moreInfluencersList.length)
-        {
-            event.target.parentNode.style.display = "none";
-        }
-        else
-        {
-            moreInfluencersList[i].style.display = "block";
-        }
-    }
+//    function seeMoreInfluencers(event)
+//    {
+//        var moreInfluencersList = document.getElementById("moreinfluencers-container").getElementsByClassName("MoreInfluencersDiv");
+//        var i = 0;
+//        for(;i<moreInfluencersList.length;i++)
+//        {
+//            if(moreInfluencersList[i].style.display=="none")
+//                break;
+//        }
+//        if(i == moreInfluencersList.length)
+//        {
+//            event.target.parentNode.style.display = "none";
+//        }
+//        else
+//        {
+//            moreInfluencersList[i].style.display = "block";
+//        }
+//    }
 </script>
 </body>
 </html>
