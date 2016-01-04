@@ -13,8 +13,20 @@ body{
 
 /*modal*/
 
-.modal-row{
-    margin: 15px;
+table{
+    margin: 0 30px;
+}
+
+tr{
+    height: 50px;
+}
+
+input{
+    width: 275px;
+}
+
+select{
+    width: 275px;
 }
 
 label {float: left; width: 6em; text-align: right;}
