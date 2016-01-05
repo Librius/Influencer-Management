@@ -207,7 +207,7 @@ function readFromJson(eventsJsonObj){
         jQuery("#status_control_button").html("Disable");
     }
     else {
-        jQuery("#modal_status").text("Off");
+        jQuery("#modal_status").text("Off")
         jQuery("#status_control_button").html("Enable");
     }
     jQuery("#modal_begin_time").val(eventsJsonObj.time_begin);
