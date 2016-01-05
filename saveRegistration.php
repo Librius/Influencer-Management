@@ -67,7 +67,7 @@ $current_json = array('id' => $global_id,
     'apply_time' => $local_date);
 $file_json->global_available_id = $global_id + 1;
 array_push($file_json->influencers, $current_json);
-print_r(json_encode($file_json));
+//print_r(json_encode($file_json));
 
 //file_put_contents($myfile, json_encode($data));
 $myfile = fopen("allInfluencer.txt", "w") or die("Unable to open file!");
@@ -75,4 +75,5 @@ fwrite($myfile, json_encode($file_json));
 fclose($myfile);
 
 header("Location: https://www.evestemptation.com/Affilant_Apply_Success?");
+
 ?>
