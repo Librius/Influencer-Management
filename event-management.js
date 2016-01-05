@@ -9,7 +9,7 @@ var events;
 var eventJSON;
 var oldJSON;
 
-var ROWS_PER_PAGE=1;
+var ROWS_PER_PAGE=3;
 var current_page=0;
 
 var sortOrder = 0;//0 means asc, 1 means desc
@@ -254,7 +254,7 @@ function writeToJson(){
         events.big_image[i] = {"url": jQuery(bigImages[i].children[1]).attr("src"),"main_title":bigImages[i].children[2].value,"subtitle":bigImages[i].children[3].value,"link":bigImages[i].children[4].value};
     }
     var middleImages = jQuery("#middle_img_div .chunk_div");
-    for(var i=0; i<middleI8mages.length; i++){
+    for(var i=0; i<middleImages.length; i++){
         events.middle_image[i] = {"url": jQuery(middleImages[i].children[1]).attr("src"),"main_title":middleImages[i].children[2].value,"subtitle":middleImages[i].children[3].value,"link":middleImages[i].children[4].value};
     }
   
