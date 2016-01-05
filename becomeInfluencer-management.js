@@ -190,6 +190,20 @@ function writeToJson()
 {
   if(confirm("Are you sure to save?") == false)
     return;
+  jQuery.ajax({
+    type:"GET",
+    url:"getallinfluencers.php",
+    async: false,
+    success:function(result)
+    {
+      newJSON = JSON.parse(result);
+      oldJSON = JSON.parse(result);
+    },
+    error:function()
+    {
+      alert("error!");
+    }
+  });
   var i;
   for(i = 0;i<newJSON.influencers.length;i++)
   {
