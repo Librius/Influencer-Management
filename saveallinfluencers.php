@@ -35,30 +35,30 @@ if(isset($_POST["data"]))
             echo json_encode($result);
             return;
         }
-        if(!isset($data->influencers[$i]->blog) || trim($data->influencers[$i]->blog) == "")
-        {
-            $result = array("status"=>"error","message"=>"Please write the blog of every influencer.");
-            echo json_encode($result);
-            return;
-        }
-        if(!isset($data->influencers[$i]->facebook) || trim($data->influencers[$i]->facebook) == "")
-        {
-            $result = array("status"=>"error","message"=>"Please write the facebook of every influencer.");
-            echo json_encode($result);
-            return;
-        }
+//        if(!isset($data->influencers[$i]->blog) || trim($data->influencers[$i]->blog) == "")
+//        {
+//            $result = array("status"=>"error","message"=>"Please write the blog of every influencer.");
+//            echo json_encode($result);
+//            return;
+//        }
+//        if(!isset($data->influencers[$i]->facebook) || trim($data->influencers[$i]->facebook) == "")
+//        {
+//            $result = array("status"=>"error","message"=>"Please write the facebook of every influencer.");
+//            echo json_encode($result);
+//            return;
+//        }
         if(!isset($data->influencers[$i]->instagram) || trim($data->influencers[$i]->instagram) == "")
         {
             $result = array("status"=>"error","message"=>"Please write the instagram of every influencer.");
             echo json_encode($result);
             return;
         }
-        if(!isset($data->influencers[$i]->youtube) || trim($data->influencers[$i]->youtube) == "")
-        {
-            $result = array("status"=>"error","message"=>"Please write the youtube of every influencer.");
-            echo json_encode($result);
-            return;
-        }
+//        if(!isset($data->influencers[$i]->youtube) || trim($data->influencers[$i]->youtube) == "")
+//        {
+//            $result = array("status"=>"error","message"=>"Please write the youtube of every influencer.");
+//            echo json_encode($result);
+//            return;
+//        }
         if(!isset($data->influencers[$i]->country) || trim($data->influencers[$i]->country) == "")
         {
             $result = array("status"=>"error","message"=>"Please write the country of every influencer.");
