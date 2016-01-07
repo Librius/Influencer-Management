@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4c171a-605d-4e38-bc29-d4ad12f0d3f8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saveRegistration.php" afterPath="$PROJECT_DIR$/saveRegistration.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/event_page.html" afterPath="$PROJECT_DIR$/event_page.html" />
     </list>
     <ignored path="Influencer-Management.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,30 +34,30 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="saveRegistration.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="saveRegistration.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/saveRegistration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61946905">
-              <caret line="47" column="72" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
+            <state vertical-scroll-proportion="-16.875">
+              <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="event_page.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="event_page.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/event_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-3.6666667">
-              <caret line="131" column="28" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
+            <state vertical-scroll-proportion="0.47158217">
+              <caret line="636" column="62" selection-start-line="636" selection-start-column="62" selection-end-line="636" selection-end-column="62" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <marker date="1452102126000" expanded="true" signature="30680:30694" placeholder="..." />
-                <marker date="1452102126000" expanded="true" signature="31453:31467" placeholder="..." />
-                <marker date="1452102126000" expanded="true" signature="33734:33748" placeholder="..." />
-                <marker date="1452102126000" expanded="true" signature="33883:33896" placeholder="..." />
-                <marker date="1452102126000" expanded="true" signature="36073:36087" placeholder="..." />
-                <marker date="1452102126000" expanded="true" signature="36166:36179" placeholder="..." />
+                <element signature="n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <marker date="1452207704000" expanded="true" signature="26709:26723" placeholder="..." />
+                <marker date="1452207704000" expanded="true" signature="27482:27496" placeholder="..." />
+                <marker date="1452207704000" expanded="true" signature="29763:29777" placeholder="..." />
+                <marker date="1452207704000" expanded="true" signature="29912:29925" placeholder="..." />
+                <marker date="1452207704000" expanded="true" signature="32102:32116" placeholder="..." />
+                <marker date="1452207704000" expanded="true" signature="32195:32208" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -155,12 +155,12 @@
         <option value="$PROJECT_DIR$/influencerDetail.html" />
         <option value="$PROJECT_DIR$/event-management.html" />
         <option value="$PROJECT_DIR$/event-management.js" />
-        <option value="$PROJECT_DIR$/event_page.html" />
         <option value="$PROJECT_DIR$/setInfluencer.js" />
         <option value="$PROJECT_DIR$/temp" />
         <option value="$PROJECT_DIR$/temp.html" />
         <option value="$PROJECT_DIR$/saveallinfluencers.php" />
         <option value="$PROJECT_DIR$/saveRegistration.php" />
+        <option value="$PROJECT_DIR$/event_page.html" />
       </list>
     </option>
   </component>
@@ -342,7 +342,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/event_page.html</url>
-          <line>722</line>
+          <line>660</line>
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="3" />
@@ -762,23 +762,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/event_page.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.6666667">
-          <caret line="131" column="28" selection-start-line="131" selection-start-column="28" selection-end-line="131" selection-end-column="28" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1452102126000" expanded="true" signature="30680:30694" placeholder="..." />
-            <marker date="1452102126000" expanded="true" signature="31453:31467" placeholder="..." />
-            <marker date="1452102126000" expanded="true" signature="33734:33748" placeholder="..." />
-            <marker date="1452102126000" expanded="true" signature="33883:33896" placeholder="..." />
-            <marker date="1452102126000" expanded="true" signature="36073:36087" placeholder="..." />
-            <marker date="1452102126000" expanded="true" signature="36166:36179" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setInfluencer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.888889">
@@ -821,9 +804,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/saveRegistration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61946905">
-          <caret line="47" column="72" selection-start-line="47" selection-start-column="72" selection-end-line="47" selection-end-column="72" />
+        <state vertical-scroll-proportion="-16.875">
+          <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/event_page.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47158217">
+          <caret line="636" column="62" selection-start-line="636" selection-start-column="62" selection-end-line="636" selection-end-column="62" />
+          <folding>
+            <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <marker date="1452207704000" expanded="true" signature="26709:26723" placeholder="..." />
+            <marker date="1452207704000" expanded="true" signature="27482:27496" placeholder="..." />
+            <marker date="1452207704000" expanded="true" signature="29763:29777" placeholder="..." />
+            <marker date="1452207704000" expanded="true" signature="29912:29925" placeholder="..." />
+            <marker date="1452207704000" expanded="true" signature="32102:32116" placeholder="..." />
+            <marker date="1452207704000" expanded="true" signature="32195:32208" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
