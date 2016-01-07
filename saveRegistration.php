@@ -15,31 +15,31 @@ if(!isset($_POST["lastname"]) || trim($_POST["lastname"]) == "")
     echo "<script>alert(\"Please write the last name.\");</script>";
     return;
 }
-if(!isset($_POST["blogurl"]) || trim($_POST["blogurl"]) == "")
-{
-    echo "<script>alert(\"Please write the blog url.\");</script>";
-    return;
-}
-if(!isset($_POST["facebookaccount"]) || trim($_POST["facebookaccount"]) == "")
-{
-    echo "<script>alert(\"Please write the.\");</script>";
-    return;
-}
+//if(!isset($_POST["blogurl"]) || trim($_POST["blogurl"]) == "")
+//{
+//    echo "<script>alert(\"Please write the blog url.\");</script>";
+//    return;
+//}
+//if(!isset($_POST["facebookaccount"]) || trim($_POST["facebookaccount"]) == "")
+//{
+//    echo "<script>alert(\"Please write the.\");</script>";
+//    return;
+//}
 if(!isset($_POST["instagramaccount"]) || trim($_POST["instagramaccount"]) == "")
 {
     echo "<script>alert(\"Please write the.\");</script>";
     return;
 }
-if(!isset($_POST["youtubeaccount"]) || trim($_POST["youtubeaccount"]) == "")
-{
-    echo "<script>alert(\"Please write the.\");</script>";
-    return;
-}
-if(!isset($_POST["otheraccount"]) || trim($_POST["otheraccount"]) == "")
-{
-    echo "<script>alert(\"Please write the.\");</script>";
-    return;
-}
+//if(!isset($_POST["youtubeaccount"]) || trim($_POST["youtubeaccount"]) == "")
+//{
+//    echo "<script>alert(\"Please write the.\");</script>";
+//    return;
+//}
+//if(!isset($_POST["otheraccount"]) || trim($_POST["otheraccount"]) == "")
+//{
+//    echo "<script>alert(\"Please write the.\");</script>";
+//    return;
+//}
 if(!isset($_POST["country"]) || trim($_POST["country"]) == "")
 {
     echo "<script>alert(\"Please write the.\");</script>";
