@@ -17,6 +17,7 @@ var sortOrder = 0;//0 means asc, 1 means desc
 
 function showPage(page_num)
 {
+  current_page = page_num;
   var table_body_html = "";
   for(var i =page_num*ROWS_PER_PAGE;i<eventJSON.events.length && i<page_num*ROWS_PER_PAGE+ROWS_PER_PAGE;i++)
   {
@@ -257,6 +258,22 @@ function writeToJson(){
     for(var i=0; i<middleImages.length; i++){
         events.middle_image[i] = {"url": jQuery(middleImages[i].children[1]).attr("src"),"main_title":middleImages[i].children[2].value,"subtitle":middleImages[i].children[3].value,"link":middleImages[i].children[4].value};
     }
+  
+    //read data again before write
+    jQuery.ajax({
+      type:"GET",
+      url:"geteventinfo.php",
+      async: false,
+      success:function(result)
+      {
+        eventJSON = JSON.parse(result);
+        oldJSON = JSON.parse(result);
+      },
+      error:function()
+      {
+        alert("error!");
+      }
+    });
   
     if(event_id == 0)
     {
