@@ -629,11 +629,11 @@
             <span class="subheader_block-span3"></span>
         </div>
     </div>
-    <div class="row">
+    <div class="row" id="picks_category_id">
         <!--simple product list -->
         {{block type="catalog/product_list"
         name="home.catalog.product.list"
-        alias="products_homepage" category_id="<span id="picks_category_id">11</span>"
+        alias="products_homepage" category_id="11"
         template="catalog/product/list2.phtml"}}
     </div>
 </div>
@@ -865,7 +865,7 @@
       }
       jQuery("#mid_image_div").html(mid_image_html);
 
-        jQuery("#picks_category_id").html(eventObj.category_id);
+        jQuery("#picks_category_id").html("{{block type=\"catalog/product_list\"name=\"home.catalog.product.list\"alias=\"products_homepage\" category_id=\""+eventObj.category_id+"\"template=\"catalog/product/list2.phtml\"}}");
     }
   
   

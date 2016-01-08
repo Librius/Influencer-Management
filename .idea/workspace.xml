@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="be4c171a-605d-4e38-bc29-d4ad12f0d3f8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/event_page.html" afterPath="$PROJECT_DIR$/event_page.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Influencer-Management.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,22 +25,33 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="saveallinfluencers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/saveallinfluencers.php">
+      <file leaf-file-name="event-management.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/event-management.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.1764706">
-              <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
-              <folding />
+            <state vertical-scroll-proportion="-6.5882354">
+              <caret line="128" column="81" selection-start-line="128" selection-start-column="70" selection-end-line="128" selection-end-column="81" />
+              <folding>
+                <element signature="n#div#6;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="saveRegistration.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/saveRegistration.php">
+      <file leaf-file-name="saveeventinfo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/saveeventinfo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.875">
-              <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
-              <folding />
+            <state vertical-scroll-proportion="-8.235294">
+              <caret line="110" column="67" selection-start-line="110" selection-start-column="67" selection-end-line="110" selection-end-column="67" />
+              <folding>
+                <element signature="e#395#669#0#PHP" expanded="false" />
+                <element signature="e#678#943#0#PHP" expanded="false" />
+                <element signature="e#952#1219#0#PHP" expanded="false" />
+                <element signature="e#1228#1493#0#PHP" expanded="false" />
+                <element signature="e#1531#1802#0#PHP" expanded="false" />
+                <element signature="e#1811#3146#0#PHP" expanded="false" />
+                <element signature="e#3193#3473#0#PHP" expanded="false" />
+                <element signature="e#3482#4844#0#PHP" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -47,56 +59,21 @@
       <file leaf-file-name="event_page.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/event_page.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.54070663">
-              <caret line="640" column="0" selection-start-line="640" selection-start-column="0" selection-end-line="640" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.3563748">
+              <caret line="875" column="18" selection-start-line="875" selection-start-column="18" selection-end-line="875" selection-end-column="18" />
               <folding>
-                <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <marker date="1452208336000" expanded="true" signature="26708:26722" placeholder="..." />
-                <marker date="1452208336000" expanded="true" signature="27481:27495" placeholder="..." />
-                <marker date="1452208336000" expanded="true" signature="29762:29776" placeholder="..." />
-                <marker date="1452208336000" expanded="true" signature="29911:29924" placeholder="..." />
-                <marker date="1452208336000" expanded="true" signature="32101:32115" placeholder="..." />
-                <marker date="1452208336000" expanded="true" signature="32194:32207" placeholder="..." />
+                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1452216135000" expanded="true" signature="26674:26688" placeholder="..." />
+                <marker date="1452216135000" expanded="true" signature="27447:27461" placeholder="..." />
+                <marker date="1452216135000" expanded="true" signature="29728:29742" placeholder="..." />
+                <marker date="1452216135000" expanded="true" signature="29877:29890" placeholder="..." />
+                <marker date="1452216135000" expanded="true" signature="32067:32081" placeholder="..." />
+                <marker date="1452216135000" expanded="true" signature="32160:32173" placeholder="..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="setInfluencer.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/setInfluencer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.888889">
-              <caret line="40" column="60" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
-              <folding>
-                <element signature="n#!!block;n#checkShowCuration#0" expanded="false" />
-                <element signature="n#!!block;n#UpLoadCurationImageBig#0" expanded="false" />
-                <element signature="n#!!block;n#UpLoadCurationImageSmall#0" expanded="false" />
-                <element signature="n#!!block;n#viewandedit#0" expanded="false" />
-                <element signature="n#!!block;n#updateAll#0" expanded="false" />
-                <marker date="1452104323000" expanded="true" signature="1951:1988" placeholder="..." />
-                <marker date="1452104323000" expanded="true" signature="2229:2237" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="temp.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/temp.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.375">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="getallinfluencers.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/getallinfluencers.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5">
-              <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -104,8 +81,8 @@
       <file leaf-file-name="event-management.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/event-management.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="444" column="48" selection-start-line="444" selection-start-column="47" selection-end-line="444" selection-end-column="48" />
+            <state vertical-scroll-proportion="-13.333333">
+              <caret line="266" column="34" selection-start-line="266" selection-start-column="34" selection-end-line="266" selection-end-column="34" />
               <folding>
                 <element signature="e#0#44#0" expanded="false" />
               </folding>
@@ -142,8 +119,6 @@
         <option value="$USER_HOME$/Downloads/__jquery.tablesorter/tests/demo.html" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/event-management.css" />
-        <option value="$PROJECT_DIR$/saveeventinfo.php" />
-        <option value="$PROJECT_DIR$/eventinfo.txt" />
         <option value="$PROJECT_DIR$/InfluencerCuration.html" />
         <option value="$PROJECT_DIR$/becomeInfluencer.html" />
         <option value="$PROJECT_DIR$/becomeInfluencer-management.js" />
@@ -153,13 +128,15 @@
         <option value="$PROJECT_DIR$/register.html" />
         <option value="$PROJECT_DIR$/allInfluencer.txt" />
         <option value="$PROJECT_DIR$/influencerDetail.html" />
-        <option value="$PROJECT_DIR$/event-management.html" />
-        <option value="$PROJECT_DIR$/event-management.js" />
         <option value="$PROJECT_DIR$/setInfluencer.js" />
         <option value="$PROJECT_DIR$/temp" />
         <option value="$PROJECT_DIR$/temp.html" />
         <option value="$PROJECT_DIR$/saveallinfluencers.php" />
         <option value="$PROJECT_DIR$/saveRegistration.php" />
+        <option value="$PROJECT_DIR$/event-management.html" />
+        <option value="$PROJECT_DIR$/eventinfo.txt" />
+        <option value="$PROJECT_DIR$/saveeventinfo.php" />
+        <option value="$PROJECT_DIR$/event-management.js" />
         <option value="$PROJECT_DIR$/event_page.html" />
       </list>
     </option>
@@ -342,10 +319,11 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/event_page.html</url>
-          <line>660</line>
+          <line>560</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -431,8 +409,8 @@
             <element signature="n#!!block;n#UpLoadCurationImageSmall#0" expanded="false" />
             <element signature="n#!!block;n#viewandedit#0" expanded="false" />
             <element signature="n#!!block;n#updateAll#0" expanded="false" />
-            <marker date="1452104323000" expanded="true" signature="1951:1988" placeholder="..." />
-            <marker date="1452104323000" expanded="true" signature="2229:2237" placeholder="..." />
+            <marker date="1452104323000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1452104323000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -581,16 +559,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventinfo.txt">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="109" selection-start-line="0" selection-start-column="93" selection-end-line="0" selection-end-column="109" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/event-management.css">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.06837607">
@@ -656,14 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/saveeventinfo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75735295">
-          <caret line="104" column="13" selection-start-line="104" selection-start-column="13" selection-end-line="104" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/getinfluencerinfo.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -696,16 +656,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="44" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="1524" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/event-management.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5588235">
-          <caret line="132" column="22" selection-start-line="132" selection-start-column="22" selection-end-line="132" selection-end-column="22" />
-          <folding>
-            <element signature="n#div#6;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -752,16 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/event-management.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="444" column="48" selection-start-line="444" selection-start-column="47" selection-end-line="444" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#44#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/setInfluencer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.888889">
@@ -772,8 +712,8 @@
             <element signature="n#!!block;n#UpLoadCurationImageSmall#0" expanded="false" />
             <element signature="n#!!block;n#viewandedit#0" expanded="false" />
             <element signature="n#!!block;n#updateAll#0" expanded="false" />
-            <marker date="1452104323000" expanded="true" signature="1951:1988" placeholder="..." />
-            <marker date="1452104323000" expanded="true" signature="2229:2237" placeholder="..." />
+            <marker date="1452104323000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1452104323000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -786,43 +726,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getallinfluencers.php">
+    <entry file="file://$PROJECT_DIR$/saveRegistration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.5">
-          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.5973451">
+          <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/saveallinfluencers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1764706">
+        <state vertical-scroll-proportion="0.0921659">
           <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/saveRegistration.php">
+    <entry file="file://$PROJECT_DIR$/getallinfluencers.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.875">
-          <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
+        <state vertical-scroll-proportion="0.088495575">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventinfo.txt">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="3355" selection-start-line="0" selection-start-column="3355" selection-end-line="0" selection-end-column="3355" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/saveeventinfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.235294">
+          <caret line="110" column="67" selection-start-line="110" selection-start-column="67" selection-end-line="110" selection-end-column="67" />
+          <folding>
+            <element signature="e#395#669#0#PHP" expanded="false" />
+            <element signature="e#678#943#0#PHP" expanded="false" />
+            <element signature="e#952#1219#0#PHP" expanded="false" />
+            <element signature="e#1228#1493#0#PHP" expanded="false" />
+            <element signature="e#1531#1802#0#PHP" expanded="false" />
+            <element signature="e#1811#3146#0#PHP" expanded="false" />
+            <element signature="e#3193#3473#0#PHP" expanded="false" />
+            <element signature="e#3482#4844#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/event-management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5882354">
+          <caret line="128" column="81" selection-start-line="128" selection-start-column="70" selection-end-line="128" selection-end-column="81" />
+          <folding>
+            <element signature="n#div#6;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/event-management.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.333333">
+          <caret line="266" column="34" selection-start-line="266" selection-start-column="34" selection-end-line="266" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#44#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/event_page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54070663">
-          <caret line="640" column="0" selection-start-line="640" selection-start-column="0" selection-end-line="640" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.3563748">
+          <caret line="875" column="18" selection-start-line="875" selection-start-column="18" selection-end-line="875" selection-end-column="18" />
           <folding>
-            <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <marker date="1452208336000" expanded="true" signature="26708:26722" placeholder="..." />
-            <marker date="1452208336000" expanded="true" signature="27481:27495" placeholder="..." />
-            <marker date="1452208336000" expanded="true" signature="29762:29776" placeholder="..." />
-            <marker date="1452208336000" expanded="true" signature="29911:29924" placeholder="..." />
-            <marker date="1452208336000" expanded="true" signature="32101:32115" placeholder="..." />
-            <marker date="1452208336000" expanded="true" signature="32194:32207" placeholder="..." />
+            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1452216135000" expanded="true" signature="26674:26688" placeholder="..." />
+            <marker date="1452216135000" expanded="true" signature="27447:27461" placeholder="..." />
+            <marker date="1452216135000" expanded="true" signature="29728:29742" placeholder="..." />
+            <marker date="1452216135000" expanded="true" signature="29877:29890" placeholder="..." />
+            <marker date="1452216135000" expanded="true" signature="32067:32081" placeholder="..." />
+            <marker date="1452216135000" expanded="true" signature="32160:32173" placeholder="..." />
           </folding>
         </state>
       </provider>
