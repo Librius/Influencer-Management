@@ -448,7 +448,6 @@
     </div>
 </div>
 
-<div class="container">
 
 <!--Influencer-->
 <div class="container">
@@ -622,7 +621,7 @@
 </div>
 
 <!--Picks-->
-<div class="">
+<div class="container">
     <div class="grid-container" style="text-align:center;">
         <div style="margin-top:20px;margin-bottom:20px; color:#a89f9f">
             <span class="subheader_block-span1"></span>
@@ -654,7 +653,7 @@
 </div>
 
 
-</div>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 <script type="text/javascript">
@@ -865,6 +864,8 @@
           mid_image_html+="</div>";
       }
       jQuery("#mid_image_div").html(mid_image_html);
+
+        jQuery("#picks_category_id").html(eventObj.category_id);
     }
   
   

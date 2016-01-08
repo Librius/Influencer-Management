@@ -229,6 +229,7 @@ function readFromJson(eventsJsonObj){
         var middleImgJson = eventsJsonObj.middle_image[i]
         jQuery("#middle_img_div").append(getChunk(middleImgJson.url, middleImgJson.main_title, middleImgJson.subtitle, middleImgJson.link));
     }
+    jQuery("#pick_category_id").val(eventsJsonObj.category_id);
 }
 
 function writeToJson(){
@@ -246,7 +247,8 @@ function writeToJson(){
         "brief":jQuery("#modal_intro").val(),
         "event_hashtag":tags,
         "big_image":[],
-        "middle_image":[]
+        "middle_image":[],
+        "category_id":jQuery("#pick_category_id").val()
     };
 
     var bigImages = jQuery("#big_img_div .chunk_div");
@@ -258,7 +260,10 @@ function writeToJson(){
     for(var i=0; i<middleImages.length; i++){
         events.middle_image[i] = {"url": jQuery(middleImages[i].children[1]).attr("src"),"main_title":middleImages[i].children[2].value,"subtitle":middleImages[i].children[3].value,"link":middleImages[i].children[4].value};
     }
-  
+    //console.log("event-management.js");
+    //console.log(jQuery("#pick_category_id").val());
+    //console.log(events);
+
     //read data again before write
     jQuery.ajax({
       type:"GET",
@@ -337,7 +342,8 @@ function createEvent(){
         "brief":"",
         "event_hashtag": [],
         "big_image":[],
-        "middle_image":[]
+        "middle_image":[],
+        "category_id": -1
     };
     readFromJson(emptyJson);
 }
