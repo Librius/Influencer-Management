@@ -106,12 +106,12 @@ if(isset($_POST["data"]))
         }
 
         // check category id
-        if(!isset($data->events[$i]->category_id) || $data->events[$i]->category_id == -1)
-        {
-            $result = array("status"=>"error","message"=>"Please write a category id.");
-            echo json_encode($result);
-            return;
-        }
+//        if(!isset($data->events[$i]->category_id) || $data->events[$i]->category_id == -1)
+//        {
+//            $result = array("status"=>"error","message"=>"Please write a category id.");
+//            echo json_encode($result);
+//            return;
+//        }
     }
 
     $myfile = fopen("eventinfo.txt", "w") or die("Unable to open file!");

@@ -187,6 +187,9 @@ function viewandedit(event)
   readFromJson(currentEvent);
 }
 
+function escapeDoubleQuotation(string){
+    return string.replace('"', '\"', 'g');
+}
 
 function getChunk(imgSrc, mainTitle, subTitle, link){
     return "<div class=\"chunk_div\">" +
@@ -195,6 +198,13 @@ function getChunk(imgSrc, mainTitle, subTitle, link){
     "Main Title: <input type=\"text\" class=\"entry_input\" value=\""+ mainTitle +"\">" +
     "Subtitle: <input type=\"text\" class=\"entry_input\" value=\""+ subTitle +"\">" +
     "Link: <input type=\"text\" class=\"entry_input\" value=\""+ link +"\">" +
+    "<button class=\"remove_chunk_buttons\" onclick=\"closestDiv()\">Remove</button>" +
+    "</div>";
+}
+
+function getPickChunk(code){
+    return "<div class=\"chunk_div\">" +
+    "Code Generated: <input type=\"text\" class=\"entry_input\" value=\""+escapeDoubleQuotation(code)+"\" style=\"height: 200px\">"+
     "<button class=\"remove_chunk_buttons\" onclick=\"closestDiv()\">Remove</button>" +
     "</div>";
 }
@@ -229,8 +239,52 @@ function readFromJson(eventsJsonObj){
         var middleImgJson = eventsJsonObj.middle_image[i]
         jQuery("#middle_img_div").append(getChunk(middleImgJson.url, middleImgJson.main_title, middleImgJson.subtitle, middleImgJson.link));
     }
-    jQuery("#pick_category_id").val(eventsJsonObj.category_id);
+    jQuery("#picks_div").html("");
+    //console.log(eventsJsonObj);
+    //jQuery("#picks_div").html(eventsJsonObj.picks.length);
+    for(var i=0; i<eventsJsonObj.picks.length; i++) {
+        var pick = eventsJsonObj.picks[i];
+        jQuery("#picks_div").append(getPickChunk(pick));
+        //console.log(getPickChunk(pick));
+        //jQuery("#picks_div").append("<div>lalla</div>");
+    }
 }
+
+//function safe_tags(str) {
+//    return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') ;
+//}
+
+
+var entityMap = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': '&quot;',
+    "'": '&#39;',
+    "/": '&#x2F;'
+//        "&amp;": "&",
+//        "&lt;": "<",
+//        "&gt;": ">",
+//        '&quot;': '"',
+//        "&#39;": "'",
+//        "&#x2F;": '/'
+};
+
+function escapeHtml(string) {
+    return String(string).replace(/[&<>"'\/]/g, function (s) {
+        return entityMap[s];
+    });
+}
+
+function unescapeHtml(safe) {
+    return safe.replace(/&amp;/g, "&")
+        .replace(/&lt;/g, "<")
+        .replace(/&gt;/g, ">")
+        .replace(/&quot;/g, "\"")
+        .replace(/&#039;/g, "'")
+        .replace(/&#x2F;/g, "/");
+}
+
 
 function writeToJson(){
     var status;
@@ -248,7 +302,7 @@ function writeToJson(){
         "event_hashtag":tags,
         "big_image":[],
         "middle_image":[],
-        "category_id":jQuery("#pick_category_id").val()
+        "picks":[]
     };
 
     var bigImages = jQuery("#big_img_div .chunk_div");
@@ -260,9 +314,10 @@ function writeToJson(){
     for(var i=0; i<middleImages.length; i++){
         events.middle_image[i] = {"url": jQuery(middleImages[i].children[1]).attr("src"),"main_title":middleImages[i].children[2].value,"subtitle":middleImages[i].children[3].value,"link":middleImages[i].children[4].value};
     }
-    //console.log("event-management.js");
-    //console.log(jQuery("#pick_category_id").val());
-    //console.log(events);
+    var picks = jQuery("#picks_div .chunk_div");
+    for(var i=0; i<picks.length; i++){
+        events.picks[i] = escapeHtml(picks[i].children[0].value);
+    }
 
     //read data again before write
     jQuery.ajax({
@@ -343,7 +398,7 @@ function createEvent(){
         "event_hashtag": [],
         "big_image":[],
         "middle_image":[],
-        "category_id": -1
+        "picks":[]
     };
     readFromJson(emptyJson);
 }
@@ -445,6 +500,12 @@ jQuery(document).ready(function() {
     jQuery("#middle_img_add_btn").click(function(){
         jQuery("#middle_img_div").append(
             getChunk("", "", "", "")
+        );
+    });
+
+    jQuery("#picks_add_btn").click(function(){
+        jQuery("#picks_div").append(
+            getPickChunk("")
         );
     });
 

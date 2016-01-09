@@ -629,13 +629,9 @@
             <span class="subheader_block-span3"></span>
         </div>
     </div>
-    <div class="row" id="picks_category_id">
-        <!--simple product list -->
-        {{block type="catalog/product_list"
-        name="home.catalog.product.list"
-        alias="products_homepage" category_id="11"
-        template="catalog/product/list2.phtml"}}
-    </div>
+    <!--<div class="row" id="picks_category_id">-->
+        <div id="event_page_picks_div"></div>
+    <!--</div>-->
 </div>
 
 <!--Instagram-->
@@ -687,7 +683,9 @@
       var eventObj;
       jQuery.ajax({
         type:"GET",
-        url:"geteventinfo.php",
+//        url:"../influencer/geteventinfo.php",
+        url:"influencer/geteventinfo.php",
+//        url:"geteventinfo.php",
         async: false,
         success:function(result)
         {
@@ -712,7 +710,9 @@
       
         jQuery.ajax({
             type:"GET",
-            url:"getlink.php",
+//            url:"../influencer/getlink.php",
+            url:"influencer/getlink.php",
+//            url:"getlink.php",
             data:{"event_id":eventObj.id},
             success:function(result)
             {
@@ -773,7 +773,9 @@
 
         jQuery.ajax({
             type:"GET",
-            url:"getinfluencerinfo.php",
+//            url:"../influencer/getinfluencerinfo.php",
+            url:"influencer/getinfluencerinfo.php",
+//            url:"getinfluencerinfo.php",
             success:function(result)
             {
                 influencersJSONObj = JSON.parse(result);
@@ -865,10 +867,28 @@
       }
       jQuery("#mid_image_div").html(mid_image_html);
 
-        jQuery("#picks_category_id").html("{{block type=\"catalog/product_list\"name=\"home.catalog.product.list\"alias=\"products_homepage\" category_id=\""+eventObj.category_id+"\"template=\"catalog/product/list2.phtml\"}}");
+        var picks_html = "";
+        for(var i=0; i<eventObj.picks.length; i++){
+            picks_html += unescapeHtml(eventObj.picks[i]);
+        }
+        jQuery("#event_page_picks_div").html(picks_html);
+
+//        console.log(jQuery("#picks_category_id").html());
+//        console.log("{"+"{block type=\"catalog/product_list\"name=\"home.catalog.product.list\"}"+"}");
+//        jQuery("#picks_category_id").html("{"+"{block type=\"catalog/product_list\"name=\"home.catalog.product.list\"alias=\"products_homepage\" category_id=\""+eventObj.category_id+"\"template=\"catalog/product/list2.phtml\"}"+"}");
+//        console.log("{"+"{block type=\"catalog/product_list\"name=\"home.catalog.product.list\"alias=\"products_homepage\" category_id=\""+eventObj.category_id+"\"template=\"catalog/product/list2.phtml\"}"+"}");
+//        console.log(eventObj);
     }
-  
-  
+
+    function unescapeHtml(safe) {
+        return safe.replace(/&amp;/g, "&")
+                .replace(/&lt;/g, "<")
+                .replace(/&gt;/g, ">")
+                .replace(/&quot;/g, "\"")
+                .replace(/&#039;/g, "'")
+                .replace(/&#39;/g, "'")
+                .replace(/&#x2F;/g, "/");
+    }
 
     function seeMoreInfluencers(event)
     {
@@ -909,5 +929,11 @@
     }
   
 </script>
+<script type="text/javascript">(function(){
+    var js, wjs = document.getElementsByTagName('script')[0];
+    if (document.getElementById('pwid')) return;
+    js = document.createElement('script'); js.id = 'pwid';
+    js.src = "//www.evestemptation.com:443/js/magestore/productwidget/request.js";
+    wjs.parentNode.insertBefore(js, wjs);}());</script>
 </body>
 </html>

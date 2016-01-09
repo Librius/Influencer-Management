@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Temp</title>
 </head>
 <body>
 
@@ -14,6 +14,48 @@
     js.src = "//www.evestemptation.com:443/js/magestore/productwidget/request.js";
     wjs.parentNode.insertBefore(js, wjs);}());</script>
 <div class="productwidget" data-width="300" data-height="250" data-wid="MU1hZ2VzdG9yZQ=="></div>
+
+test input: <input type="text" id="test_input">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    var entityMap = {
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': '&quot;',
+        "'": '&#39;',
+        "/": '&#x2F;'
+//        "&amp;": "&",
+//        "&lt;": "<",
+//        "&gt;": ">",
+//        '&quot;': '"',
+//        "&#39;": "'",
+//        "&#x2F;": '/'
+    };
+
+    function escapeHtml(string) {
+        return String(string).replace(/[&<>"'\/]/g, function (s) {
+            return entityMap[s];
+        });
+    }
+
+    function unescapeHtml(safe) {
+        return safe.replace("&amp;", "&","g").replace("&lt;", "<","g").replace( "&gt;", ">","g").replace("&quot;", "\"","g").replace("&#039;", "'","g");
+    }
+
+    var string = "<div class=\"chunk_div\">" +
+            "Code Generated: <input type=\"text\" class=\"entry_input\" value=\""+"\" style=\"height: 200px\">"+
+            "<button class=\"remove_chunk_buttons\" onclick=\"closestDiv()\">Remove</button>" +
+            "</div>";
+
+    $("#test_input").val(string);
+    console.log($("#test_input").val());
+//    console.log(unescapeHtml($("#test_input").val()));
+
+
+</script>
 
 </body>
 </html>
