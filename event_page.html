@@ -651,7 +651,7 @@
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script type="text/javascript">
 
     var influencersJSONObj, html_content_4="", html_content_2="";
@@ -684,8 +684,8 @@
       jQuery.ajax({
         type:"GET",
 //        url:"../influencer/geteventinfo.php",
-        url:"influencer/geteventinfo.php",
-//        url:"geteventinfo.php",
+//        url:"influencer/geteventinfo.php",
+        url:"geteventinfo.php",
         async: false,
         success:function(result)
         {
@@ -711,8 +711,8 @@
         jQuery.ajax({
             type:"GET",
 //            url:"../influencer/getlink.php",
-            url:"influencer/getlink.php",
-//            url:"getlink.php",
+//            url:"influencer/getlink.php",
+            url:"getlink.php",
             data:{"event_id":eventObj.id},
             success:function(result)
             {
@@ -774,8 +774,8 @@
         jQuery.ajax({
             type:"GET",
 //            url:"../influencer/getinfluencerinfo.php",
-            url:"influencer/getinfluencerinfo.php",
-//            url:"getinfluencerinfo.php",
+//            url:"influencer/getinfluencerinfo.php",
+            url:"getinfluencerinfo.php",
             success:function(result)
             {
                 influencersJSONObj = JSON.parse(result);
@@ -873,6 +873,8 @@
         }
         jQuery("#event_page_picks_div").html(picks_html);
 
+        jQuery(".productwidget").addClass("col-md-3 col-sm-4 col-xs-6");
+
 //        console.log(jQuery("#picks_category_id").html());
 //        console.log("{"+"{block type=\"catalog/product_list\"name=\"home.catalog.product.list\"}"+"}");
 //        jQuery("#picks_category_id").html("{"+"{block type=\"catalog/product_list\"name=\"home.catalog.product.list\"alias=\"products_homepage\" category_id=\""+eventObj.category_id+"\"template=\"catalog/product/list2.phtml\"}"+"}");
@@ -929,11 +931,5 @@
     }
   
 </script>
-<script type="text/javascript">(function(){
-    var js, wjs = document.getElementsByTagName('script')[0];
-    if (document.getElementById('pwid')) return;
-    js = document.createElement('script'); js.id = 'pwid';
-    js.src = "//www.evestemptation.com:443/js/magestore/productwidget/request.js";
-    wjs.parentNode.insertBefore(js, wjs);}());</script>
 </body>
 </html>
