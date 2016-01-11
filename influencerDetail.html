@@ -546,6 +546,16 @@
     var image=document.getElementById("influencerimage");
     image.style.marginTop="-10px";
 
+    function unescapeHtml(safe) {
+        return safe.replace(/&amp;/g, "&")
+                .replace(/&lt;/g, "<")
+                .replace(/&gt;/g, ">")
+                .replace(/&quot;/g, "\"")
+                .replace(/&#039;/g, "'")
+                .replace(/&#39;/g, "'")
+                .replace(/&#x2F;/g, "/");
+    }
+
     var influencerJson;
     var influencerJsonObj;
     jQuery(document).ready(function(){
@@ -628,7 +638,8 @@
         }
 //        jQuery("#picks-container").html("lalalala");
         jQuery("#picks-container").html(picks_html);
-//        console.log(picks_html);
+        console.log("picks html");
+        console.log(picks_html);
         jQuery(".productwidget").addClass("col-md-3 col-sm-4 col-xs-6");
 
 //        var pick_html = "";
