@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be4c171a-605d-4e38-bc29-d4ad12f0d3f8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/event_page.html" afterPath="$PROJECT_DIR$/event_page.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/social_redirect.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/influencerDetail.html" afterPath="$PROJECT_DIR$/influencerDetail.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/influencerinfo.txt" afterPath="$PROJECT_DIR$/influencerinfo.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/saveinfluencerinfo.php" afterPath="$PROJECT_DIR$/saveinfluencerinfo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setInfluencer.html" afterPath="$PROJECT_DIR$/setInfluencer.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/setInfluencer.js" afterPath="$PROJECT_DIR$/setInfluencer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Influencer-Management.iws" />
@@ -19,6 +24,56 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DockManager">
+    <window id="1">
+      <content type="file-editors">
+        <state>
+          <leaf>
+            <file leaf-file-name="event-management.js" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/event-management.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="354" column="42" selection-start-line="354" selection-start-column="42" selection-end-line="354" selection-end-column="42" />
+                    <folding>
+                      <element signature="e#0#44#0" expanded="false" />
+                      <element signature="n#!!block;n#showPage#0" expanded="false" />
+                      <element signature="n#!!block;n#previousPage#0" expanded="false" />
+                      <element signature="n#!!block;n#nextPage#0" expanded="false" />
+                      <element signature="n#!!block;n#sortTable#0" expanded="false" />
+                      <element signature="n#!!block;n#UpLoadFile#0" expanded="false" />
+                      <element signature="n#!!block;n#getEventEntry#0" expanded="false" />
+                      <element signature="e#9588#9853#0" expanded="false" />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="event_page.html" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/event_page.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.6328725">
+                    <caret line="873" column="38" selection-start-line="873" selection-start-column="38" selection-end-line="873" selection-end-column="38" />
+                    <folding>
+                      <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                      <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                      <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+                      <element signature="n#style#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                      <marker date="1452304005000" expanded="true" signature="26806:26820" placeholder="..." />
+                      <marker date="1452304005000" expanded="true" signature="27579:27593" placeholder="..." />
+                      <marker date="1452304005000" expanded="true" signature="29971:29985" placeholder="..." />
+                      <marker date="1452304005000" expanded="true" signature="30120:30133" placeholder="..." />
+                      <marker date="1452304005000" expanded="true" signature="32310:32324" placeholder="..." />
+                      <marker date="1452304005000" expanded="true" signature="32403:32416" placeholder="..." />
+                    </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+          </leaf>
+        </state>
+      </content>
+    </window>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Influencer-Management" />
@@ -28,8 +83,8 @@
       <file leaf-file-name="event-management.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/event-management.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5882354">
-              <caret line="128" column="81" selection-start-line="128" selection-start-column="70" selection-end-line="128" selection-end-column="81" />
+            <state vertical-scroll-proportion="-24.5">
+              <caret line="122" column="20" selection-start-line="122" selection-start-column="20" selection-end-line="133" selection-end-column="26" />
               <folding>
                 <element signature="n#div#6;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
               </folding>
@@ -37,54 +92,94 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="saveeventinfo.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/saveeventinfo.php">
+      <file leaf-file-name="setInfluencer.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/setInfluencer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.235294">
-              <caret line="110" column="67" selection-start-line="110" selection-start-column="67" selection-end-line="110" selection-end-column="67" />
+            <state vertical-scroll-proportion="-5.1372547">
+              <caret line="97" column="33" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="33" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="eventinfo.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eventinfo.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="setInfluencer.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/setInfluencer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.7777777">
+              <caret line="261" column="24" selection-start-line="261" selection-start-column="24" selection-end-line="261" selection-end-column="24" />
               <folding>
-                <element signature="e#395#669#0#PHP" expanded="false" />
-                <element signature="e#678#943#0#PHP" expanded="false" />
-                <element signature="e#952#1219#0#PHP" expanded="false" />
-                <element signature="e#1228#1493#0#PHP" expanded="false" />
-                <element signature="e#1531#1802#0#PHP" expanded="false" />
-                <element signature="e#1811#3146#0#PHP" expanded="false" />
-                <element signature="e#3193#3473#0#PHP" expanded="false" />
-                <element signature="e#3482#4844#0#PHP" expanded="false" />
+                <marker date="1452537844000" expanded="true" signature="2587:2624" placeholder="..." />
+                <marker date="1452537844000" expanded="true" signature="2865:2873" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="event_page.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/event_page.html">
+      <file leaf-file-name="saveinfluencerinfo.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/saveinfluencerinfo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3563748">
-              <caret line="875" column="18" selection-start-line="875" selection-start-column="18" selection-end-line="875" selection-end-column="18" />
+            <state vertical-scroll-proportion="-10.411765">
+              <caret line="142" column="17" selection-start-line="142" selection-start-column="17" selection-end-line="142" selection-end-column="17" />
               <folding>
-                <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#style#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1452216135000" expanded="true" signature="26674:26688" placeholder="..." />
-                <marker date="1452216135000" expanded="true" signature="27447:27461" placeholder="..." />
-                <marker date="1452216135000" expanded="true" signature="29728:29742" placeholder="..." />
-                <marker date="1452216135000" expanded="true" signature="29877:29890" placeholder="..." />
-                <marker date="1452216135000" expanded="true" signature="32067:32081" placeholder="..." />
-                <marker date="1452216135000" expanded="true" signature="32160:32173" placeholder="..." />
+                <element signature="e#434#638#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="event-management.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/event-management.js">
+      <file leaf-file-name="influencerinfo.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/influencerinfo.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.333333">
-              <caret line="266" column="34" selection-start-line="266" selection-start-column="34" selection-end-line="266" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="566" selection-start-line="0" selection-start-column="566" selection-end-line="0" selection-end-column="566" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="influencerDetail.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/influencerDetail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.5683564">
+              <caret line="456" column="17" selection-start-line="456" selection-start-column="17" selection-end-line="456" selection-end-column="17" />
               <folding>
-                <element signature="e#0#44#0" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#a#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#1;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1452539508000" expanded="true" signature="23369:23386" placeholder="..." />
+                <marker date="1452539508000" expanded="true" signature="27922:27939" placeholder="..." />
+                <marker date="1452539508000" expanded="true" signature="28191:28230" placeholder="..." />
+                <marker date="1452539508000" expanded="true" signature="28418:28438" placeholder="..." />
+                <marker date="1452539508000" expanded="true" signature="29096:29110" placeholder="..." />
+                <marker date="1452539508000" expanded="true" signature="29269:29282" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -111,8 +206,6 @@
         <option value="$PROJECT_DIR$/uploads/backupInfluencerDetailPage.html" />
         <option value="$PROJECT_DIR$/backupInfluencerDetailPage.html" />
         <option value="$PROJECT_DIR$/backupInfluencerDetail.html" />
-        <option value="$PROJECT_DIR$/setInfluencer.html" />
-        <option value="$PROJECT_DIR$/saveinfluencerinfo.php" />
         <option value="$PROJECT_DIR$/uploads/InfluencerCuration.html" />
         <option value="$PROJECT_DIR$/setInfluencer.css" />
         <option value="$PROJECT_DIR$/6.html" />
@@ -127,17 +220,21 @@
         <option value="$PROJECT_DIR$/registerHandler.php" />
         <option value="$PROJECT_DIR$/register.html" />
         <option value="$PROJECT_DIR$/allInfluencer.txt" />
-        <option value="$PROJECT_DIR$/influencerDetail.html" />
-        <option value="$PROJECT_DIR$/setInfluencer.js" />
         <option value="$PROJECT_DIR$/temp" />
-        <option value="$PROJECT_DIR$/temp.html" />
         <option value="$PROJECT_DIR$/saveallinfluencers.php" />
         <option value="$PROJECT_DIR$/saveRegistration.php" />
         <option value="$PROJECT_DIR$/event-management.html" />
-        <option value="$PROJECT_DIR$/eventinfo.txt" />
         <option value="$PROJECT_DIR$/saveeventinfo.php" />
+        <option value="$PROJECT_DIR$/social_redirect.php" />
+        <option value="$PROJECT_DIR$/eventinfo.txt" />
+        <option value="$PROJECT_DIR$/temp.html" />
         <option value="$PROJECT_DIR$/event-management.js" />
         <option value="$PROJECT_DIR$/event_page.html" />
+        <option value="$PROJECT_DIR$/setInfluencer.html" />
+        <option value="$PROJECT_DIR$/saveinfluencerinfo.php" />
+        <option value="$PROJECT_DIR$/setInfluencer.js" />
+        <option value="$PROJECT_DIR$/influencerinfo.txt" />
+        <option value="$PROJECT_DIR$/influencerDetail.html" />
       </list>
     </option>
   </component>
@@ -179,8 +276,8 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -263,7 +360,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2180937" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22132471" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -322,33 +419,17 @@
           <line>560</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/event-management.js</url>
+          <line>47</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="4" />
+      <option name="time" value="6" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/InfluencerCuration.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#4;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/influencerDetail.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -358,28 +439,29 @@
             <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#a#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#a#0;n#div#1;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1452048044000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452048044000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452048044000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452048044000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452048044000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452048044000" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1452539508000" expanded="true" signature="23369:23386" placeholder="..." />
+            <marker date="1452539508000" expanded="true" signature="27922:27939" placeholder="..." />
+            <marker date="1452539508000" expanded="true" signature="28191:28230" placeholder="..." />
+            <marker date="1452539508000" expanded="true" signature="28418:28438" placeholder="..." />
+            <marker date="1452539508000" expanded="true" signature="29096:29110" placeholder="..." />
+            <marker date="1452539508000" expanded="true" signature="29269:29282" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -409,8 +491,6 @@
             <element signature="n#!!block;n#UpLoadCurationImageSmall#0" expanded="false" />
             <element signature="n#!!block;n#viewandedit#0" expanded="false" />
             <element signature="n#!!block;n#updateAll#0" expanded="false" />
-            <marker date="1452104323000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452104323000" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -516,20 +596,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/influencerinfo.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="67" selection-start-line="0" selection-start-column="67" selection-end-line="0" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/geteventinfo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.088495575">
-          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uploadfile.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3539823">
@@ -563,7 +629,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.06837607">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -619,7 +684,7 @@
         <state vertical-scroll-proportion="0.2647059">
           <caret line="56" column="55" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="62" />
           <folding>
-            <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -628,7 +693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -636,18 +700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-13.416667">
           <caret line="374" column="400" selection-start-line="374" selection-start-column="388" selection-end-line="374" selection-end-column="400" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/saveinfluencerinfo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7352941">
-          <caret line="148" column="34" selection-start-line="148" selection-start-column="2" selection-end-line="148" selection-end-column="34" />
-          <folding>
-            <element signature="e#76#235#0#PHP" expanded="false" />
-            <element signature="e#434#638#0#PHP" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -655,82 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="44" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="1524" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setInfluencer.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6161765">
-          <caret line="105" column="26" selection-start-line="96" selection-start-column="20" selection-end-line="105" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/influencerDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41911766">
-          <caret line="443" column="0" selection-start-line="443" selection-start-column="0" selection-end-line="531" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#1;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1452048044000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452048044000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452048044000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452048044000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452048044000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452048044000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/setInfluencer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.888889">
-          <caret line="40" column="60" selection-start-line="40" selection-start-column="60" selection-end-line="40" selection-end-column="60" />
-          <folding>
-            <element signature="n#!!block;n#checkShowCuration#0" expanded="false" />
-            <element signature="n#!!block;n#UpLoadCurationImageBig#0" expanded="false" />
-            <element signature="n#!!block;n#UpLoadCurationImageSmall#0" expanded="false" />
-            <element signature="n#!!block;n#viewandedit#0" expanded="false" />
-            <element signature="n#!!block;n#updateAll#0" expanded="false" />
-            <marker date="1452104323000" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1452104323000" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/temp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.375">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/saveRegistration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5973451">
-          <caret line="27" column="80" selection-start-line="27" selection-start-column="80" selection-end-line="27" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -738,7 +714,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0921659">
           <caret line="54" column="9" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -746,25 +721,37 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.088495575">
           <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/temp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.5">
+          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="45" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/eventinfo.txt">
-      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
+    <entry file="file://$PROJECT_DIR$/saveRegistration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="3355" selection-start-line="0" selection-start-column="3355" selection-end-line="0" selection-end-column="3355" />
+        <state vertical-scroll-proportion="1.751152">
+          <caret line="76" column="6" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geteventinfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.088495575">
+          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/saveeventinfo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.235294">
-          <caret line="110" column="67" selection-start-line="110" selection-start-column="67" selection-end-line="110" selection-end-column="67" />
+        <state vertical-scroll-proportion="0.1843318">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="44" />
           <folding>
             <element signature="e#395#669#0#PHP" expanded="false" />
             <element signature="e#678#943#0#PHP" expanded="false" />
@@ -780,8 +767,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/event-management.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5882354">
-          <caret line="128" column="81" selection-start-line="128" selection-start-column="70" selection-end-line="128" selection-end-column="81" />
+        <state vertical-scroll-proportion="-24.5">
+          <caret line="122" column="20" selection-start-line="122" selection-start-column="20" selection-end-line="133" selection-end-column="26" />
           <folding>
             <element signature="n#div#6;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
           </folding>
@@ -790,30 +777,120 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/event-management.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.333333">
-          <caret line="266" column="34" selection-start-line="266" selection-start-column="34" selection-end-line="266" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="354" column="42" selection-start-line="354" selection-start-column="42" selection-end-line="354" selection-end-column="42" />
           <folding>
             <element signature="e#0#44#0" expanded="false" />
+            <element signature="n#!!block;n#showPage#0" expanded="false" />
+            <element signature="n#!!block;n#previousPage#0" expanded="false" />
+            <element signature="n#!!block;n#nextPage#0" expanded="false" />
+            <element signature="n#!!block;n#sortTable#0" expanded="false" />
+            <element signature="n#!!block;n#UpLoadFile#0" expanded="false" />
+            <element signature="n#!!block;n#getEventEntry#0" expanded="false" />
+            <element signature="e#9588#9853#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/influencerinfo.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="566" selection-start-line="0" selection-start-column="566" selection-end-line="0" selection-end-column="566" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/event_page.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3563748">
-          <caret line="875" column="18" selection-start-line="875" selection-start-column="18" selection-end-line="875" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.6328725">
+          <caret line="873" column="38" selection-start-line="873" selection-start-column="38" selection-end-line="873" selection-end-column="38" />
           <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#1;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1452216135000" expanded="true" signature="26674:26688" placeholder="..." />
-            <marker date="1452216135000" expanded="true" signature="27447:27461" placeholder="..." />
-            <marker date="1452216135000" expanded="true" signature="29728:29742" placeholder="..." />
-            <marker date="1452216135000" expanded="true" signature="29877:29890" placeholder="..." />
-            <marker date="1452216135000" expanded="true" signature="32067:32081" placeholder="..." />
-            <marker date="1452216135000" expanded="true" signature="32160:32173" placeholder="..." />
+            <marker date="1452304005000" expanded="true" signature="26806:26820" placeholder="..." />
+            <marker date="1452304005000" expanded="true" signature="27579:27593" placeholder="..." />
+            <marker date="1452304005000" expanded="true" signature="29971:29985" placeholder="..." />
+            <marker date="1452304005000" expanded="true" signature="30120:30133" placeholder="..." />
+            <marker date="1452304005000" expanded="true" signature="32310:32324" placeholder="..." />
+            <marker date="1452304005000" expanded="true" signature="32403:32416" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eventinfo.txt">
+      <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setInfluencer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.7777777">
+          <caret line="261" column="24" selection-start-line="261" selection-start-column="24" selection-end-line="261" selection-end-column="24" />
+          <folding>
+            <marker date="1452537844000" expanded="true" signature="2587:2624" placeholder="..." />
+            <marker date="1452537844000" expanded="true" signature="2865:2873" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/setInfluencer.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.1372547">
+          <caret line="97" column="33" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/saveinfluencerinfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.411765">
+          <caret line="142" column="17" selection-start-line="142" selection-start-column="17" selection-end-line="142" selection-end-column="17" />
+          <folding>
+            <element signature="e#434#638#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/influencerDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5683564">
+          <caret line="456" column="17" selection-start-line="456" selection-start-column="17" selection-end-line="456" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#a#0;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#1;n#div#2;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1452539508000" expanded="true" signature="23369:23386" placeholder="..." />
+            <marker date="1452539508000" expanded="true" signature="27922:27939" placeholder="..." />
+            <marker date="1452539508000" expanded="true" signature="28191:28230" placeholder="..." />
+            <marker date="1452539508000" expanded="true" signature="28418:28438" placeholder="..." />
+            <marker date="1452539508000" expanded="true" signature="29096:29110" placeholder="..." />
+            <marker date="1452539508000" expanded="true" signature="29269:29282" placeholder="..." />
           </folding>
         </state>
       </provider>

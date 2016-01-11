@@ -109,40 +109,40 @@ if(isset($_POST["data"]))
         return;
       }
     }
-    if(!isset($data->influencers[$i]->picks) || count($data->influencers[$i]->picks) == 0)
-    {
-      $result = array("status"=>"error","message"=>"Each influencer should have at least one pick.");
-      echo json_encode($result);
-      return;
-    }
-    //check each pick
-    for($j = 0;$j<count($data->influencers[$i]->picks);$j++)
-    {
-      if(!isset($data->influencers[$i]->picks[$j]->img) || trim($data->influencers[$i]->picks[$j]->img) == "")
-      {
-        $result = array("status"=>"error","message"=>"Each pick should have an image.");
-        echo json_encode($result);
-        return;
-      }
-      if(!isset($data->influencers[$i]->picks[$j]->description) || trim($data->influencers[$i]->picks[$j]->description) == "")
-      {
-        $result = array("status"=>"error","message"=>"Each pick should have a description.");
-        echo json_encode($result);
-        return;
-      }
-      if(!isset($data->influencers[$i]->picks[$j]->money) || trim($data->influencers[$i]->picks[$j]->money) == "")
-      {
-        $result = array("status"=>"error","message"=>"Each pick should have a prize.");
-        echo json_encode($result);
-        return;
-      }
-      if(!isset($data->influencers[$i]->picks[$j]->link) || trim($data->influencers[$i]->picks[$j]->link) == "")
-      {
-        $result = array("status"=>"error","message"=>"Each pick should have a link.");
-        echo json_encode($result);
-        return;
-      }
-    }
+//    if(!isset($data->influencers[$i]->picks) || count($data->influencers[$i]->picks) == 0)
+//    {
+//      $result = array("status"=>"error","message"=>"Each influencer should have at least one pick.");
+//      echo json_encode($result);
+//      return;
+//    }
+//    //check each pick
+//    for($j = 0;$j<count($data->influencers[$i]->picks);$j++)
+//    {
+//      if(!isset($data->influencers[$i]->picks[$j]->img) || trim($data->influencers[$i]->picks[$j]->img) == "")
+//      {
+//        $result = array("status"=>"error","message"=>"Each pick should have an image.");
+//        echo json_encode($result);
+//        return;
+//      }
+//      if(!isset($data->influencers[$i]->picks[$j]->description) || trim($data->influencers[$i]->picks[$j]->description) == "")
+//      {
+//        $result = array("status"=>"error","message"=>"Each pick should have a description.");
+//        echo json_encode($result);
+//        return;
+//      }
+//      if(!isset($data->influencers[$i]->picks[$j]->money) || trim($data->influencers[$i]->picks[$j]->money) == "")
+//      {
+//        $result = array("status"=>"error","message"=>"Each pick should have a prize.");
+//        echo json_encode($result);
+//        return;
+//      }
+//      if(!isset($data->influencers[$i]->picks[$j]->link) || trim($data->influencers[$i]->picks[$j]->link) == "")
+//      {
+//        $result = array("status"=>"error","message"=>"Each pick should have a link.");
+//        echo json_encode($result);
+//        return;
+//      }
+//    }
   }
   
   $myfile = fopen("influencerinfo.txt", "w") or die("Unable to open file!");

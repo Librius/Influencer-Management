@@ -7,6 +7,38 @@ var oldJsonObj;
 var newJSON;
 var newJsonObj;
 
+var entityMap = {
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': '&quot;',
+    "'": '&#39;',
+    "/": '&#x2F;'
+//        "&amp;": "&",
+//        "&lt;": "<",
+//        "&gt;": ">",
+//        '&quot;': '"',
+//        "&#39;": "'",
+//        "&#x2F;": '/'
+};
+
+function escapeHtml(string) {
+    return String(string).replace(/[&<>"'\/]/g, function (s) {
+        return entityMap[s];
+    });
+}
+
+function escapeHtml(string) {
+    return String(string).replace(/[&<>"'\/]/g, function (s) {
+        return entityMap[s];
+    });
+}
+
+//remove image div
+function closestDiv(){
+    ((event.currentTarget).closest("div")).remove();
+}
+
 //display the page with JSON object
 function parseJSON(JSONObj)
 {
@@ -136,7 +168,7 @@ function createInfluencer(){
     var emptyJson = jQuery.parseJSON('{"id":0,"name":"","profile_icon":"","description":"","big_image":"","blog":[{"img":  "","description": ""}],'+
         '"style":[{"img":"","link":""}],'+
         //'"style":[{"img":"","main_title":"","subtitle":"","link":""}],'+
-        '"picks":[{ "img":"","description":"","money":"","link": ""}]}');
+        '"picks":[]}');
         readFromJson(emptyJson);
 }
 
@@ -178,77 +210,53 @@ function test(){
     ((event.currentTarget).closest("div")).remove();
 }
 
+function escapeDoubleQuotation(string){
+    return string.replace('"', '\"', 'g');
+}
 
 var influencer_id;
 
 //write the detail page into json object
 function writeToJson(){
-  var jsonStr = "{";
-  var jsonObj;
-  jsonStr += "\"id\": " + influencer_id + ", ";
-  var modalbody = jQuery(".modal-body")[0];
-  var name = jQuery("#name")[0].value;
-  jsonStr += "\"name\": \"" + name + "\", ";
-  var profile_icon = jQuery("#icon_img", modalbody).attr("src");
-  jsonStr += "\"profile_icon\": \"" + profile_icon + "\", ";
-  var description = (jQuery("#description", modalbody)[0]).value;
-  jsonStr += "\"description\": \"" + description + "\", ";
-  var big_image = jQuery("#background_img", modalbody).attr("src");
-  jsonStr += "\"big_image\": \"" + big_image + "\", ";
+    var modalbody = jQuery(".modal-body")[0];
+
+    var jsonObj = {
+        "id": influencer_id,
+        "name": jQuery("#name")[0].value,
+        "profile_icon": jQuery("#icon_img", modalbody).attr("src"),
+        "description": (jQuery("#description", modalbody)[0]).value,
+        "big_image": jQuery("#background_img", modalbody).attr("src"),
+        "blog": [],
+        "style": [],
+        "picks": []
+    }
 
   var blog_div = jQuery("#blog_div");
   var blogs = jQuery(".chunk_div", blog_div);
-  jsonStr += "\"blog\": ";
-  jsonStr += "[";
-  for (var i=0; i<blogs.length; i++){
-      jsonStr += "{";
+    for (var i=0; i<blogs.length; i++){
+        jsonObj.blog[i] = {
+            "img": jQuery("img", blogs[i]).attr("src"),
+            "description": (jQuery("textarea", blogs[i])[0]).value
+        }
 
-      jsonStr += "\"img\": \"" + jQuery("img", blogs[i]).attr("src") + "\", ";
-      jsonStr += "\"description\": \"" + (jQuery("textarea", blogs[i])[0]).value + "\"";
-
-      if(i==blogs.length-1)  jsonStr += "} ";
-      else jsonStr += "}, ";
-  }
-  jsonStr += "], ";
+    }
 
   var style_div = jQuery("#style_div");
   var styles = jQuery(".chunk_div", style_div);
-  jsonStr += "\"style\": ";
-  jsonStr += "[";
-  for (var i=0; i<styles.length; i++){
-      jsonStr += "{";
+    for (var i=0; i<styles.length; i++){
+        jsonObj.style[i] = {
+            "img": jQuery("img", styles[i]).attr("src"),
+            "link": jQuery("input", styles[i])[1].value
+        }
+    }
 
-      jsonStr += "\"img\": \"" + jQuery("img", styles[i]).attr("src") + "\", ";
-      //jsonStr += "\"main_title\": \"" + jQuery("input", styles[i])[1].value + "\", ";
-      //jsonStr += "\"subtitle\": \"" + jQuery("input", styles[i])[2].value + "\", ";
-      jsonStr += "\"link\": \"" + jQuery("input", styles[i])[1].value + "\"";
+    var picks_div = jQuery("#picks_div");
+    var picks = jQuery(".chunk_div", picks_div);
+    for (var i=0; i<picks.length; i++){
+        jsonObj.picks[i] = escapeHtml(picks[i].children[0].value);
+    }
 
-      if(i==styles.length-1)  jsonStr += "} ";
-      else jsonStr += "}, ";
-  }
-  jsonStr += "], ";
-
-  var pick_div = jQuery("#pick_div");
-  var picks = jQuery(".chunk_div", pick_div);
-  jsonStr += "\"picks\": ";
-  jsonStr += "[";
-  for (var i=0; i<picks.length; i++){
-      jsonStr += "{";
-
-      jsonStr += "\"img\": \"" + jQuery("img", picks[i]).attr("src") + "\", ";
-      jsonStr += "\"description\": \"" + (jQuery("textarea", picks[i])[0]).value + "\", ";
-      jsonStr += "\"money\": \"" + jQuery("input", picks[i])[1].value + "\", ";
-      jsonStr += "\"link\": \"" + jQuery("input", picks[i])[2].value + "\"";
-
-      if(i==picks.length-1)  jsonStr += "} ";
-      else jsonStr += "}, ";
-  }
-
-  jsonStr += "]";
-
-  jsonStr += ("}");
-
-  jsonObj = JSON.parse(jsonStr);
+    console.log(jsonObj);
 
   //change new Json Object
   if(influencer_id == 0)
@@ -270,6 +278,8 @@ function writeToJson(){
     }
     newJsonObj.influencers[j] = jsonObj;
   }
+
+
   parseJSON(newJsonObj);
 }
 
@@ -325,29 +335,47 @@ function readFromJson(data){
         );
     }
 
-    var picks = data["picks"];
-    for(var i=0; i<picks.length; i++){
-        jQuery("#pick_div").append(
-            "<div class=\"chunk_div\">" +
-            "<button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>" +
-            "<input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>" +
-            "<img class=\"entry_picture\" src=\""+
-            data["picks"][i]["img"] +  "\" alt=\"No file chosen\"/>" +
-            "<div class=\"entry\">Money: <input type=\"text\" class=\"pick_money_input entry_input\" value=\"" +
-            data["picks"][i]["money"] +
-            "\"/></div>" +
-            "<div class=\"entry\">Link: <input type=\"text\" class=\"pick_link_input entry_input\" value=\"" +
-            data["picks"][i]["link"] +
-            "\"/></div>" +
-            "<div class=\"entry\">Description: <textarea class=\"pick_description_textarea entry_textarea\">" +
-            data["picks"][i]["description"]  +
-            "</textarea></div></div>"
-        );
+    jQuery("#picks_div").html("");
+    //console.log(eventsJsonObj);
+    //jQuery("#picks_div").html(eventsJsonObj.picks.length);
+    for(var i=0; i<data.picks.length; i++) {
+        var pick = data.picks[i];
+        jQuery("#picks_div").append(getPickChunk(pick));
+        console.log(getPickChunk(pick));
+        //console.log(getPickChunk(pick));
+        //jQuery("#picks_div").append("<div>lalla</div>");
     }
 
-
+    console.log(data);
+    //var picks = data["picks"];
+    //for(var i=0; i<picks.length; i++){
+    //    jQuery("#picks_div").append(
+    //        "<div class=\"chunk_div\">" +
+    //        "<button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>" +
+    //        "<input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>" +
+    //        "<img class=\"entry_picture\" src=\""+
+    //        data["picks"][i]["img"] +  "\" alt=\"No file chosen\"/>" +
+    //        "<div class=\"entry\">Money: <input type=\"text\" class=\"pick_money_input entry_input\" value=\"" +
+    //        data["picks"][i]["money"] +
+    //        "\"/></div>" +
+    //        "<div class=\"entry\">Link: <input type=\"text\" class=\"pick_link_input entry_input\" value=\"" +
+    //        data["picks"][i]["link"] +
+    //        "\"/></div>" +
+    //        "<div class=\"entry\">Description: <textarea class=\"pick_description_textarea entry_textarea\">" +
+    //        data["picks"][i]["description"]  +
+    //        "</textarea></div></div>"
+    //    );
+    //}
 }
 
+function getPickChunk(code){
+    console.log(code);
+    return "<div class=\"chunk_div\">" +
+        "Code Generated: <input type=\"text\" class=\"entry_input\" value=\""+escapeDoubleQuotation(code)+"\" style=\"height: 200px\">"+
+        //"Code Generated: <input type=\"text\" class=\"entry_input\" value=\""+(code)+"\" style=\"height: 200px\">"+
+        "<button class=\"remove_chunk_buttons\" onclick=\"closestDiv()\">Remove</button>" +
+        "</div>";
+}
 
 
 function UpLoadFile(event)
@@ -506,17 +534,22 @@ jQuery(document).ready(function(){
         );
     });
 
-    jQuery("#pick_add_button").click(function(){
-        jQuery("#pick_div").append(
-            "<div class=\"chunk_div\">" +
-            "<input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>" +
-            "<button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>" +
-            "<img class=\"entry_picture\" src=\"\" alt=\"No file chosen\"/>" +
-            "<div class=\"entry\">Money: <input type=\"text\" class=\"pick_money_input entry_input\"/></div>" +
-            "<div class=\"entry\">Link: <input type=\"text\" class=\"pick_link_input entry_input\"/></div>" +
-            "<div class=\"entry\">Description: <textarea class=\"pick_description_textarea entry_textarea\"></textarea></div></div>"
+    //jQuery("#pick_add_button").click(function(){
+    //    jQuery("#pick_div").append(
+    //        "<div class=\"chunk_div\">" +
+    //        "<input type=\"file\" class=\"fileUpload\" onchange='UpLoadFile(event)'>" +
+    //        "<button class=\"remove_chunk_buttons\" onclick=\"test()\">Remove</button>" +
+    //        "<img class=\"entry_picture\" src=\"\" alt=\"No file chosen\"/>" +
+    //        "<div class=\"entry\">Money: <input type=\"text\" class=\"pick_money_input entry_input\"/></div>" +
+    //        "<div class=\"entry\">Link: <input type=\"text\" class=\"pick_link_input entry_input\"/></div>" +
+    //        "<div class=\"entry\">Description: <textarea class=\"pick_description_textarea entry_textarea\"></textarea></div></div>"
+    //    );
+    //});
+
+    jQuery("#picks_add_btn").click(function(){
+        console.log(getPickChunk(""));
+        jQuery("#picks_div").append(
+            getPickChunk("")
         );
     });
-
-
 });
