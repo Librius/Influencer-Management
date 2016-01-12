@@ -115,8 +115,8 @@
       <file leaf-file-name="InfluencerCuration.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/InfluencerCuration.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.14900154">
-              <caret line="613" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="689" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.33333334">
+              <caret line="594" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="689" selection-end-column="7" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -130,13 +130,13 @@
                 <element signature="n#style#0;n#div#1;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#3;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#4;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <marker date="1452561460000" expanded="true" signature="17223:17237" placeholder="..." />
-                <marker date="1452561460000" expanded="true" signature="17996:18010" placeholder="..." />
-                <marker date="1452561460000" expanded="true" signature="21900:21922" placeholder="..." />
-                <marker date="1452561460000" expanded="true" signature="24029:24043" placeholder="..." />
-                <marker date="1452561460000" expanded="true" signature="24178:24191" placeholder="..." />
-                <marker date="1452561460000" expanded="true" signature="27262:27284" placeholder="..." />
-                <marker date="1452561460000" expanded="true" signature="28520:28542" placeholder="..." />
+                <marker date="1452561938000" expanded="true" signature="17223:17237" placeholder="..." />
+                <marker date="1452561938000" expanded="true" signature="17996:18010" placeholder="..." />
+                <marker date="1452561938000" expanded="true" signature="21900:21922" placeholder="..." />
+                <marker date="1452561938000" expanded="true" signature="24029:24043" placeholder="..." />
+                <marker date="1452561938000" expanded="true" signature="24178:24191" placeholder="..." />
+                <marker date="1452561938000" expanded="true" signature="27315:27337" placeholder="..." />
+                <marker date="1452561938000" expanded="true" signature="28573:28595" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -852,8 +852,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/InfluencerCuration.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14900154">
-          <caret line="613" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="689" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="594" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="689" selection-end-column="7" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -867,13 +867,13 @@
             <element signature="n#style#0;n#div#1;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#3;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#4;n#div#2;n#div#3;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <marker date="1452561460000" expanded="true" signature="17223:17237" placeholder="..." />
-            <marker date="1452561460000" expanded="true" signature="17996:18010" placeholder="..." />
-            <marker date="1452561460000" expanded="true" signature="21900:21922" placeholder="..." />
-            <marker date="1452561460000" expanded="true" signature="24029:24043" placeholder="..." />
-            <marker date="1452561460000" expanded="true" signature="24178:24191" placeholder="..." />
-            <marker date="1452561460000" expanded="true" signature="27262:27284" placeholder="..." />
-            <marker date="1452561460000" expanded="true" signature="28520:28542" placeholder="..." />
+            <marker date="1452561938000" expanded="true" signature="17223:17237" placeholder="..." />
+            <marker date="1452561938000" expanded="true" signature="17996:18010" placeholder="..." />
+            <marker date="1452561938000" expanded="true" signature="21900:21922" placeholder="..." />
+            <marker date="1452561938000" expanded="true" signature="24029:24043" placeholder="..." />
+            <marker date="1452561938000" expanded="true" signature="24178:24191" placeholder="..." />
+            <marker date="1452561938000" expanded="true" signature="27315:27337" placeholder="..." />
+            <marker date="1452561938000" expanded="true" signature="28573:28595" placeholder="..." />
           </folding>
         </state>
       </provider>
