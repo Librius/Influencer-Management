@@ -2,10 +2,10 @@
 <head>
     <title>test </title>
     <style>
-        a:hover{
+        .featured_stories a:hover{
             text-decoration: none !important;
         }
-        a{
+        .featured_stories a{
             color: #373737 !important;
         }
         h1{text-align: center;}
@@ -238,7 +238,7 @@
             .semitrans-enter-store{height:25%;}
         }
     </style>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">-->
 </head>
 <body>
 
@@ -397,7 +397,7 @@
                 </div>
             </div>
             <div class="col-md-12" style="text-align:center;">
-                <a class="become-influencer" href=""> <span >BECOME OUR INFLUENCER</span></a>
+                <a class="become-influencer" href="https://www.evestemptation.com/become-influencer"> <span >BECOME OUR INFLUENCER</span></a>
             </div>
             <div class="col-md-12">
                 <img class="coverfull influencer-email" src="{{media url="wysiwyg/influencer/infulencer-email.png"}}" alt="" />
@@ -600,7 +600,7 @@
                 }
             }
 
-            moreinfluencer_html += "<div class=\"col-md-2 col-xs-3 top-bot-padding\"><div class=\"influencer-img\"><a href='" + "https://www.evestemptation.com/influencer-detail" + window.location.href.split('?')[0] + "?id=" + influencersJSONObj.influencers[i].id + "'><img class=\"influencer-icon img-circle\" src=\"" + influencersJSONObj.influencers[i].profile_icon + "\" alt=\"" + influencersJSONObj.influencers[i].name + "\"\/></a><\/div><\/div>";
+            moreinfluencer_html += "<div class=\"col-md-2 col-xs-3 top-bot-padding\"><div class=\"influencer-img\"><a href='" + "https://www.evestemptation.com/influencer-detail" + "?id=" + influencersJSONObj.influencers[i].id + "'><img class=\"influencer-icon img-circle\" src=\"" + influencersJSONObj.influencers[i].profile_icon + "\" alt=\"" + influencersJSONObj.influencers[i].name + "\"\/></a><\/div><\/div>";
 
             if (i == influencersJSONObj.influencers.length - 1) {
                 moreinfluencer_html += "</div>";

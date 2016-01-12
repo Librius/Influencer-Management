@@ -817,7 +817,6 @@
     function showInfluencer(influencersJSONObj)
     {
         var moreinfluencer_html = "";
-
         for(var i= 0;i<influencersJSONObj.influencers.length;i++) {
             //more influencers
             if (i % 12 == 0) {
@@ -829,7 +828,7 @@
                 }
             }
 
-            moreinfluencer_html += "<div class=\"col-md-2 col-xs-3 top-bot-padding\"><div class=\"influencer-img\"><a href='" + window.location.href.split('?')[0] + "?id=" + influencersJSONObj.influencers[i].id + "'><img class=\"influencer-icon img-circle\" src=\"" + influencersJSONObj.influencers[i].profile_icon + "\" alt=\"" + influencersJSONObj.influencers[i].name + "\"\/></a><\/div><\/div>";
+            moreinfluencer_html += "<div class=\"col-md-2 col-xs-3 top-bot-padding\"><div class=\"influencer-img\"><a href='" + "https://www.evestemptation.com/influencer-detail" + "?id=" + influencersJSONObj.influencers[i].id + "'><img class=\"influencer-icon img-circle\" src=\"" + influencersJSONObj.influencers[i].profile_icon + "\" alt=\"" + influencersJSONObj.influencers[i].name + "\"\/></a><\/div><\/div>";
 
             if (i== influencersJSONObj.influencers.length-1) {
                 moreinfluencer_html += "</div>";
