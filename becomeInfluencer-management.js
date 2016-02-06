@@ -30,6 +30,7 @@ jQuery(document).ready(function(){
 
 function showPage(page_num)
 {
+  current_page = page_num;
   var table_body_html = "";
   for(var i =page_num*ROWS_PER_PAGE;i<newJSON.influencers.length && i<page_num*ROWS_PER_PAGE+ROWS_PER_PAGE;i++)
   {

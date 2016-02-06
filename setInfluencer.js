@@ -229,7 +229,7 @@ function writeToJson(){
         "blog": [],
         "style": [],
         "picks": []
-    }
+    };
 
   var blog_div = jQuery("#blog_div");
   var blogs = jQuery(".chunk_div", blog_div);
@@ -261,6 +261,9 @@ function writeToJson(){
   //change new Json Object
   if(influencer_id == 0)
   {
+      jsonObj.show_curation = 0;
+      jsonObj.curation_image_big = "";
+      jsonObj.curation_image_small = "";
     jsonObj.id = newJsonObj.global_available_id;
     newJsonObj.global_available_id++;
     jsonObj.show_curation = 0;
@@ -276,6 +279,9 @@ function writeToJson(){
       if(newJsonObj.influencers[j].id == influencer_id)
         break;
     }
+      jsonObj.show_curation = newJsonObj.influencers[j].show_curation;
+      jsonObj.curation_image_big = newJsonObj.influencers[j].curation_image_big;
+      jsonObj.curation_image_small = newJsonObj.influencers[j].curation_image_small;
     newJsonObj.influencers[j] = jsonObj;
   }
 
