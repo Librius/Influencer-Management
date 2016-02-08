@@ -170,7 +170,8 @@ function getEventEntry(id,name, timeBegin, timeEnd, briefIntro ){
         "<td>" + timeBegin + "</td>" +
         "<td>" + timeEnd + "</td>" +
         "<td>" + briefIntro + "</td>" +
-        "<td><button class=\"btn btn-link\" id=\"editbutton"+id+"\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"viewandedit(event)\">view&amp;edit </button></td>";
+        "<td><button class=\"btn btn-link\" id=\"editbutton"+id+"\" data-toggle=\"modal\" data-target=\"#myModal\" onclick=\"viewandedit(event)\">view&amp;edit </button></td>" +
+        "<td>" + id + "</td>";
 }
 
 function viewandedit(event)

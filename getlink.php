@@ -76,7 +76,12 @@
     }
     else if($json->sort_by == "like")
     {
-      usort($html, 'likecmp');
+      usort($html, function($a, $b) {
+        if ($a['likes'] == $b['likes']) {
+          return 0;
+        }
+        return ($a['likes'] < $b['likes']) ? 1 : -1;
+      });
     }
 
     function likecmp($a, $b)
